@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    akjdbjagd awudiuawhduahuidhawhdwuihiawdu
+    <img src="img/landingpage1.png" alt="background">
 </body>
 
 </html>
