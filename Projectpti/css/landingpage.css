@@ -4,6 +4,7 @@
 	box-sizing: content-box;
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 .halaman-utama .navbar {
 	display: flex;
@@ -220,6 +221,9 @@ halaman-utama .guru .contenguru .batang6 {
 	color: rgba(33, 69, 81, 1);
 	font-family: "Roboto Slab", serif;
 }
+.halaman-utama .guru .contenguru .isiguru .isigurukiri {
+	float: left;
+}
 
 .halaman-utama .guru .contenguru .isiguru .isigurukiri .contenguruu1 {
 	background-color: var(--bittersweet);
@@ -339,16 +343,32 @@ halaman-utama .guru .contenguru .batang6 {
 	.jabatan {
 	margin-left: 101px;
 }
-.halaman-utama .guru .contenguru .lanjutguru {
-	margin-left: 500px;
+.halaman-utama .guru .contenguru .isiguru .isigurukanan {
+	float: left;
 }
 
-.halaman-utama .gurup .contenguru .isiguru .isigurukanan .kanan {
+.halaman-utama .guru .contenguru .isiguru .isigurukanan .kanan {
 	background-color: var(--jonquil);
 	border-radius: 20px;
-	height: 86px;
+	height: 90px;
 	width: 349px;
+	margin-left: 900px;
+	margin-top: -550px;
 }
 :root {
 	--jonquil: rgba(240, 255, 151, 1);
+}
+
+.halaman-utama .guru .contenguru .isiguru .isigurukanan .kanan .pengumuman {
+	color: rgba(33, 69, 81, 1);
+	font-family: "Roboto Slab", serif;
+	font-size: 30px;
+	font-style: normal;
+	padding-left: 40px;
+	padding-top: 0.1px;
+}
+
+.halaman-utama .guru .contenguru .lanjutguru {
+	float: left;
+	margin-left: 500px;
 }

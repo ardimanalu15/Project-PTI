@@ -114,7 +114,11 @@
                         </div>
                     </div>
                     <div class="isigurukanan">
-                        <div class="kanan"></div>
+                        <div class="kanan">
+                            <div class="pengumuman">
+                                <h3>PENGUMUMAN</h3>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="lanjutguru">
