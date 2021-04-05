@@ -86,16 +86,39 @@
                 <div class="batang5"></div>
                 <div class="batang6"></div>
                 <div class="isiguru">
+                    <h1 class="gurup"> GURU</h1>
                     <div class="isigurukiri">
-                        <h1> GURU</h1>
-                        <div class="contenguruu">
-                            <div class="text-1">
+                        <div class="contenguruu1">
+                            <div class="satu">
+                                <tr id="ip">
+                                    <th>Nama <span class="nama">:</span></th><br />
+                                    <th>Tempat Tanggal Lahir :</span></th><br />
+                                    <th>Alamat <span class="alamat">:</span></th><br />
+                                    <th>Pendidikan <span class="pendidikan">:</span></th><br />
+                                    <th>Jabatan <span class="jabatan">:</span></th>
+                                </tr>
+                            </div>
+
+                        </div>
+                        <div class="contenguruu2">
+                            <div class="dua">
+                                <tr>
+                                    <th>Nama <span class="nama">:</span> </th><br />
+                                    <th>Tempat Tanggal Lahir :</th><br />
+                                    <th>Alamat <span class="alamat">:</span></th><br />
+                                    <th>Pendidikan <span class="pendidikan">:</span></th><br />
+                                    <th>Jabatan <span class="jabatan">:</span> </th>
+                                </tr>
+
                             </div>
                         </div>
                     </div>
                     <div class="isigurukanan">
-
+                        <div class="kanan"></div>
                     </div>
+                </div>
+                <div class="lanjutguru">
+                    <a href="#"><img src="img/Group132.png" alt="tombol"></a>
                 </div>
             </div>
 

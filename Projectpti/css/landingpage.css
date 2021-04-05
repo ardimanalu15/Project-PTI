@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap");
+
 .halaman-utama {
 	box-sizing: content-box;
 	margin: 0;
@@ -196,7 +197,8 @@
 .halaman-utama .guru .contenguru .batang5 {
 	background-color: var(--viking);
 	height: 30px;
-	width: 1200px;
+	width: 1248px;
+	float: right;
 }
 :root {
 	--viking: rgba(110, 199, 211, 1);
@@ -206,17 +208,147 @@ halaman-utama .guru .contenguru .batang6 {
 	background-color: var(--spray);
 	height: 30px;
 	width: 1093px;
+	float: right;
 }
 :root {
 	--spray: rgba(123, 225, 239, 1);
 }
 
-.halaman-utama .guru .contenguru .contenguruu {
+.halaman-utama .guru .contenguru .isiguru .gurup {
+	margin-top: 150px;
+	margin-left: 100px;
+	color: rgba(33, 69, 81, 1);
+	font-family: "Roboto Slab", serif;
+}
+
+.halaman-utama .guru .contenguru .isiguru .isigurukiri .contenguruu1 {
 	background-color: var(--bittersweet);
 	border-radius: 20px;
 	height: 179px;
 	width: 749px;
+	margin-left: 50px;
 }
 :root {
 	--bittersweet: rgba(254, 120, 120, 1);
+}
+.halaman-utama .guru .contenguru .isiguru .isigurukiri .contenguruu2 {
+	background-color: var(--bittersweett);
+	border-radius: 20px;
+	height: 179px;
+	width: 749px;
+	margin-top: 50px;
+	margin-left: 50px;
+}
+:root {
+	--bittersweett: rgba(245, 216, 114, 1);
+}
+
+.halaman-utama .guru .contenguru .isiguru .isigurukiri .contenguruu1 .satu {
+	color: rgba(33, 69, 81, 1);
+	font-family: "Roboto Slab", serif;
+	font-size: 15px;
+	margin-top: 0px;
+	margin-left: 200px;
+	padding-top: 20px;
+}
+.halaman-utama
+	.guru
+	.contenguru
+	.isiguru
+	.isigurukiri
+	.contenguruu1
+	.satu
+	.nama {
+	margin-left: 115px;
+}
+.halaman-utama
+	.guru
+	.contenguru
+	.isiguru
+	.isigurukiri
+	.contenguruu1
+	.satu
+	.alamat {
+	margin-left: 106px;
+}
+.halaman-utama
+	.guru
+	.contenguru
+	.isiguru
+	.isigurukiri
+	.contenguruu1
+	.satu
+	.pendidikan {
+	margin-left: 76px;
+}
+.halaman-utama
+	.guru
+	.contenguru
+	.isiguru
+	.isigurukiri
+	.contenguruu1
+	.satu
+	.jabatan {
+	margin-left: 101px;
+}
+.halaman-utama .guru .contenguru .isiguru .isigurukiri .contenguruu2 .dua {
+	color: rgba(33, 69, 81, 1);
+	font-family: "Roboto Slab", serif;
+	font-size: 15px;
+	margin-top: 0px;
+	margin-left: 200px;
+	padding-top: 20px;
+}
+.halaman-utama
+	.guru
+	.contenguru
+	.isiguru
+	.isigurukiri
+	.contenguruu2
+	.dua
+	.nama {
+	margin-left: 115px;
+}
+.halaman-utama
+	.guru
+	.contenguru
+	.isiguru
+	.isigurukiri
+	.contenguruu2
+	.dua
+	.alamat {
+	margin-left: 106px;
+}
+.halaman-utama
+	.guru
+	.contenguru
+	.isiguru
+	.isigurukiri
+	.contenguruu2
+	.dua
+	.pendidikan {
+	margin-left: 76px;
+}
+.halaman-utama
+	.guru
+	.contenguru
+	.isiguru
+	.isigurukiri
+	.contenguruu2
+	.dua
+	.jabatan {
+	margin-left: 101px;
+}
+.halaman-utama .guru .contenguru .lanjutguru {
+	margin-left: 500px;
+}
+
+.halaman-utama .gurup .contenguru .isiguru .isigurukanan .kanan {
+	background-color: var(--jonquil);
+	border-radius: 20px;
+	height: 86px;
+	width: 349px;
+}
+:root {
+	--jonquil: rgba(240, 255, 151, 1);
 }
