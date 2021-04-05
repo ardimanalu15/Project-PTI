@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap");
+.halaman-utama {
+	box-sizing: content-box;
+	margin: 0;
+	padding: 0;
+}
+.halaman-utama .navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	width: 1350px;
+	padding: 10px 0px;
+	color: #ffff;
+}
+.halaman-utama .navbar .brand {
+	font-family: "Roboto", sans-serif;
+	font-weight: bold;
+	font-size: 25px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.halaman-utama .navbar .nav-link {
+	list-style: none;
+	margin-right: 100px;
+}
+.halaman-utama .navbar .nav-link li {
+	display: inline-block;
+	padding: 0px 25px;
+}
+.halaman-utama .navbar .nav-link li .navbar-link {
+	font-family: "Roboto Slab", serif;
+	font-weight: 500px;
+	font-size: 20px;
+	text-decoration: none;
+	color: rgba(33, 69, 81, 1);
+}
+.halaman-utama .navbar .nav-link li .butt {
+	color: rgba(33, 69, 81, 1);
+	background: rgba(160, 194, 82, 1);
+	padding: 10px 40px;
+	text-decoration: none;
+	border-radius: 0.5em;
+	font-family: "Roboto Slab", serif;
+}
+.halaman-utama .navbar .nav-link li .navbar-link:hover::after {
+	content: "";
+	display: block;
+	border-bottom: 3px solid blue;
+	width: 30px;
+	margin: auto;
+	padding-bottom: 5px;
+	margin-bottom: -10px;
+}
+
+.halaman-utama .main {
+	width: 1350px;
+	background: url("../img/landingpage1.png");
+	background-size: cover;
+	position: relative;
+	z-index: -1;
+}
+.halaman-utama .main .container {
+	padding: 3rem 2rem;
+}
+.halaman-utama .main img {
+	position: relative;
+}
+.halaman-utama .main .container .main-content {
+	display: flex;
+}
+.halaman-utama .main .container .main-content .text {
+	padding-top: 12px;
+}
+.halaman-utama .main .container .main-content .text img {
+	height: 60px;
+	width: 800px;
+	margin-bottom: -20px;
+}
+
+.halaman-utama .main .container .main-content .text h1 {
+	color: rgba(33, 69, 81, 1);
+	font-size: 32px;
+	font-family: "Roboto Slab", serif;
+}
+.halaman-utama .main .container .banner {
+	margin-top: 10px;
+	margin-left: 0px;
+	float: right;
+}
+.halaman-utama .main .container .banner img {
+	width: 550px;
+}
+.halaman-utama .main .container .sosmet {
+	margin-top: 330px;
+	display: flex;
+}
+.halaman-utama .main .container .sosmet img {
+	height: 35px;
+	left: 10px;
+	top: 9px;
+	width: 39px;
+}
+.halaman-utama .main .container .sosmet .fb {
+	margin-left: 10px;
+}
+.halaman-utama .main .container .sosmet .ig {
+	margin-left: 10px;
+}
+.halaman-utama .content {
+	height: 1024;
+	width: 1350px;
+}
+.halaman-utama .content .contain {
+	height: 1024;
+	width: 1350px;
+}
+.halaman-utama .content .contain .batang {
+	background-color: var(--fountain-blue);
+	height: 30px;
+	width: 1350px;
+}
+:root {
+	--fountain-blue: rgba(99, 181, 192, 1);
+}
+.halaman-utama .content .contain .batang2 {
+	background-color: var(--viking);
+	height: 30px;
+	width: 1200px;
+}
+:root {
+	--viking: rgba(110, 199, 211, 1);
+}
+
+.halaman-utama .content .contain .batang3 {
+	background-color: var(--spray);
+	height: 30px;
+	width: 1050px;
+}
+:root {
+	--spray: rgba(123, 225, 239, 1);
+}
+
+.halaman-utama .content .contain .retangle {
+	height: 300px;
+	width: 500px;
+	background: url("../img/tkm.png");
+	background-size: cover;
+	border-radius: 20px;
+	margin-top: 150px;
+	margin-left: 150px;
+	margin-bottom: 100px;
+	position: relative;
+	z-index: -1;
+}
+.halaman-utama .content .contain .retangle:hover {
+}
+
+.halaman-utama .content .contain .title {
+	margin-top: -400px;
+	margin-left: 650px;
+	color: rgba(33, 69, 81, 1);
+	font-family: "Roboto Slab", serif;
+	position: relative;
+}
+.halaman-utama .content .contain .title .profile {
+	font-size: 42px;
+}
+.halaman-utama .content .contain .title .intro {
+	font-size: 21px;
+}
+.halaman-utama .content .contain .lanjutprofile {
+	margin-left: 1050px;
+}
+
+.halaman-utama .guru {
+	height: 1024;
+	width: 1350px;
+}
+.halaman-utama .guru .contenguru {
+	height: 1024;
+	width: 1350px;
+}
+
+.halaman-utama .guru .contenguru .batang4 {
+	background-color: var(--fountain-blue);
+	height: 30px;
+	width: 1350px;
+	border-top: 900px;
+}
+:root {
+	--fountain-blue: rgba(99, 181, 192, 1);
+}
+
+.halaman-utama .guru .contenguru .batang5 {
+	background-color: var(--viking);
+	height: 30px;
+	width: 1200px;
+}
+:root {
+	--viking: rgba(110, 199, 211, 1);
+}
+
+halaman-utama .guru .contenguru .batang6 {
+	background-color: var(--spray);
+	height: 30px;
+	width: 1093px;
+}
+:root {
+	--spray: rgba(123, 225, 239, 1);
+}
+
+.halaman-utama .guru .contenguru .contenguruu {
+	background-color: var(--bittersweet);
+	border-radius: 20px;
+	height: 179px;
+	width: 749px;
+}
+:root {
+	--bittersweet: rgba(254, 120, 120, 1);
+}
