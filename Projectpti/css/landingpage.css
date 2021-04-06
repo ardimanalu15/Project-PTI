@@ -605,4 +605,16 @@ halaman-utama .guru .contenguru .batang6 {
 .halaman-utama .footer .backgroundfooter .hubungi {
 	color: rgba(33, 69, 81, 1);
 	font-family: "Roboto Slab", Helvetica;
+	font-size: 34px;
+	width: 166px;
+	height: 32px;
+	left: 48px;
+	top: 4012px;
+	margin-left: 29px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 32px;
+	/* identical to box height */
+	border: 5px solid #ffffff;
 }
