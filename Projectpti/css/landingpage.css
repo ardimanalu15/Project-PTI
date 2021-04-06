@@ -558,7 +558,7 @@ halaman-utama .guru .contenguru .batang6 {
 	font-family: "Roboto Slab", serif;
 	float: left;
 	margin-left: 100px;
-	margin-top: -200px;
+	margin-top: -100px;
 	font-size: 40px;
 }
 .halaman-utama .info .isi-info .back {
@@ -566,7 +566,6 @@ halaman-utama .guru .contenguru .batang6 {
 	border-radius: 5px;
 	height: 350px;
 	width: 1280px;
-	margin-top: 160px;
 	margin-left: 25px;
 }
 :root {
@@ -579,7 +578,7 @@ halaman-utama .guru .contenguru .batang6 {
 	font-family: "Roboto Slab", Helvetica;
 	text-decoration: underline;
 	margin-bottom: 30px;
-	margin-top: 230px;
+	margin-top: 250px;
 	margin-left: 40px;
 	font-size: 25px;
 }
@@ -590,4 +589,20 @@ halaman-utama .guru .contenguru .batang6 {
 }
 .halaman-utama .info .isi-info .gambarinfo {
 	margin-left: 900px;
+}
+
+.halaman-utama .footer .backgroundfooter {
+	background-color: var(--footer);
+	border-radius: 5px;
+	height: 350px;
+	width: 1350px;
+	margin-top: 150px;
+	margin-left: 0px;
+}
+:root {
+	--footer: rgba(241, 255, 152, 1);
+}
+.halaman-utama .footer .backgroundfooter .hubungi {
+	color: rgba(33, 69, 81, 1);
+	font-family: "Roboto Slab", Helvetica;
 }

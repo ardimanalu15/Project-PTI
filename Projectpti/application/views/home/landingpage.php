@@ -169,7 +169,10 @@
             </section>
 
             <section class="footer">
-                <dir class="backgroundfooter"></dir>
+                <div class="backgroundfooter">
+                    <H3 class="hubungi"> Hubungi Kami</H3>
+
+                </div>
             </section>
 
     </div>
