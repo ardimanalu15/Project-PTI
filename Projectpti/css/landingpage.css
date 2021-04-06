@@ -428,7 +428,7 @@ halaman-utama .guru .contenguru .batang6 {
 	position: absolute;
 	top: 0px;
 	width: 282px;
-	margin-left: 60px;
+	margin-left: 70px;
 	margin-top: -60px;
 }
 .halaman-utama
@@ -519,8 +519,75 @@ halaman-utama .guru .contenguru .batang6 {
 	--regent-st-blue: rgba(173, 216, 222, 1);
 }
 .halaman-utama .guru .contenguru .lanjutguru {
-	margin-top: 350px;
+	margin-top: 320px;
 	margin-left: 500px;
 	position: absolute;
 	float: left;
+}
+
+.halaman-utama .info .isi-info .batang7 {
+	background-color: var(--fountain-blue);
+	height: 30px;
+	width: 1350px;
+	margin-top: 600px;
+}
+:root {
+	--fountain-blue: rgba(99, 181, 192, 1);
+}
+.halaman-utama .info .isi-info .batang8 {
+	background-color: var(--viking);
+	height: 30px;
+	width: 1200px;
+}
+:root {
+	--viking: rgba(110, 199, 211, 1);
+}
+
+.halaman-utama .info .isi-info .batang9 {
+	background-color: var(--spray);
+	height: 30px;
+	width: 1050px;
+}
+:root {
+	--spray: rgba(123, 225, 239, 1);
+}
+
+.halaman-utama .info .isi-info .infopendaftaran .inpendaftaran {
+	color: rgba(33, 69, 81, 1);
+	font-size: 32px;
+	font-family: "Roboto Slab", serif;
+	float: left;
+	margin-left: 100px;
+	margin-top: -200px;
+	font-size: 40px;
+}
+.halaman-utama .info .isi-info .back {
+	background-color: var(--bittersweettt);
+	border-radius: 5px;
+	height: 350px;
+	width: 1280px;
+	margin-top: 160px;
+	margin-left: 25px;
+}
+:root {
+	--bittersweettt: rgba(241, 255, 152, 1);
+}
+.halaman-utama .info .isi-info .back .isigan {
+	color: rgba(33, 69, 81, 1);
+}
+.halaman-utama .info .isi-info .back .isigan .isiganheader {
+	font-family: "Roboto Slab", Helvetica;
+	text-decoration: underline;
+	margin-bottom: 30px;
+	margin-top: 230px;
+	margin-left: 40px;
+	font-size: 25px;
+}
+.halaman-utama .info .isi-info .back .isigan .teksheaderisi {
+	font-family: "Roboto Slab", Helvetica;
+	margin-left: 20px;
+	font-size: 20px;
+}
+.halaman-utama .info .isi-info .gambarinfo {
+	margin-left: 900px;
 }
