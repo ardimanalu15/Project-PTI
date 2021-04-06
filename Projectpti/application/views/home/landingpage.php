@@ -140,7 +140,7 @@
 
         </section>
         <!-- akhir guru -->
-
+        adawaaaaaaaaaaaaaaaaaaaaaaaaaa
     </div>
 </body>
 
