@@ -114,9 +114,21 @@
                         </div>
                     </div>
                     <div class="isigurukanan">
-                        <div class="kanan">
-                            <div class="pengumuman">
-                                <h3>PENGUMUMAN</h3>
+                        <div class="pengumuman-">
+                            <div class="overlap-group">
+                                <div class="rectangle-1"></div>
+                                <div class="rectangle-108"></div>
+                                <div class="text-1 robotoslab-normal-blue-dianne-22px">Mulai tanggal 31 mei pembayaran SPP dapat Dilakukan</div>
+                                <div class="text-2 robotoslab-normal-blue-dianne-22px">
+                                    Berhubung dengan pengumuman dinas pendidikan mengenai COVID-19, maka sekolah meliburkan seluruh siswa selama 2
+                                    minggu
+                                </div>
+                                <div class="group-115">
+                                    <div class="overlap-group1">
+                                        <img class="pengumuman-1" src="img/PENGUMUMAN.png" />
+                                        <img class="loudspeaker-128x128-2" src="img/loudspeaker-128x128.png" />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

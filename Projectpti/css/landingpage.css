@@ -157,8 +157,6 @@
 	position: relative;
 	z-index: -1;
 }
-.halaman-utama .content .contain .retangle:hover {
-}
 
 .halaman-utama .content .contain .title {
 	margin-top: -400px;
@@ -229,8 +227,8 @@ halaman-utama .guru .contenguru .batang6 {
 .halaman-utama .guru .contenguru .isiguru .isigurukiri .contenguruu1 {
 	background-color: var(--bittersweet);
 	border-radius: 20px;
-	height: 179px;
-	width: 749px;
+	height: 150px;
+	width: 650px;
 	margin-left: 50px;
 }
 :root {
@@ -239,8 +237,8 @@ halaman-utama .guru .contenguru .batang6 {
 .halaman-utama .guru .contenguru .isiguru .isigurukiri .contenguruu2 {
 	background-color: var(--bittersweett);
 	border-radius: 20px;
-	height: 179px;
-	width: 749px;
+	height: 150px;
+	width: 650px;
 	margin-top: 50px;
 	margin-left: 50px;
 }
@@ -348,27 +346,180 @@ halaman-utama .guru .contenguru .batang6 {
 	float: left;
 }
 
-.halaman-utama .guru .contenguru .isiguru .isigurukanan .kanan {
+.halaman-utama
+	.guru
+	.contenguru
+	.isiguru
+	.isigurukanan
+	.pengumuman-
+	.overlap-group
+	.group-115 {
+	align-items: flex-start;
+	display: flex;
+	height: 35px;
+	justify-content: flex-end;
+	left: 10px;
+	min-width: 328px;
+	padding: 0 2px;
+	top: 21px;
+	float: left;
+}
+.halaman-utama
+	.guru
+	.contenguru
+	.isiguru
+	.isigurukanan
+	.pengumuman-
+	.overlap-group
+	.group-115
+	.overlap-group1
+	.loudspeaker-128x128-2 {
+	height: 35px;
+	left: 277px;
+	object-fit: cover;
+	position: absolute;
+	top: 0px;
+	width: 40px;
+	margin-left: 60px;
+	margin-top: -65px;
+}
+.halaman-utama
+	.guru
+	.contenguru
+	.isiguru
+	.isigurukanan
+	.pengumuman-
+	.overlap-group {
+	height: 920px;
+	position: relative;
+	width: 491px;
+}
+.halaman-utama
+	.guru
+	.contenguru
+	.isiguru
+	.isigurukanan
+	.pengumuman-
+	.overlap-group
+	.group-115
+	.overlap-group1 {
+	height: 35px;
+	margin-top: -0.04px;
+	position: relative;
+	width: 317px;
+}
+.halaman-utama .guru .contenguru .isiguru .isigurukanan .pengumuman- {
+	align-items: flex-start;
+	display: flex;
+	width: 495px;
+}
+.halaman-utama
+	.guru
+	.contenguru
+	.isiguru
+	.isigurukanan
+	.pengumuman-
+	.overlap-group
+	.group-115
+	.overlap-group1
+	.pengumuman-1 {
+	height: 35px;
+	left: 0px;
+	position: absolute;
+	top: 0px;
+	width: 282px;
+	margin-left: 55px;
+	margin-top: -60px;
+}
+.halaman-utama
+	.guru
+	.contenguru
+	.isiguru
+	.isigurukanan
+	.pengumuman-
+	.overlap-group
+	.rectangle-1 {
+	background-color: var(--regent-st-blue);
+	border-radius: 15px;
+	height: 500px;
+	left: 41px;
+	top: 26px;
+	width: 450px;
+	margin-left: 120px;
+	margin-top: -65px;
+}
+.halaman-utama
+	.guru
+	.contenguru
+	.isiguru
+	.isigurukanan
+	.pengumuman-
+	.overlap-group
+	.rectangle-108 {
 	background-color: var(--jonquil);
 	border-radius: 20px;
-	height: 90px;
+	height: 86px;
+	left: 0px;
+	position: relative;
+	top: 0px;
 	width: 349px;
-	margin-left: 900px;
-	margin-top: -550px;
+	margin-left: 70px;
+	margin-top: -500px;
+}
+.halaman-utama
+	.guru
+	.contenguru
+	.isiguru
+	.isigurukanan
+	.pengumuman-
+	.overlap-group
+	.text-1 {
+	left: 92px;
+	letter-spacing: 0px;
+	position: absolute;
+	text-decoration: underline;
+	top: 171px;
+	width: 372px;
+}
+.halaman-utama
+	.guru
+	.contenguru
+	.isiguru
+	.isigurukanan
+	.pengumuman-
+	.overlap-group
+	.text-2 {
+	left: 92px;
+	letter-spacing: 0px;
+	position: absolute;
+	text-decoration: underline;
+	top: 270px;
+	width: 377px;
+}
+
+.halaman-utama
+	.guru
+	.contenguru
+	.isiguru
+	.isigurukanan
+	.pengumuman-
+	.overlap-group
+	.robotoslab-normal-blue-dianne-22px {
+	color: var(--blue-dianne);
+	font-family: "Roboto Slab", Helvetica;
+	font-size: 22px;
+	font-style: normal;
+	font-weight: 400;
+	margin-left: 75px;
+	margin-top: -130px;
 }
 :root {
+	--blue-dianne: rgba(33, 69, 81, 1);
 	--jonquil: rgba(240, 255, 151, 1);
+	--regent-st-blue: rgba(173, 216, 222, 1);
 }
-
-.halaman-utama .guru .contenguru .isiguru .isigurukanan .kanan .pengumuman {
-	color: rgba(33, 69, 81, 1);
-	font-family: "Roboto Slab", serif;
-	font-size: 30px;
-	font-style: normal;
-	padding-left: 40px;
-}
-
 .halaman-utama .guru .contenguru .lanjutguru {
-	float: left;
+	margin-top: 350px;
 	margin-left: 500px;
+	position: absolute;
 }
