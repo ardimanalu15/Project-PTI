@@ -1,18 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap");
 
-.halaman-utama {
+.halaman {
 	box-sizing: content-box;
-	margin: 0;
+	margin: 900px;
 	padding: 0;
 	box-sizing: border-box;
 }
-.halaman-utama .header .text-1 {
+.halaman .header .text-1 {
 	letter-spacing: 0px;
 	min-height: 126px;
 	min-width: 711px;
 	text-align: center;
 }
-.halaman-utama .header .robotoslab-regular-normal-spectra-48px {
+.halaman .header .robotoslab-regular-normal-spectra-48px {
 	color: var(--spectra);
 	font-family: "Roboto Slab-Regular", Helvetica;
 	font-size: 48px;

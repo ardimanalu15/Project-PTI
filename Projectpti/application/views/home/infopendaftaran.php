@@ -10,23 +10,26 @@
 </head>
 
 <body>
-
-    <div class="halaman-utama">
-
+    <div class="halaman">
         <div class="header">
             <h1 class="text-1 robotoslab-regular-normal-spectra-48px">
                 Penerimaan Peserta Didik Baru<br />Tahun Pelajaran 2021/2022
             </h1>
         </div>
         <div class="isi">
+            <div class="isi-kiri">
+                <table>
 
+                </table>
+            </div>
+            <div class="garis">
+
+            </div>
+            <dir class="isi kanan">
+
+            </dir>
         </div>
-
-
     </div>
-
-
-
 </body>
 
 </html>
