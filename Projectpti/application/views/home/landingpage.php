@@ -164,7 +164,7 @@
                     </div>
                 </div>
                 <div class="gambarinfo">
-                    <img src="img/Group133.png" alt="gambarinfolengkapnya">
+                    <a href="#"> <img src="img/Group133.png" alt="gambarinfolengkapnya"></a>
                 </div>
             </div>
         </section>

@@ -12,7 +12,7 @@
 	align-items: center;
 	position: fixed;
 	width: 1350px;
-	background-color: aqua;
+	background-color: rgba(208, 209, 209, 0.692);
 }
 .halaman-utama .navbar .brand {
 	font-family: "Roboto", sans-serif;
@@ -586,7 +586,7 @@ halaman-utama .guru .contenguru .batang6 {
 	margin-left: 0px;
 }
 :root {
-	--footer: rgba(241, 255, 152, 1);
+	--footer: rgba(173, 216, 222, 1);
 }
 .halaman-utama .footer .backgroundfooter .hubungi {
 	color: rgba(33, 69, 81, 1);
