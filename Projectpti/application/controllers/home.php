@@ -7,4 +7,8 @@ class home extends CI_Controller
     {
         $this->load->view('home/landingpage');
     }
+    public function infopendaftaran()
+    {
+        $this->load->view('home/infopendaftaran');
+    }
 }
