@@ -137,41 +137,57 @@
                     <a href="#"><img src="img/Group132.png" alt="tombol"></a>
                 </div>
             </div>
+        </section>
 
-            <!-- akhir guru -->
-            <section class="info">
-                <div class="isi-info">
-                    <div class="batang7"></div>
-                    <div class="batang8"></div>
-                    <div class="batang9"></div>
-                    <div class="infopendaftaran">
-                        <h1 class="inpendaftaran">INFO PENDAFTARAN</h1>
-                    </div>
-                    <div class="back">
-                        <div class="isigan">
-                            <h2 class="isiganheader">INFORMASI PENDAFTARAN</h2>
-                            <h3 class="teksheaderisi"> Pendaftaran Siswa Baru di TK Melati Putih terdapat 2 jalur yakni ONLINE dan OFFLINE dengan ketentuan sebagai berikut: <br /><br />
+        <!-- akhir guru -->
+        <section class="info">
+            <div class="isi-info">
+                <div class="batang7"></div>
+                <div class="batang8"></div>
+                <div class="batang9"></div>
+                <div class="infopendaftaran">
+                    <h1 class="inpendaftaran">INFO PENDAFTARAN</h1>
+                </div>
+                <div class="back">
+                    <div class="isigan">
+                        <h2 class="isiganheader">INFORMASI PENDAFTARAN</h2>
+                        <h3 class="teksheaderisi"> Pendaftaran Siswa Baru di TK Melati Putih terdapat 2 jalur yakni ONLINE dan OFFLINE dengan ketentuan sebagai berikut: <br /><br />
 
-                                1. Pendaftaran ONLINE, orangtua dapat mengaksesnya melalui official website kami di https://www.<br /><br />
+                            1. Pendaftaran ONLINE, orangtua dapat mengaksesnya melalui official website kami di https://www.<br /><br />
 
-                                2. Pendaftaran OFFLINE, orangtua dapat langung ke TK Melati Putih di Alamat: JL. Bilal Ujung, Gang Surya No. 168 B, Kec. Medan Tembung, Kota Medan, Sumatera Utara.<br /><br />
+                            2. Pendaftaran OFFLINE, orangtua dapat langung ke TK Melati Putih di Alamat: JL. Bilal Ujung, Gang Surya No. 168 B, Kec. Medan Tembung, Kota Medan, Sumatera Utara.<br /><br />
 
-                                3. Pendaftaran di buka pada tanggal 26 November 2018 s.d Kuota Terpenuhi.<br /><br />
+                            3. Pendaftaran di buka pada tanggal 26 November 2018 s.d Kuota Terpenuhi.<br /><br />
 
-                                4.Pendaftaran ONLINE maupun OFFLINE akan di tutup jika kuota pendaftar terpenuhi. <br /><br />
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="gambarinfo">
-                        <img src="img/Group133.png" alt="gambarinfolengkapnya">
+                            4.Pendaftaran ONLINE maupun OFFLINE akan di tutup jika kuota pendaftar terpenuhi. <br /><br />
+                        </h3>
                     </div>
                 </div>
-            </section>
-            <section class="footer">
-                <div class="backgroundfooter">
-                    <H3 class="hubungi">Hubungi Kami</H3>
+                <div class="gambarinfo">
+                    <img src="img/Group133.png" alt="gambarinfolengkapnya">
                 </div>
-            </section>
+            </div>
+        </section>
+
+        <!-- footer -->
+        <section class="footer">
+            <div class="backgroundfooter">
+                <H2 class="hubungi">Hubungi Kami</H2>
+                <img class="telephone" src="img/telephone.png" alt="">
+                <h4 class="nohp1"> 08123456789</h4>
+                <h4 class="nohp2"> 090880808</h4>
+                <img class="whattsap" src="img/wa.png" alt="">
+                <h4 class="nowaa">0909090</h4>
+                <img class="facebook" src="img/fb.png" alt="">
+                <h4 class="facebookteks"> TK Melati Putih </h4>
+                <img class="igg" src="img/ig.png" alt="">
+                <h4 class="igid">@tkmelatiputih</h4>
+                <img class="location" src="img/lication.png" alt="">
+                <h4 class="locationid">JL. Bilal Ujung, Gang Surya No. 168 B,
+                    Kec. Medan Tembung, Kota Medan,
+                    Sumatera Utara</h4>
+            </div>
+        </section>
 
     </div>
 </body>

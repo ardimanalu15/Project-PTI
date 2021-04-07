@@ -12,8 +12,7 @@
 	align-items: center;
 	position: fixed;
 	width: 1350px;
-	padding: 10px 0px;
-	color: #ffff;
+	background-color: aqua;
 }
 .halaman-utama .navbar .brand {
 	font-family: "Roboto", sans-serif;
@@ -26,6 +25,7 @@
 .halaman-utama .navbar .nav-link {
 	list-style: none;
 	margin-right: 100px;
+	position: static;
 }
 .halaman-utama .navbar .nav-link li {
 	display: inline-block;
@@ -163,7 +163,6 @@
 	margin-left: 650px;
 	color: rgba(33, 69, 81, 1);
 	font-family: "Roboto Slab", serif;
-	position: relative;
 }
 .halaman-utama .content .contain .title .profile {
 	font-size: 42px;
@@ -358,11 +357,9 @@ halaman-utama .guru .contenguru .batang6 {
 	display: flex;
 	height: 35px;
 	justify-content: flex-end;
-	left: 10px;
 	min-width: 328px;
 	padding: 0 2px;
 	top: 21px;
-	float: left;
 }
 .halaman-utama
 	.guru
@@ -377,10 +374,9 @@ halaman-utama .guru .contenguru .batang6 {
 	height: 35px;
 	left: 277px;
 	object-fit: cover;
-	position: absolute;
 	top: 0px;
 	width: 40px;
-	margin-left: 60px;
+	margin-left: 0px;
 	margin-top: -65px;
 }
 .halaman-utama
@@ -391,7 +387,6 @@ halaman-utama .guru .contenguru .batang6 {
 	.pengumuman-
 	.overlap-group {
 	height: 920px;
-	position: relative;
 	width: 491px;
 }
 .halaman-utama
@@ -404,8 +399,7 @@ halaman-utama .guru .contenguru .batang6 {
 	.group-115
 	.overlap-group1 {
 	height: 35px;
-	margin-top: -0.04px;
-	position: relative;
+	margin-top: -295px;
 	width: 317px;
 }
 .halaman-utama .guru .contenguru .isiguru .isigurukanan .pengumuman- {
@@ -424,12 +418,9 @@ halaman-utama .guru .contenguru .batang6 {
 	.overlap-group1
 	.pengumuman-1 {
 	height: 35px;
-	left: 0px;
-	position: absolute;
-	top: 0px;
 	width: 282px;
-	margin-left: 70px;
-	margin-top: -60px;
+	margin-left: -95px;
+	margin-top: -25 px;
 }
 .halaman-utama
 	.guru
@@ -460,7 +451,6 @@ halaman-utama .guru .contenguru .batang6 {
 	border-radius: 20px;
 	height: 86px;
 	left: 0px;
-	position: relative;
 	top: 0px;
 	width: 349px;
 	margin-left: 70px;
@@ -474,12 +464,10 @@ halaman-utama .guru .contenguru .batang6 {
 	.pengumuman-
 	.overlap-group
 	.text-1 {
-	left: 92px;
 	letter-spacing: 0px;
-	position: absolute;
 	text-decoration: underline;
-	top: 171px;
 	width: 372px;
+	margin-top: 100px;
 }
 .halaman-utama
 	.guru
@@ -491,7 +479,6 @@ halaman-utama .guru .contenguru .batang6 {
 	.text-2 {
 	left: 92px;
 	letter-spacing: 0px;
-	position: absolute;
 	text-decoration: underline;
 	top: 270px;
 	width: 377px;
@@ -510,8 +497,8 @@ halaman-utama .guru .contenguru .batang6 {
 	font-size: 22px;
 	font-style: normal;
 	font-weight: 400;
-	margin-left: 75px;
-	margin-top: -130px;
+	margin-left: 150px;
+	margin-top: 30px;
 }
 :root {
 	--blue-dianne: rgba(33, 69, 81, 1);
@@ -519,9 +506,8 @@ halaman-utama .guru .contenguru .batang6 {
 	--regent-st-blue: rgba(173, 216, 222, 1);
 }
 .halaman-utama .guru .contenguru .lanjutguru {
-	margin-top: 320px;
 	margin-left: 500px;
-	position: absolute;
+	margin-top: -600px;
 	float: left;
 }
 
@@ -603,17 +589,66 @@ halaman-utama .guru .contenguru .batang6 {
 	--footer: rgba(241, 255, 152, 1);
 }
 .halaman-utama .footer .backgroundfooter .hubungi {
-	position: absolute;
-	width: 223px;
-	height: 42px;
-	left: 48px;
-	top: 4012px;
-
-	font-family: "Roboto Slab";
-	font-style: normal;
-	font-weight: bold;
+	color: rgba(33, 69, 81, 1);
 	font-size: 32px;
-	line-height: 42px;
+	font-family: "Roboto Slab", serif;
+	margin-left: 60px;
+	padding-top: 20px;
+}
+.halaman-utama .footer .backgroundfooter .telephone {
+	margin-top: 40px;
+	margin-left: 80px;
+	position: absolute;
+}
 
-	color: #214551;
+.halaman-utama .footer .backgroundfooter .nohp1 {
+	margin-left: 130px;
+	position: absolute;
+	margin-top: 35px;
+}
+.halaman-utama .footer .backgroundfooter .nohp2 {
+	margin-left: 130px;
+	position: absolute;
+	margin-top: 55px;
+}
+.halaman-utama .footer .backgroundfooter .whattsap {
+	margin-left: 440px;
+	position: absolute;
+	margin-top: 35px;
+}
+.halaman-utama .footer .backgroundfooter .nowaa {
+	margin-left: 490px;
+	position: absolute;
+	margin-top: 45px;
+}
+.halaman-utama .footer .backgroundfooter .facebook {
+	margin-left: 440px;
+	position: absolute;
+	margin-top: 80px;
+}
+.halaman-utama .footer .backgroundfooter .facebookteks {
+	margin-left: 490px;
+	position: absolute;
+	margin-top: 90px;
+}
+.halaman-utama .footer .backgroundfooter .igg {
+	margin-left: 440px;
+	position: absolute;
+	margin-top: 125px;
+}
+.halaman-utama .footer .backgroundfooter .igid {
+	margin-left: 490px;
+	position: absolute;
+	margin-top: 135px;
+}
+.halaman-utama .footer .backgroundfooter .location {
+	margin-left: 810px;
+	position: absolute;
+	margin-top: 40px;
+}
+
+.halaman-utama .footer .backgroundfooter .locationid {
+	margin-left: 850px;
+	position: absolute;
+	margin-top: 40px;
 }
