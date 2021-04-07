@@ -188,7 +188,6 @@
                     Sumatera Utara</h4>
             </div>
         </section>
-
     </div>
 </body>
 
