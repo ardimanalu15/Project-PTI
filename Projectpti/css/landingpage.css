@@ -603,18 +603,17 @@ halaman-utama .guru .contenguru .batang6 {
 	--footer: rgba(241, 255, 152, 1);
 }
 .halaman-utama .footer .backgroundfooter .hubungi {
-	color: rgba(33, 69, 81, 1);
-	font-family: "Roboto Slab", Helvetica;
-	font-size: 34px;
-	width: 166px;
-	height: 32px;
+	position: absolute;
+	width: 223px;
+	height: 42px;
 	left: 48px;
 	top: 4012px;
-	margin-left: 29px;
+
+	font-family: "Roboto Slab";
 	font-style: normal;
-	font-weight: normal;
-	font-size: 24px;
-	line-height: 32px;
-	/* identical to box height */
-	border: 5px solid #ffffff;
+	font-weight: bold;
+	font-size: 32px;
+	line-height: 42px;
+
+	color: #214551;
 }

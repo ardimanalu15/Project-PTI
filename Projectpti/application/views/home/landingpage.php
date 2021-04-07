@@ -170,7 +170,6 @@
             <section class="footer">
                 <div class="backgroundfooter">
                     <H3 class="hubungi">Hubungi Kami</H3>
-
                 </div>
             </section>
 
