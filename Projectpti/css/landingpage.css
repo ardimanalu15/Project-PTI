@@ -653,3 +653,35 @@ halaman-utama .guru .contenguru .batang6 {
 	position: absolute;
 	margin-top: 40px;
 }
+/* mengatur responsive */
+
+@media screen and (max-width: 600px) {
+	.halaman-utama .navbar .nav-link {
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.img {
+		display: none;
+		width: 500px;
+	}
+
+	.gambar {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 1199px) {
+	.img {
+		width: 500px;
+		z-index: -1;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.img {
+		width: 300px;
+		z-index: -1;
+	}
+}

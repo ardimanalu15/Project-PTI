@@ -15,10 +15,10 @@
         <div class="navbar">
             <div class="brand"> </div>
             <ul class="nav-link">
-                <li> <a href="#homePage" class="navbar-link"> Home </a></li>
+                <li> <a href="<?= base_url() ?>" class="navbar-link"> Home </a></li>
                 <li> <a href="#profilePage" class="navbar-link"> Profil </a></li>
                 <li> <a href="#guruPage" class="navbar-link"> Guru </a></li>
-                <li> <a href="#infoPage" class="navbar-link">Info Pendaftaran </a></li>
+                <li> <a href="Welcome/halamanpendaf" class="navbar-link">Info Pendaftaran </a></li>
                 <li> <a href="Welcome/LoginCon" class="butt" type="button">Login</a>
             </ul>
         </div>
@@ -184,7 +184,7 @@
                 <h4 class="igid">@tkmelatiputih</h4>
                 <img class="location" src="img/lication.png" alt="">
                 <h4 class="locationid">JL. Bilal Ujung, Gang Surya No. 168 B,
-                    Kec. Medan Tembung, Kota Medan,
+                    Kec. Medan Timur, Kota Medan,
                     Sumatera Utara</h4>
             </div>
         </section>
