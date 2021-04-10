@@ -26,7 +26,7 @@
                         <td> <a href="#" class="tabelisi"> Info Pendaftaran </a></td>
                     </tr>
                     <tr>
-                        <td class="tabelisiwarna"> <a href="#" class="tabelisi"> Formulir pendaftaran</a></td>
+                        <td class="tabelisiwarna"> <a href="<?= base_url() ?>Welcome/halamanpendaf" class="tabelisi"> Formulir pendaftaran</a></td>
                     </tr>
                     <tr>
                         <td> <a href="#" class="tabelisi"> Hubungi Kami</a></td>
@@ -45,39 +45,39 @@
                         <tr>
                             <td class="isitabelnya">Tanggal Lahir Siswa</td>
                             <td>*</td>
-                            <td><input type="date" name="ttl" placeholder=""></td>
+                            <td><input type="date" name="ttl" placeholder="" class="input"></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Alamat</td>
                             <td>*</td>
-                            <td><textarea name="alamat" id="" cols="30" rows="2"></textarea></td>
+                            <td><textarea name="alamat" id="" cols="30" rows="2" class="input"></textarea></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Umur </td>
                             <td>*</td>
-                            <td><input type="number" max="10" min="3" name="umur"> Tahun</td>
+                            <td><input type="number" max="10" min="3" name="umur" class="input"> Tahun</td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Nomor Akte Kelahiran</td>
                             <td>*</td>
-                            <td><input type="text" name="noakte" placeholder="Angka"></td>
+                            <td><input type="text" name="noakte" placeholder="Angka" class="input"></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">No Kartu Keluarga</td>
                             <td>*</td>
-                            <td><input type="text" name="nokk"></td>
+                            <td><input type="text" name="nokk" class="input"></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Tinggi/Berat Badan</td>
                             <td>*</td>
-                            <td><input type="number" max="300" min="50" name="tinggi"> cm</td>
+                            <td><input type="number" max="300" min="50" name="tinggi" class="input"> cm</td>
                             <td>/</td>
-                            <td><input type="number" max="150" min="10" name="berat"> kg</td>
+                            <td><input type="number" max="150" min="10" name="berat" class="input"> kg</td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Jenis kelamin</td>
                             <td>*</td>
-                            <td><select name="jeniskelamin" id="jenis_kelamin" class="select">
+                            <td><select name="jeniskelamin" id="jenis_kelamin" class="select" class="input">
                                     <option value="" selected>-Pilih</option>
                                     <option value="Laki-Laki" selected>Laki-Laki</option>
                                     <option value="Perempuan" selected>Perempuan</option>
@@ -87,57 +87,57 @@
                         <tr>
                             <td class="isitabelnya">Nama Lengkap Ayah</td>
                             <td>*</td>
-                            <td><input type="text" name="nama_ayah"></td>
+                            <td><input type="text" name="nama_ayah" class="input"></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Nama Lengkap Ibu</td>
                             <td>*</td>
-                            <td><input type="text" name="nama_ibu"></td>
+                            <td><input type="text" name="nama_ibu" class="input"></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Pendidikan Terakhir Ayah</td>
                             <td>*</td>
-                            <td><input type="text" name="pendidikan_ayah"></td>
+                            <td><input type="text" name="pendidikan_ayah" class="input"></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Pendidikan Terakhir Ibu</td>
                             <td>*</td>
-                            <td><input type="text" name="pendidikan_ibu"></td>
+                            <td><input type="text" name="pendidikan_ibu" class="input"></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Pekerjaan Ayah</td>
                             <td>*</td>
-                            <td><input type="text" name="pekerjaan_ayah"></td>
+                            <td><input type="text" name="pekerjaan_ayah" class="input"></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Pekerjaan Ibu</td>
                             <td>*</td>
-                            <td><input type="text" name="pekerjaan_ibu"></td>
+                            <td><input type="text" name="pekerjaan_ibu" class="input"></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Penghasilan Ayah</td>
                             <td>*</td>
-                            <td><input type="text" name="penghasilan_ayah"></td>
+                            <td><input type="text" name="penghasilan_ayah" class="input"></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Pernghasilan Ibu</td>
                             <td>*</td>
-                            <td><input type="text" name="penghasilan_ibu"></td>
+                            <td><input type="text" name="penghasilan_ibu" class="input"></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Tanggal Lahir Ayah </td>
                             <td>*</td>
-                            <td><input type="date" name="ttl_ayah"></td>
+                            <td><input type="date" name="ttl_ayah" class="input"></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Tanggal Lahir Ibu</td>
                             <td>*</td>
-                            <td><input type="date" name="ttl_ibu"></td>
+                            <td><input type="date" name="ttl_ibu" class="input"></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">No. Telep. Ayah/ibu</td>
                             <td>*</td>
-                            <td><input type="text" name="notelpon"></td>
+                            <td><input type="text" name="notelpon" placeholder="+62" class="input"></td>
                         </tr>
                         <tr>
                             <td><Button type="submit" name="kirim">Kirim</Button></td>
