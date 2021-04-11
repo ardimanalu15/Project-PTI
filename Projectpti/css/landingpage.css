@@ -46,7 +46,12 @@
 	text-decoration: none;
 	border-radius: 0.5em;
 	font-family: "Roboto Slab", serif;
+	border: rgba(160, 194, 82, 1);
 }
+.halaman-utama .navbar .nav-link li .butt:hover {
+	border-color: rgba(33, 69, 81, 1);
+}
+
 .halaman-utama .navbar .nav-link li .navbar-link:hover::after {
 	content: "";
 	display: block;

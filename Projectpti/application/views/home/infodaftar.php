@@ -25,7 +25,7 @@
         </div>
         <div class="header">
             <h2 class="headerisi"> AYO SEGERA DAFTARKAN ANAK ANDA DI TK MELATI PUTIH!</h2>
-            <a href="<?= base_url() ?>Welcome/halamanpendaf" class="tombol" type="button">Daftar</a>
+            <a class="linktombol" href="<?= base_url() ?>Welcome/halamanpendaf" type="button">Daftar</a>
         </div>
         <div class="bawaheader">
             INFORMASI PENDAFTARAN

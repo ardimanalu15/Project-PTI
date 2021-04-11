@@ -90,7 +90,7 @@
 	height: 48px;
 	background-color: rgba(0, 102, 255, 1);
 	margin-top: 50px;
-	filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.25));
+	filter: drop-shadow(0px 5px 1px rgba(0, 0, 0, 0.25));
 	border-radius: 10px;
 	border-color: rgba(0, 102, 255, 1);
 	font-family: Roboto Slab;
@@ -127,7 +127,7 @@
 	border-radius: 5px;
 	height: 350px;
 	width: 1440px;
-	margin-top: 100%;
+	margin-top: 300px;
 	margin-left: 0px;
 	float: left;
 }
