@@ -31,8 +31,6 @@
 :root {
 	--spectra: rgba(42, 90, 96, 1);
 }
-.halaman .isi .isikiri {
-}
 .halaman .isi .isikiri .tabel {
 	float: left;
 	margin-top: 100px;

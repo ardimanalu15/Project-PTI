@@ -6,8 +6,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	width: 1440;
-	height: 2887;
+	width: 1440px;
 }
 .halaman-utama .navbar {
 	display: flex;
@@ -30,7 +29,6 @@
 .halaman-utama .navbar .nav-link {
 	list-style: none;
 	margin-right: 100px;
-	position: static;
 }
 .halaman-utama .navbar .nav-link li {
 	display: inline-block;
@@ -94,9 +92,10 @@
 	margin-top: 30px;
 	float: left;
 	filter: drop-shadow(0px 5px 3px rgba(0, 0, 0, 0.25));
+	position: none;
 }
 
-.halaman-utama .header .linktombol:hover: {
+.halaman-utama .header .linktombol:hover {
 	border-color: cyan;
 }
 
@@ -121,6 +120,7 @@
 	width: 835px;
 	height: 557px;
 	filter: drop-shadow(0px 20px 20px rgba(0, 0, 0, 0.25));
+	position: none;
 }
 .halaman-utama .isi .isinya {
 	margin-top: 100px;

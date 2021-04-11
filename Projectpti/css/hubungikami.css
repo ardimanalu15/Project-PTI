@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap");
+
+body {
+	box-sizing: content-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.halaman-utama {
+	width: 1440px;
+	box-sizing: content-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.halaman-utama .navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	width: 1440px;
+	background-color: rgba(173, 216, 222, 1);
+	margin-top: 0px;
+	margin-left: 0px;
+	position: relative;
+}
+.halaman-utama .navbar .brand {
+	font-family: "Roboto", sans-serif;
+	font-weight: bold;
+	font-size: 25px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.halaman-utama .navbar .nav-link {
+	list-style: none;
+	margin-right: 100px;
+}
+.halaman-utama .navbar .nav-link li {
+	display: inline-block;
+	padding: 0px 25px;
+}
+.halaman-utama .navbar .nav-link li .navbar-link {
+	font-family: "Roboto Slab", serif;
+	font-weight: 500px;
+	font-size: 20px;
+	text-decoration: none;
+	color: rgba(33, 69, 81, 1);
+}
+.halaman-utama .navbar .nav-link li .butt {
+	color: rgba(33, 69, 81, 1);
+	background: rgba(160, 194, 82, 1);
+	padding: 10px 40px;
+	text-decoration: none;
+	border-radius: 0.5em;
+	font-family: "Roboto Slab", serif;
+}
+.halaman-utama .navbar .nav-link li .navbar-link:hover::after {
+	content: "";
+	display: block;
+	border-bottom: 3px solid blue;
+	width: 30px;
+	margin: auto;
+	padding-bottom: 5px;
+	margin-bottom: -10px;
+}
+
+.header {
+	background-color: rgba(245, 224, 177, 1);
+	height: 1024px;
+	width: 1440px;
+	position: absolute;
+}
+.header .headerisi {
+	background-color: var(--fountain-blue);
+	height: 170px;
+	width: 1440px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+:root {
+	--fountain-blue: white;
+}
+
+.header .headerisi .headerisii {
+	text-align: center;
+	font-family: "Roboto Slab", sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 64px;
+	padding-top: 45px;
+}
+
+.isi .isinya .isinyakiri {
+	float: left;
+	position: absolute;
+	margin-top: 150px;
+}
+.isi .isinya .isinyakanan {
+	float: left;
+	position: absolute;
+	margin-left: 700px;
+	margin-top: 150px;
+}
+.isi .isinya .isinyakanan .isinyakanansosmed {
+	margin-left: 350px;
+	float: left;
+}
+.isi .isinya .isinyakanan .isinyakanansosmed .whattsap {
+	position: absolute;
+	margin-top: -250px;
+}
+.isi .isinya .isinyakanan .isinyakanansosmed .nowaa {
+	position: absolute;
+	margin-left: 50px;
+	margin-top: -245px;
+}
+
+.isi .isinya .isinyakanan .isinyakanansosmed .facebook {
+	position: absolute;
+	margin-left: 0px;
+	margin-top: -200px;
+}
+.isi .isinya .isinyakanan .isinyakanansosmed .facebookteks {
+	position: absolute;
+	margin-left: 50px;
+	margin-top: -190px;
+}
+.isi .isinya .isinyakanan .isinyakanansosmed .igg {
+	position: absolute;
+	margin-left: 0px;
+	margin-top: -150px;
+}
+.isi .isinya .isinyakanan .isinyakanansosmed .igid {
+	position: absolute;
+	margin-left: 50px;
+	margin-top: -145px;
+}
+.isi .isinya .isinyakanan .isinyakanansosmed .telephone {
+	position: absolute;
+	margin-left: 0px;
+	margin-top: -100px;
+}
+.isi .isinya .isinyakanan .isinyakanansosmed .nohp1 {
+	margin-left: 50px;
+	margin-top: -100px;
+}
+.isi .isinya .isinyakanan .isinyakanansosmed .nohp2 {
+	margin-left: 50px;
+	margin-top: -20px;
+}

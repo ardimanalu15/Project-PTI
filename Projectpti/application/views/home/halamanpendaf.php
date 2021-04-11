@@ -29,7 +29,7 @@
                         <td class="tabelisiwarna"> <a href="<?= base_url() ?>Welcome/halamanpendaf" class="tabelisi"> Formulir pendaftaran</a></td>
                     </tr>
                     <tr>
-                        <td> <a href="#" class="tabelisi"> Hubungi Kami</a></td>
+                        <td> <a href="<?= base_url() ?>Welcome/hubungikami" class="tabelisi"> Hubungi Kami</a></td>
                     </tr>
                 </table>
             </div>
@@ -77,7 +77,7 @@
                         <tr>
                             <td class="isitabelnya">Jenis kelamin</td>
                             <td>*</td>
-                            <td class="input"><select name="jeniskelamin" id="jenis_kelamin" class="select" class="input">
+                            <td><select name="jeniskelamin" id="jenis_kelamin" class="select" class="input">
                                     <option class="input" value="Laki-Laki" selected>Laki-Laki</option>
                                     <option class="input" value="Perempuan" selected>Perempuan</option>
                                     <option class="input" value="" selected>-Pilih</option>

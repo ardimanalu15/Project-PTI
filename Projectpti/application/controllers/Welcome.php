@@ -63,4 +63,12 @@ class Welcome extends CI_Controller
 	{
 		$this->load->view('home/halamanpendaf');
 	}
+	public function hubungikami()
+	{
+		$this->load->view('home/hubungikami');
+	}
+	public function profilgurucon()
+	{
+		$this->load->view('home/profilguru');
+	}
 }
