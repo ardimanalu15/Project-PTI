@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Info Pendaftaran</title>
-    <link rel="stylesheet" href="<?= base_url() ?>css/infopendaftaran.css">
+    <link rel="stylesheet" href="<?= base_url() ?>css/halamanpendaftaran.css">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
                         <td> <a href="<?= base_url() ?>" class="tabelisi"> home </a></td>
                     </tr>
                     <tr>
-                        <td> <a href="#" class="tabelisi"> Info Pendaftaran </a></td>
+                        <td> <a href="<?= base_url() ?>Welcome/InfoDaftarCon" class="tabelisi"> Info Pendaftaran </a></td>
                     </tr>
                     <tr>
                         <td class="tabelisiwarna"> <a href="<?= base_url() ?>Welcome/halamanpendaf" class="tabelisi"> Formulir pendaftaran</a></td>
@@ -77,10 +77,10 @@
                         <tr>
                             <td class="isitabelnya">Jenis kelamin</td>
                             <td>*</td>
-                            <td><select name="jeniskelamin" id="jenis_kelamin" class="select" class="input">
-                                    <option value="" selected>-Pilih</option>
-                                    <option value="Laki-Laki" selected>Laki-Laki</option>
-                                    <option value="Perempuan" selected>Perempuan</option>
+                            <td class="input"><select name="jeniskelamin" id="jenis_kelamin" class="select" class="input">
+                                    <option class="input" value="Laki-Laki" selected>Laki-Laki</option>
+                                    <option class="input" value="Perempuan" selected>Perempuan</option>
+                                    <option class="input" value="" selected>-Pilih</option>
                                 </select>
                             </td>
                         </tr>
@@ -140,7 +140,7 @@
                             <td><input type="text" name="notelpon" placeholder="+62" class="input"></td>
                         </tr>
                         <tr>
-                            <td><Button type="submit" name="kirim">Kirim</Button></td>
+                            <td><Button type="submit" name="kirim" class="kirim">Kirim</Button></td>
                         </tr>
                     </table>
                 </form>
@@ -149,16 +149,16 @@
         <section class="footer">
             <div class="backgroundfooter">
                 <H2 class="hubungi">Hubungi Kami</H2>
-                <img class="telephone" src="img/telephone.png" alt="">
+                <img class="telephone" src="<?= base_url() ?>img/telephone.png" alt="">
                 <h4 class="nohp1"> 08123456789</h4>
                 <h4 class="nohp2"> 090880808</h4>
-                <img class="whattsap" src="img/wa.png" alt="">
+                <img class="whattsap" src="<?= base_url() ?>img/wa.png" alt="">
                 <h4 class="nowaa">0909090</h4>
-                <img class="facebook" src="img/fb.png" alt="">
+                <img class="facebook" src="<?= base_url() ?>img/fb.png" alt="">
                 <h4 class="facebookteks"> TK Melati Putih </h4>
-                <img class="igg" src="img/ig.png" alt="">
+                <img class="igg" src="<?= base_url() ?>img/ig.png" alt="">
                 <h4 class="igid">@tkmelatiputih</h4>
-                <img class="location" src="img/lication.png" alt="">
+                <img class="location" src="<?= base_url() ?>img/lication.png" alt="">
                 <h4 class="locationid">JL. Bilal Ujung, Gang Surya No. 168 B,
                     Kec. Medan Timur, Kota Medan,
                     Sumatera Utara</h4>

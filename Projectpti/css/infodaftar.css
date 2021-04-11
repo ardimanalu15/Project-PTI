@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap");
+
+.halaman-utama {
+	box-sizing: content-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	width: 1440;
+	height: 2887;
+}
+.halaman-utama .navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	width: 1440px;
+	background-color: rgba(173, 216, 222, 1);
+	margin-top: -100px;
+	margin-left: 0px;
+}
+.halaman-utama .navbar .brand {
+	font-family: "Roboto", sans-serif;
+	font-weight: bold;
+	font-size: 25px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.halaman-utama .navbar .nav-link {
+	list-style: none;
+	margin-right: 100px;
+	position: static;
+}
+.halaman-utama .navbar .nav-link li {
+	display: inline-block;
+	padding: 0px 25px;
+}
+.halaman-utama .navbar .nav-link li .navbar-link {
+	font-family: "Roboto Slab", serif;
+	font-weight: 500px;
+	font-size: 20px;
+	text-decoration: none;
+	color: rgba(33, 69, 81, 1);
+}
+.halaman-utama .navbar .nav-link li .butt {
+	color: rgba(33, 69, 81, 1);
+	background: rgba(160, 194, 82, 1);
+	padding: 10px 40px;
+	text-decoration: none;
+	border-radius: 0.5em;
+	font-family: "Roboto Slab", serif;
+}
+.halaman-utama .navbar .nav-link li .navbar-link:hover::after {
+	content: "";
+	display: block;
+	border-bottom: 3px solid blue;
+	width: 30px;
+	margin: auto;
+	padding-bottom: 5px;
+	margin-bottom: -10px;
+}
+.halaman-utama .header {
+	background-color: var(--header);
+	border-radius: 20px;
+	height: 90px;
+	width: 1440px;
+	margin-left: 0px;
+	margin-top: 100px;
+}
+:root {
+	--header: rgba(255, 217, 217, 1);
+}
+.halaman-utama .header .headerisi {
+	font-family: "Rubik One";
+	font-style: normal;
+	font-weight: bold;
+	font-size: 36px;
+	line-height: 45px;
+	float: left;
+}
+
+.halaman-utama .header .headerisi .tombol {
+	background-color: yellow;
+}
+
+.halaman-utama .bawaheader {
+	margin-left: 470px;
+	margin-top: 150px;
+	font-family: Roboto Slab;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 48px;
+	line-height: 63px;
+	float: left;
+	color: #214551;
+	text-align: center;
+}
+
+.halaman-utama .isi .gambarisi {
+	margin-top: 280px;
+	margin-left: 366px;
+}
+.halaman-utama .isi .gambarisi img {
+	width: 835px;
+	height: 557px;
+	filter: drop-shadow(0px 20px 20px rgba(0, 0, 0, 0.25));
+}
+.halaman-utama .isi .isinya {
+	margin-top: 100px;
+	margin-left: 20px;
+	font-family: "Roboto Slab", sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 32px;
+
+	color: #214551;
+}
+
+.halaman-utama .isi .isinya .isinyaisi {
+	text-decoration: underline;
+}
+
+.halaman-utama .footer {
+	float: left;
+}
+
+.halaman-utama .footer .backgroundfooter {
+	background-color: var(--footer);
+	border-radius: 5px;
+	height: 350px;
+	width: 1440px;
+	margin-top: 200px;
+	margin-left: 0px;
+	float: left;
+}
+:root {
+	--footer: rgba(173, 216, 222, 1);
+}
+
+.halaman-utama .footer .backgroundfooter .hubungi {
+	color: rgba(33, 69, 81, 1);
+	font-size: 32px;
+	font-family: "Roboto Slab", serif;
+	margin-left: 60px;
+	padding-top: 20px;
+}
+.halaman-utama .footer .backgroundfooter .telephone {
+	margin-top: 40px;
+	margin-left: 80px;
+	position: absolute;
+}
+
+.halaman-utama .footer .backgroundfooter .nohp1 {
+	margin-left: 130px;
+	position: absolute;
+	margin-top: 35px;
+}
+.halaman-utama .footer .backgroundfooter .nohp2 {
+	margin-left: 130px;
+	position: absolute;
+	margin-top: 55px;
+}
+.halaman-utama .footer .backgroundfooter .whattsap {
+	margin-left: 440px;
+	position: absolute;
+	margin-top: 35px;
+}
+.halaman-utama .footer .backgroundfooter .nowaa {
+	margin-left: 490px;
+	position: absolute;
+	margin-top: 45px;
+}
+.halaman-utama .footer .backgroundfooter .facebook {
+	margin-left: 440px;
+	position: absolute;
+	margin-top: 80px;
+}
+.halaman-utama .footer .backgroundfooter .facebookteks {
+	margin-left: 490px;
+	position: absolute;
+	margin-top: 90px;
+}
+.halaman-utama .footer .backgroundfooter .igg {
+	margin-left: 440px;
+	position: absolute;
+	margin-top: 125px;
+}
+.halaman-utama .footer .backgroundfooter .igid {
+	margin-left: 490px;
+	position: absolute;
+	margin-top: 135px;
+}
+.halaman-utama .footer .backgroundfooter .location {
+	margin-left: 810px;
+	position: absolute;
+	margin-top: 40px;
+}
+
+.halaman-utama .footer .backgroundfooter .locationid {
+	margin-left: 850px;
+	position: absolute;
+	margin-top: 40px;
+}
