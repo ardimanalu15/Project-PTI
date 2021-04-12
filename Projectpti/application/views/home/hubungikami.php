@@ -19,7 +19,7 @@
                 </div>
                 <ul class="nav-link">
                     <li> <a href="<?= base_url() ?>" class="navbar-link"> Home </a></li>
-                    <li> <a href="#profilePage" class="navbar-link"> Profil </a></li>
+                    <li> <a href="<?= base_url() ?>Welcome/ProfileCon" class="navbar-link"> Profil </a></li>
                     <li> <a href="<?= base_url() ?>Welcome/profilgurucon" class="navbar-link"> Guru </a></li>
                     <li> <a href="<?= base_url() ?>Welcome/InfoDaftarCon" class="navbar-link">Info Pendaftaran </a></li>
                     <li> <a href="<?= base_url() ?>Welcome/LoginCon" class="butt" type="button">Login</a>

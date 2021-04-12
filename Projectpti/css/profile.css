@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap");
+
+body {
+	margin: 0;
+	padding: 0;
+}
+.halaman-utama {
+	box-sizing: content-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	width: 1440px;
+}
+.halaman-utama .navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	width: 1440px;
+	background-color: rgba(173, 216, 222, 1);
+
+	margin-left: 0px;
+	position: static;
+}
+
+.halaman-utama .navbar .brand {
+	font-family: "Roboto", sans-serif;
+	font-weight: bold;
+	font-size: 25px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.halaman-utama .navbar .nav-link {
+	list-style: none;
+	margin-right: 100px;
+}
+.halaman-utama .navbar .nav-link li {
+	display: inline-block;
+	padding: 0px 25px;
+}
+.halaman-utama .navbar .nav-link li .navbar-link {
+	font-family: "Roboto Slab", serif;
+	font-weight: 500px;
+	font-size: 20px;
+	text-decoration: none;
+	color: rgba(33, 69, 81, 1);
+}
+.halaman-utama .navbar .nav-link li .butt {
+	color: rgba(33, 69, 81, 1);
+	background: rgba(160, 194, 82, 1);
+	padding: 10px 40px;
+	text-decoration: none;
+	border-radius: 0.5em;
+	font-family: "Roboto Slab", serif;
+}
+.halaman-utama .navbar .nav-link li .navbar-link:hover::after {
+	content: "";
+	display: block;
+	border-bottom: 3px solid blue;
+	width: 30px;
+	margin: auto;
+	padding-bottom: 5px;
+	margin-bottom: -10px;
+}
+
+.halaman-utama .header .headergambar1 {
+	max-width: 100%;
+	height: auto;
+}
+
+.halaman-utama .header .headergambar2 {
+	max-width: 100%;
+	height: auto;
+	margin-top: -165px;
+}
+.halaman-utama .isi .kepsek {
+	margin-top: 140px;
+}
+.halaman-utama .isi .kepsek .kepsekiri {
+	float: left;
+	margin-left: 50px;
+}
+
+.halaman-utama .isi .kepsek .kepsekiri .headersambutan {
+	font-family: "Roboto Slab", sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	line-height: 47px;
+	color: #214551;
+}
+.halaman-utama .isi .kepsek .kepsekiri .isiheadersambutan {
+	font-family: "Roboto Slab", sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 47px;
+	color: #214551;
+	margin-top: 50px;
+	width: 800px;
+	letter-spacing: 0px;
+	min-height: 193px;
+}
+
+.halaman-utama .isi .kepsek .kepsekkanan {
+	float: left;
+	margin-top: 100px;
+}
+.halaman-utama .isi .kepsek .kepsekkanan .gambarkepsek {
+	width: 308px;
+	height: 417px;
+	border-radius: 100%;
+	margin-left: 100px;
+}
+.halaman-utama .isi .visi {
+	float: left;
+	margin-top: 250px;
+}
+.halaman-utama .isi .visi .visikiri {
+	float: left;
+}
+.halaman-utama .isi .visi .visikiri .gambarvisi {
+	width: 461px;
+	height: 325px;
+	margin-left: 50px;
+}
+
+.halaman-utama .isi .visi .visikanan {
+	float: left;
+	margin-left: 50px;
+}
+
+.halaman-utama .isi .visi .visikanan .visimisi {
+	font-family: Roboto Slab;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	line-height: 47px;
+
+	color: #214551;
+}
+.halaman-utama .isi .visi .visikanan .isivisimisi {
+	font-family: Roboto Slab;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 32px;
+	width: 800px;
+	letter-spacing: 0px;
+	min-height: 193px;
+	color: #214551;
+}
+.footer {
+	float: left;
+}
+
+.footer .backgroundfooter {
+	background-color: var(--footerr);
+	border-radius: 5px;
+	height: 350px;
+	width: 1440px;
+	margin-top: 300px;
+	margin-left: 0px;
+	float: left;
+}
+:root {
+	--footerr: rgba(173, 216, 222, 1);
+}
+
+.footer .backgroundfooter .hubungi {
+	color: rgba(33, 69, 81, 1);
+	font-size: 32px;
+	font-family: "Roboto Slab", serif;
+	margin-left: 60px;
+	padding-top: 20px;
+}
+.footer .backgroundfooter .telephone {
+	margin-top: 40px;
+	margin-left: 80px;
+	position: absolute;
+}
+
+.footer .backgroundfooter .nohp1 {
+	margin-left: 130px;
+	position: absolute;
+	margin-top: 35px;
+}
+.footer .backgroundfooter .nohp2 {
+	margin-left: 130px;
+	position: absolute;
+	margin-top: 55px;
+}
+.footer .backgroundfooter .whattsap {
+	margin-left: 440px;
+	position: absolute;
+	margin-top: 35px;
+}
+.footer .backgroundfooter .nowaa {
+	margin-left: 490px;
+	position: absolute;
+	margin-top: 45px;
+}
+.footer .backgroundfooter .facebook {
+	margin-left: 440px;
+	position: absolute;
+	margin-top: 80px;
+}
+.footer .backgroundfooter .facebookteks {
+	margin-left: 490px;
+	position: absolute;
+	margin-top: 90px;
+}
+.footer .backgroundfooter .igg {
+	margin-left: 440px;
+	position: absolute;
+	margin-top: 125px;
+}
+.footer .backgroundfooter .igid {
+	margin-left: 490px;
+	position: absolute;
+	margin-top: 135px;
+}
+.footer .backgroundfooter .location {
+	margin-left: 810px;
+	position: absolute;
+	margin-top: 40px;
+}
+
+.footer .backgroundfooter .locationid {
+	margin-left: 850px;
+	position: absolute;
+	margin-top: 40px;
+}
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+.halaman-utama .lokasi {
+	font-family: Roboto Slab;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	line-height: 47px;
+	color: #214551;
+	margin-left: 100px;
+	margin-top: -90px;
+}
+.halaman-utama .text-1 {
+	letter-spacing: 0px;
+	min-height: 193px;
+	width: 900px;
+	margin-left: 50px;
+}
+.halaman-utama .robotoslab-bold-white-24px {
+	color: var(--white);
+	font-family: var(--font-family-roboto_slab-bold);
+	font-size: var(--font-size-24px);
+	font-style: normal;
+	font-weight: 700;
+}
+:root {
+	--font-family-roboto_slab-bold: "Roboto Slab-Bold", Helvetica;
+	--font-size-24px: 24px;
+	--white: rgba(33, 69, 81, 1);
+}

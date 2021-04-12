@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap");
 body {
 	margin: 0;
 	padding: 0;
@@ -62,4 +62,233 @@ body {
 	margin: auto;
 	padding-bottom: 5px;
 	margin-bottom: -10px;
+}
+.halaman-utama .header {
+	text-align: center;
+	align-items: center;
+}
+.halaman-utama .header .headerisi {
+	font-family: "Roboto Slab", sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 48px;
+	line-height: 63px;
+	color: rgba(33, 69, 81, 1);
+}
+
+.halaman-utama .biodata .biodataguru {
+	font-family: Open Sans Condensed;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 40px;
+	line-height: 54px;
+	color: rgba(33, 69, 81, 1);
+	margin-left: 50px;
+}
+
+.halaman-utama .biodata .isibiodata .isibiodatakiri {
+	float: left;
+	position: abosulte;
+}
+
+.halaman-utama .biodata .isibiodata .isibiodatakiri .guru1 {
+	background-color: var(--guru1);
+	border-radius: 20px;
+	height: 150px;
+	width: 650px;
+	margin-left: 50px;
+}
+:root {
+	--guru1: rgba(173, 216, 222, 1);
+}
+.halaman-utama .biodata .isibiodata .isibiodatakiri .guru1 .biodataguru1 {
+	color: rgba(33, 69, 81, 1);
+	font-family: "Roboto Slab", serif;
+	font-size: 15px;
+	margin-top: 0px;
+	margin-left: 200px;
+	padding-top: 20px;
+}
+
+.halaman-utama .biodata .isibiodata .isibiodatakiri .guru2 {
+	background-color: var(--guru2);
+	border-radius: 20px;
+	height: 150px;
+	width: 650px;
+	margin-left: 50px;
+	margin-top: 25px;
+}
+:root {
+	--guru2: rgba(245, 216, 114, 1);
+}
+
+.halaman-utama .biodata .isibiodata .isibiodatakiri .guru2 .biodataguru2 {
+	color: rgba(33, 69, 81, 1);
+	font-family: "Roboto Slab", serif;
+	font-size: 15px;
+	margin-top: 0px;
+	margin-left: 200px;
+	padding-top: 20px;
+}
+
+.halaman-utama .biodata .isibiodata .isibiodatakiri .guru3 {
+	background-color: var(--guru3);
+	border-radius: 20px;
+	height: 150px;
+	width: 650px;
+	margin-top: 25px;
+	margin-left: 50px;
+}
+:root {
+	--guru3: rgba(254, 73, 73, 0.74);
+}
+.halaman-utama .biodata .isibiodata .isibiodatakiri .guru3 .biodataguru3 {
+	color: rgba(33, 69, 81, 1);
+	font-family: "Roboto Slab", serif;
+	font-size: 15px;
+	margin-top: 0px;
+	margin-left: 200px;
+	padding-top: 20px;
+}
+
+.halaman-utama .biodata .isibiodata .isibiodatakanan {
+	float: left;
+}
+.halaman-utama .biodata .isibiodata .isibiodatakanan .guru1 {
+	background-color: var(--guru4);
+	border-radius: 20px;
+	height: 150px;
+	width: 650px;
+	margin-left: 50px;
+}
+:root {
+	--guru4: rgba(160, 194, 82, 1);
+}
+.halaman-utama .biodata .isibiodata .isibiodatakanan .guru1 .biodataguru1 {
+	color: rgba(33, 69, 81, 1);
+	font-family: "Roboto Slab", serif;
+	font-size: 15px;
+	margin-top: 0px;
+	margin-left: 200px;
+	padding-top: 20px;
+}
+
+.halaman-utama .biodata .isibiodata .isibiodatakanan .guru2 {
+	background-color: var(--guru5);
+	border-radius: 20px;
+	height: 150px;
+	width: 650px;
+	margin-left: 50px;
+	margin-top: 25px;
+}
+:root {
+	--guru5: rgba(254, 73, 73, 0.74);
+}
+.halaman-utama .biodata .isibiodata .isibiodatakanan .guru2 .biodataguru2 {
+	color: rgba(33, 69, 81, 1);
+	font-family: "Roboto Slab", serif;
+	font-size: 15px;
+	margin-top: 0px;
+	margin-left: 200px;
+	padding-top: 20px;
+}
+.halaman-utama .biodata .isibiodata .isibiodatakanan .guru3 {
+	background-color: var(--guru6);
+	border-radius: 20px;
+	height: 150px;
+	width: 650px;
+	margin-left: 50px;
+	margin-top: 25px;
+}
+:root {
+	--guru6: rgba(245, 216, 114, 1);
+}
+.halaman-utama .biodata .isibiodata .isibiodatakanan .guru3 .biodataguru3 {
+	color: rgba(33, 69, 81, 1);
+	font-family: "Roboto Slab", serif;
+	font-size: 15px;
+	margin-top: 0px;
+	margin-left: 200px;
+	padding-top: 20px;
+}
+.footer {
+	float: left;
+}
+
+.footer .backgroundfooter {
+	background-color: var(--footerr);
+	border-radius: 5px;
+	height: 350px;
+	width: 1440px;
+	margin-top: 300px;
+	margin-left: 0px;
+	float: left;
+}
+:root {
+	--footerr: rgba(173, 216, 222, 1);
+}
+
+.footer .backgroundfooter .hubungi {
+	color: rgba(33, 69, 81, 1);
+	font-size: 32px;
+	font-family: "Roboto Slab", serif;
+	margin-left: 60px;
+	padding-top: 20px;
+}
+.footer .backgroundfooter .telephone {
+	margin-top: 40px;
+	margin-left: 80px;
+	position: absolute;
+}
+
+.footer .backgroundfooter .nohp1 {
+	margin-left: 130px;
+	position: absolute;
+	margin-top: 35px;
+}
+.footer .backgroundfooter .nohp2 {
+	margin-left: 130px;
+	position: absolute;
+	margin-top: 55px;
+}
+.footer .backgroundfooter .whattsap {
+	margin-left: 440px;
+	position: absolute;
+	margin-top: 35px;
+}
+.footer .backgroundfooter .nowaa {
+	margin-left: 490px;
+	position: absolute;
+	margin-top: 45px;
+}
+.footer .backgroundfooter .facebook {
+	margin-left: 440px;
+	position: absolute;
+	margin-top: 80px;
+}
+.footer .backgroundfooter .facebookteks {
+	margin-left: 490px;
+	position: absolute;
+	margin-top: 90px;
+}
+.footer .backgroundfooter .igg {
+	margin-left: 440px;
+	position: absolute;
+	margin-top: 125px;
+}
+.footer .backgroundfooter .igid {
+	margin-left: 490px;
+	position: absolute;
+	margin-top: 135px;
+}
+.footer .backgroundfooter .location {
+	margin-left: 810px;
+	position: absolute;
+	margin-top: 40px;
+}
+
+.footer .backgroundfooter .locationid {
+	margin-left: 850px;
+	position: absolute;
+	margin-top: 40px;
 }
