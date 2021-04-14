@@ -21,6 +21,12 @@
                 <li> <a href="Welcome/InfoDaftarCon" class="navbar-link">Info Pendaftaran </a></li>
                 <li> <a href="Welcome/LoginCon" class="butt" type="button">Login</a>
             </ul>
+            <div class="menu-toggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
         <!--Header -->
         <section class="main">
@@ -189,6 +195,7 @@
             </div>
         </section>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>

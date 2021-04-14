@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap");
 
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	overflow-x: hidden;
+}
+
 .halaman-utama {
 	box-sizing: content-box;
 	margin: 0;
@@ -60,6 +68,51 @@
 	margin: auto;
 	padding-bottom: 5px;
 	margin-bottom: -10px;
+}
+/* menu toggel */
+.halaman-utama .navbar .menu-toggle {
+	display: flex;
+	flex-direction: column;
+	height: 20px;
+	justify-content: space-between;
+	position: relative;
+}
+.halaman-utama .navbar .menu-toggle input {
+	position: absolute;
+	width: 40px;
+	height: 28px;
+	opacity: 0;
+	left: -5px;
+	top: -3px;
+	cursor: pointer;
+	z-index: 2;
+}
+.halaman-utama .navbar .menu-toggle span {
+	display: block;
+	width: 28px;
+	height: 3px;
+	background-color: cyan;
+	border-radius: 3px;
+	transition: all 0.5s;
+}
+.halaman-utama .navbar .menu-toggle span:nth-child(2) {
+	transform-origin: 0 0;
+}
+.halaman-utama .navbar .menu-toggle span:nth-child(4) {
+	transform-origin: 0 100%;
+}
+halaman-utama .navbar .menu-toggle input:checked ~ span:nth-child(2) {
+	transform: rotate(45deg) translate(-1px, -1px);
+	background-color: white;
+}
+
+halaman-utama .navbar .menu-toggle input:checked ~ span:nth-child(4) {
+	transform: rotate(-45deg) translate(-1px, 0);
+	background-color: white;
+}
+halaman-utama .navbar .menu-toggle input:checked ~ span:nth-child(3) {
+	opacity: 0;
+	transform: scale(0);
 }
 
 .halaman-utama .main {
@@ -660,9 +713,33 @@ halaman-utama .guru .contenguru .batang6 {
 }
 /* mengatur responsive */
 
-@media screen and (max-width: 600px) {
-	.halaman-utama .navbar .nav-link {
+@media screen and (max-width: 768px) {
+	.halaman-utama .navbar ul li {
 		width: 50%;
+	}
+}
+@media screen and (max-width: 576px) {
+	.halaman-utama .navbar ul {
+		position: absolute;
+		right: 0;
+		flex-direction: column;
+		top: 0;
+		width: 80%;
+		height: 100vh;
+		align-items: center;
+		justify-content: space-evenly;
+		z-index: -1;
+		transform: translateX(100%);
+		transition: all 1s;
+		background-color: cyan;
+		opacity: 0;
+	}
+	.navbar-link .menu-toggle {
+		display: flex;
+	}
+	.halaman-utama .navbar ul.slide {
+		opacity: 1;
+		transform: translateX(0);
 	}
 }
 
@@ -677,11 +754,7 @@ halaman-utama .guru .contenguru .batang6 {
 	}
 }
 
-@media screen and (max-width: 1199px) {
-	.img {
-		width: 500px;
-		z-index: -1;
-	}
+@media screen and (max-width: 1440px) {
 }
 
 @media screen and (max-width: 992px) {
