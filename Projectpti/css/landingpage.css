@@ -196,14 +196,10 @@ halaman-utama .navbar .menu-toggle input:checked ~ span:nth-child(3) {
 }
 
 @media screen and (max-width: 1440px) {
-	body {
-		width: 100%;
-	}
 }
 
 @media screen and (max-width: 992px) {
 	.brand img {
-		
 	}
 	.halaman-utama .navbar {
 		width: 992px;
