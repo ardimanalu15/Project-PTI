@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>DashBoardAdmin</title>
+    <title>StatusSPP</title>
 
     <!-- Custom fonts for this template-->
     <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -17,7 +17,7 @@
 
     <!-- Custom styles for this template-->
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
-
+    <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
 </head>
 
 <body id="page-top">
@@ -26,43 +26,53 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #569BB1; font-family:Roboto Slab;">
+            <div class="mt-3" style="color:white; font-size: 20px; font-family:Roboto Slab;">
+                <p>
+                    <img style=" height:25pt" src='<?= base_url('assets/'); ?>/img/tkMelati.svg'>
 
+                </p>
+            </div>
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center">
 
-                <div class="sidebar-brand-text mx-3">ADMIN</div>
+                <div class="sidebar-brand-text mx-3" style="font-family:Roboto Slab;">ADMIN</div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item active" style="font-family:Roboto Slab;">
                 <a class="nav-link" href="<?= base_url('Welcome/DashAdminCon'); ?>">
 
                     <span>Dashboard</span></a>
             </li>
+            <li class="nav-item active" style="font-family:Roboto Slab;">
+                <a class="nav-link" href="<?= base_url('Welcome/DataGuruCon'); ?>">
+
+                    <span>Data Guru</span></a>
+            </li>
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item active" style="font-family:Roboto Slab;">
                 <a class="nav-link" href="<?= base_url('Welcome/DataSiswaCon'); ?>">
 
                     <span>Data Siswa</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item active" style="font-family:Roboto Slab;">
                 <a class="nav-link" href="#">
 
                     <span>Status SPP Siswa</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item active" style="font-family:Roboto Slab;">
                 <a class="nav-link" href="<?= base_url('Welcome/LapKeuCon'); ?>">
 
                     <span>Laporan Keuangan</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item active" style="font-family:Roboto Slab;">
                 <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
 
                     <span>Logout</span></a>
@@ -73,36 +83,149 @@
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center mb-4" style="font-family:Roboto Slab; justify-content: center; ">
+                    <p class="mb-0 text-gray-800" style="font-size: 50px;">Status SPP Siswa</p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                </div>
+                <div style="font-family:Roboto Slab; justify-content: center;">
+                    <div class="col">
+                        <form>
+                            <div class="form-row align-items-center">
+
+                                <p class="my-1" style="font-size: 18px;">Total Siswa : </p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col">
+                        <form>
+                            <div class="form-row align-items-center">
+
+                                <p class="my-1" style="font-size: 18px;">Bayaran SPP periode bulan : </p>
+                                <div class="col-sm-5 my-1">
+                                    <div class=" dropdown show">
+
+                                        <select name=" cars" id="cars" class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; color:black; width:150px;">
+                                            <option class="dropdown-item" href="#">Januari</option>
+                                            <option class="dropdown-item" href="#">Februari</option>
+                                            <option class="dropdown-item" href="#">Maret</option>
+                                            <option class="dropdown-item" href="#">April</option>
+                                            <option class="dropdown-item" href="#">Mei</option>
+                                            <option class="dropdown-item" href="#">Juni</option>
+                                            <option class="dropdown-item" href="#">Juli</option>
+                                            <option class="dropdown-item" href="#">Agustus</option>
+                                            <option class="dropdown-item" href="#">September</option>
+                                            <option class="dropdown-item" href="#">Oktober</option>
+                                            <option class="dropdown-item" href="#">November</option>
+                                            <option class="dropdown-item" href="#">Desember</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- End of Main Content -->
+            <!-- Content Row -->
+
             <!-- Main Content -->
+
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                </nav>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Status SPP Murid</h1>
-                    </div>
-                </div>
-                <!-- End of Main Content -->
 
-                <!-- Footer -->
-                <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; TK MElLATI PUTIH MEDAN</span>
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <nav class="navbar navbar-light bg-light justify-content-end">
+
+                                <form class="form-inline">
+
+                                    <input class="form-control mr-sm-2 " type="search" placeholder="Cari..." aria-label="Search">
+                                    <button class="btn btn-info  my-2 my-sm-0" type="submit"><i class="fas fa-search fa-fw"></i></button>
+                                </form>
+                            </nav>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama Siswa</th>
+                                            <th>Nominal Bayar</th>
+                                            <th>Tanggal Terakhir Bayar</th>
+                                            <th>Status</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <th>No</th>
+                                        <th>Nama Siswa</th>
+                                        <th>Nominal Bayar</th>
+                                        <th>Tanggal Terakhir Bayar</th>
+                                        <th>Status</th>
+
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Ardi Gaya Manalu</td>
+                                            <td>Rp.100.000</td>
+                                            <td>12/04/2021</td>
+                                            <td>
+                                                <div class="dropdown show">
+
+                                                    <select name="cars" id="cars" class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; color:black; width:150px;">
+                                                        <option class="dropdown-item" href="#" style="background-color:yellowgreen;">Lunas</option>
+                                                        <option class="dropdown-item" href="#">Hutang</option>
+
+                                                    </select>
+
+                                                </div>
+                                            </td>
+
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                </footer>
-                <!-- End of Footer -->
+
+                </div>
+                <!-- /.container-fluid -->
 
             </div>
+
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white font-family:Roboto Slab;">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; TK MElLATI PUTIH MEDAN</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+
             <!-- End of Content Wrapper -->
 
         </div>

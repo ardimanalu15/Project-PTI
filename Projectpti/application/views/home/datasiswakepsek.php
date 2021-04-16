@@ -36,7 +36,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center">
 
-                <div class="sidebar-brand-text mx-3" style="font-family:Roboto Slab;">ADMIN</div>
+                <div class="sidebar-brand-text mx-3" style="font-family:Roboto Slab;">Kepala Sekolah</div>
             </a>
 
             <!-- Divider -->
@@ -44,12 +44,12 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="<?= base_url('Welcome/DashAdminCon'); ?>">
+                <a class="nav-link" href="<?= base_url('Welcome/DashKepsekCon'); ?>">
 
                     <span>Dashboard</span></a>
             </li>
             <li class="nav-item active" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="<?= base_url('Welcome/DataGuruCon'); ?>">
+                <a class="nav-link" href="<?= base_url('Welcome/DataGuruKepsekCon'); ?>">
 
                     <span>Data Guru</span></a>
             </li>
@@ -61,13 +61,13 @@
             </li>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="<?= base_url('Welcome/StatusSppCon'); ?>">
+                <a class="nav-link" href="<?= base_url('Welcome/StatusSppKepsekCon'); ?>">
 
                     <span>Status SPP Siswa</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="<?= base_url('Welcome/LapKeuCon'); ?>">
+                <a class="nav-link" href="<?= base_url('Welcome/LapKeuKepsekCon'); ?>">
 
                     <span>Laporan Keuangan</span></a>
             </li>
@@ -140,7 +140,7 @@
                                             <th>Nama Ayah</th>
                                             <th>Nama Ibu</th>
                                             <th>Alamat Tinggal</th>
-                                            <th>Tindakan</th>
+
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -152,7 +152,7 @@
                                             <th>Nama Ayah</th>
                                             <th>Nama Ibu</th>
                                             <th>Alamat Tinggal</th>
-                                            <th>Tindakan</th>
+
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -166,19 +166,12 @@
                                             <td>Pace</td>
                                             <td>Mace</td>
                                             <td>Jayapura</td>
-                                            <td>
-                                                <button type="submit" style="height: 30px; width:35px; margin-top:3px;" data-toggle="modal" data-target="#deleteModal">
-                                                    <img src="<?= base_url('assets/'); ?>/img/delete.svg">
-                                                </button>
-                                                <a href="<?= base_url('Welcome/EditDataSiswaCon'); ?>" type="submit" style="height: 25px;width:27px; margin-top:2px;">
-                                                    <img src="<?= base_url('assets/'); ?>/img/edit.svg">
-                                                </a>
-                                            </td>
+
                                         </tr>
 
                                     </tbody>
                                 </table>
-                                <a class="btn btn-info col-sm-2 float-right" style="margin-right: 0px;" href="<?= base_url('Welcome/TambahDataSiswaCon') ?>">Tambah Data Siswa</a>
+
                             </div>
                         </div>
                     </div>

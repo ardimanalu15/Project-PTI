@@ -34,9 +34,9 @@
                 </p>
             </div>
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
 
-                <div class="sidebar-brand-text mx-3" style="font-family:Roboto Slab;">ADMIN</div>
+                <div class="sidebar-brand-text mx-3" style="font-family:Roboto Slab;">Kepala Sekolah</div>
             </a>
 
             <!-- Divider -->
@@ -44,30 +44,31 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="<?= base_url('Welcome/DashAdminCon'); ?>">
+                <a class="nav-link" href="<?= base_url('Welcome/DashKepsekCon'); ?>">
 
                     <span>Dashboard</span></a>
             </li>
             <li class="nav-item active" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="<?= base_url('Welcome/DataGuruCon'); ?>">
+                <a class="nav-link" href="#">
 
                     <span>Data Guru</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="<?= base_url('Welcome/DataSiswaKepsekCon'); ?>">
 
                     <span>Data Siswa</span></a>
             </li>
+
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="<?= base_url('Welcome/StatusSppCon'); ?>">
+                <a class="nav-link" href="<?= base_url('Welcome/StatusSppKepsekCon'); ?>">
 
                     <span>Status SPP Siswa</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="<?= base_url('Welcome/LapKeuCon'); ?>">
+                <a class="nav-link" href="<?= base_url('Welcome/LapKeuKepsekCon'); ?>">
 
                     <span>Laporan Keuangan</span></a>
             </li>
@@ -89,15 +90,13 @@
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center mb-4" style="font-family:Roboto Slab; justify-content: center; ">
-                    <p class="mb-0 text-gray-800" style="font-size: 50px;">Data Siswa</p>
+                    <p class="mb-0 text-gray-800" style="font-size: 50px;">Data Guru</p>
                     <p></p>
                     <p></p>
                     <p></p>
                 </div>
                 <div style="font-family:Roboto Slab; justify-content: center;">
-                    <p>Total Siswa : </p>
-                    <p>Jumlah Siswa Laki-Laki : </p>
-                    <p>Jumlah Siswa Perempuan : </p>
+                    <p>Total Guru : </p>
                 </div>
             </div>
             <!-- End of Main Content -->
@@ -135,50 +134,39 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Foto</th>
-                                            <th>Nama Siswa</th>
+                                            <th>Nama Guru</th>
                                             <th>Jenis Kelamin</th>
-                                            <th>Nama Ayah</th>
-                                            <th>Nama Ibu</th>
+                                            <th>NIK</th>
+                                            <th>NIP</th>
+                                            <th>NUPTK</th>
+                                            <th>Jenis PTK</th>
+                                            <th>NPSN</th>
+                                            <th>TTL</th>
                                             <th>Alamat Tinggal</th>
-                                            <th>Tindakan</th>
+
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Foto</th>
-                                            <th>Nama Siswa</th>
-                                            <th>Jenis Kelamin</th>
-                                            <th>Nama Ayah</th>
-                                            <th>Nama Ibu</th>
-                                            <th>Alamat Tinggal</th>
-                                            <th>Tindakan</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
                                         <tr>
                                             <td>1.</td>
                                             <td>
                                                 <img class="justify-content-center" style="height: 95px; width:71px" src="<?= base_url('assets/'); ?>/img/pace.JPG">
                                             </td>
-                                            <td>Ardi Gaya Manalu</td>
-                                            <td>Laki-Laki</td>
-                                            <td>Pace</td>
-                                            <td>Mace</td>
-                                            <td>Jayapura</td>
-                                            <td>
-                                                <button type="submit" style="height: 30px; width:35px; margin-top:3px;" data-toggle="modal" data-target="#deleteModal">
-                                                    <img src="<?= base_url('assets/'); ?>/img/delete.svg">
-                                                </button>
-                                                <a href="<?= base_url('Welcome/EditDataSiswaCon'); ?>" type="submit" style="height: 25px;width:27px; margin-top:2px;">
-                                                    <img src="<?= base_url('assets/'); ?>/img/edit.svg">
-                                                </a>
-                                            </td>
+                                            <td>Sri</td>
+                                            <td>Perempuan</td>
+                                            <td>231898491284</td>
+                                            <td>27632839427</td>
+                                            <td>J298dbxdh8221</td>
+                                            <td>Guru</td>
+                                            <td>J298d2421421412</td>
+                                            <td>Medan, 10 januari 1978</td>
+                                            <td>Jl. gagak</td>
+
                                         </tr>
 
                                     </tbody>
                                 </table>
-                                <a class="btn btn-info col-sm-2 float-right" style="margin-right: 0px;" href="<?= base_url('Welcome/TambahDataSiswaCon') ?>">Tambah Data Siswa</a>
+
                             </div>
                         </div>
                     </div>

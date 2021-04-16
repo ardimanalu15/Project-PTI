@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>DataSiswa</title>
+    <title>StatusSPP</title>
 
     <!-- Custom fonts for this template-->
     <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -36,7 +36,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center">
 
-                <div class="sidebar-brand-text mx-3" style="font-family:Roboto Slab;">ADMIN</div>
+                <div class="sidebar-brand-text mx-3" style="font-family:Roboto Slab;">Kepala Sekolah</div>
             </a>
 
             <!-- Divider -->
@@ -44,30 +44,30 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="<?= base_url('Welcome/DashAdminCon'); ?>">
+                <a class="nav-link" href="<?= base_url('Welcome/DashKepsekCon'); ?>">
 
                     <span>Dashboard</span></a>
             </li>
             <li class="nav-item active" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="<?= base_url('Welcome/DataGuruCon'); ?>">
+                <a class="nav-link" href="<?= base_url('Welcome/DataGuruKepsekCon'); ?>">
 
                     <span>Data Guru</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="<?= base_url('Welcome/DataSiswaKepsekCon'); ?>">
 
                     <span>Data Siswa</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="<?= base_url('Welcome/StatusSppCon'); ?>">
+                <a class="nav-link" href="#">
 
                     <span>Status SPP Siswa</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="<?= base_url('Welcome/LapKeuCon'); ?>">
+                <a class="nav-link" href="<?= base_url('Welcome/LapKeuKepsekCon'); ?>">
 
                     <span>Laporan Keuangan</span></a>
             </li>
@@ -83,21 +83,55 @@
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
-
             <!-- Begin Page Content -->
             <div class="container-fluid">
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center mb-4" style="font-family:Roboto Slab; justify-content: center; ">
-                    <p class="mb-0 text-gray-800" style="font-size: 50px;">Data Siswa</p>
+                    <p class="mb-0 text-gray-800" style="font-size: 50px;">Status SPP Siswa</p>
                     <p></p>
                     <p></p>
                     <p></p>
                 </div>
                 <div style="font-family:Roboto Slab; justify-content: center;">
-                    <p>Total Siswa : </p>
-                    <p>Jumlah Siswa Laki-Laki : </p>
-                    <p>Jumlah Siswa Perempuan : </p>
+                    <div class="col">
+                        <form>
+                            <div class="form-row align-items-center">
+
+                                <p class="my-1" style="font-size: 18px;">Total Siswa : </p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col">
+                        <form>
+                            <div class="form-row align-items-center">
+
+                                <p class="my-1" style="font-size: 18px;">Bayaran SPP periode bulan : </p>
+                                <div class="col-sm-5 my-1">
+                                    <div class=" dropdown show">
+
+                                        <select name=" cars" id="cars" class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; color:black; width:150px;">
+                                            <option class="dropdown-item" href="#">Januari</option>
+                                            <option class="dropdown-item" href="#">Februari</option>
+                                            <option class="dropdown-item" href="#">Maret</option>
+                                            <option class="dropdown-item" href="#">April</option>
+                                            <option class="dropdown-item" href="#">Mei</option>
+                                            <option class="dropdown-item" href="#">Juni</option>
+                                            <option class="dropdown-item" href="#">Juli</option>
+                                            <option class="dropdown-item" href="#">Agustus</option>
+                                            <option class="dropdown-item" href="#">September</option>
+                                            <option class="dropdown-item" href="#">Oktober</option>
+                                            <option class="dropdown-item" href="#">November</option>
+                                            <option class="dropdown-item" href="#">Desember</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
                 </div>
             </div>
             <!-- End of Main Content -->
@@ -134,51 +168,35 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Foto</th>
                                             <th>Nama Siswa</th>
-                                            <th>Jenis Kelamin</th>
-                                            <th>Nama Ayah</th>
-                                            <th>Nama Ibu</th>
-                                            <th>Alamat Tinggal</th>
-                                            <th>Tindakan</th>
+                                            <th>Nominal Bayar</th>
+                                            <th>Tanggal Terakhir Bayar</th>
+                                            <th>Status</th>
+
                                         </tr>
                                     </thead>
                                     <tfoot>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Foto</th>
-                                            <th>Nama Siswa</th>
-                                            <th>Jenis Kelamin</th>
-                                            <th>Nama Ayah</th>
-                                            <th>Nama Ibu</th>
-                                            <th>Alamat Tinggal</th>
-                                            <th>Tindakan</th>
-                                        </tr>
+                                        <th>No</th>
+                                        <th>Nama Siswa</th>
+                                        <th>Nominal Bayar</th>
+                                        <th>Tanggal Terakhir Bayar</th>
+                                        <th>Status</th>
+
                                     </tfoot>
                                     <tbody>
                                         <tr>
-                                            <td>1.</td>
-                                            <td>
-                                                <img class="justify-content-center" style="height: 95px; width:71px" src="<?= base_url('assets/'); ?>/img/pace.JPG">
-                                            </td>
+                                            <td>1</td>
                                             <td>Ardi Gaya Manalu</td>
-                                            <td>Laki-Laki</td>
-                                            <td>Pace</td>
-                                            <td>Mace</td>
-                                            <td>Jayapura</td>
+                                            <td>Rp.100.000</td>
+                                            <td>12/04/2021</td>
                                             <td>
-                                                <button type="submit" style="height: 30px; width:35px; margin-top:3px;" data-toggle="modal" data-target="#deleteModal">
-                                                    <img src="<?= base_url('assets/'); ?>/img/delete.svg">
-                                                </button>
-                                                <a href="<?= base_url('Welcome/EditDataSiswaCon'); ?>" type="submit" style="height: 25px;width:27px; margin-top:2px;">
-                                                    <img src="<?= base_url('assets/'); ?>/img/edit.svg">
-                                                </a>
+                                                Lunas
                                             </td>
+
                                         </tr>
 
                                     </tbody>
                                 </table>
-                                <a class="btn btn-info col-sm-2 float-right" style="margin-right: 0px;" href="<?= base_url('Welcome/TambahDataSiswaCon') ?>">Tambah Data Siswa</a>
                             </div>
                         </div>
                     </div>
@@ -190,7 +208,7 @@
 
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white " style="font-family:Roboto Slab;">
+            <footer class="sticky-footer bg-white font-family:Roboto Slab;">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Copyright &copy; TK MElLATI PUTIH MEDAN</span>
@@ -229,47 +247,6 @@
             </div>
         </div>
 
-        <div class="modal fade" style="margin-top:150px;" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Apakah Anda Yakin Ingin Menghapus Data?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body" style="margin-left:200px;"><img src="<?= base_url('assets/'); ?>/img/warningIcon.svg"></div>
-                    <div class="modal-body">Pilih "Hapus" untuk menghapus data.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="<?= base_url('Welcome/DataSiswaCon'); ?>">Hapus</a>
-                        <!-- <a class="btn btn-primary" onclick="Swal('Data Berhasil Dihapus', 'Data telah dihapus', 'success')">Hapus</a> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" style="margin-top:150px;" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Apakah Anda Yakin Ingin Menghapus Data?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body" style="margin-left:200px;"><img src="<?= base_url('assets/'); ?>/img/warningIcon.svg"></div>
-                    <div class="modal-body">Pilih "Hapus" untuk menghapus data.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="<?= base_url('Welcome/DataSiswaCon'); ?>">Hapus</a>
-                        <!-- <a class="btn btn-primary" onclick="Swal('Data Berhasil Dihapus', 'Data telah dihapus', 'success')">Hapus</a> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
         <!-- Bootstrap core JavaScript-->
         <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
         <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -286,8 +263,6 @@
         <!-- Page level custom scripts -->
         <script src="<?= base_url('assets/'); ?>js/demo/chart-area-demo.js"></script>
         <script src="<?= base_url('assets/'); ?>js/demo/chart-pie-demo.js"></script>
-
-        <script src="<?= base_url('assets'); ?> alert/sweetalert2.all.min.js"></script>
 
 </body>
 

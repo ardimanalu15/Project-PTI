@@ -36,7 +36,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center">
 
-                <div class="sidebar-brand-text mx-3" style="font-family:Roboto Slab;">ADMIN</div>
+                <div class="sidebar-brand-text mx-3" style="font-family:Roboto Slab;">Kepala Sekolah</div>
             </a>
 
             <!-- Divider -->
@@ -49,25 +49,25 @@
                     <span>Dashboard</span></a>
             </li>
             <li class="nav-item active" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="<?= base_url('Welcome/DataGuruCon'); ?>">
+                <a class="nav-link" href="<?= base_url('Welcome/DataGuruKepsekCon'); ?>">
 
                     <span>Data Guru</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="<?= base_url('Welcome/DataSiswaCon'); ?>">
+                <a class="nav-link" href="<?= base_url('Welcome/DataSiswaKepsekCon'); ?>">
 
                     <span>Data Siswa</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="<?= base_url('Welcome/StatusSppCon'); ?>">
+                <a class="nav-link" href="<?= base_url('Welcome/StatusSppKepsekCon'); ?>">
 
                     <span>Status SPP Siswa</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="<?= base_url('Welcome/LapKeuCon'); ?>">
+                <a class="nav-link" href="<?= base_url('Welcome/LapKeuKepsekCon'); ?>">
 
                     <span>Laporan Keuangan</span></a>
             </li>
@@ -88,7 +88,7 @@
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light  mb-5  shadow justify-content-end " style=" background-image: url('<?= base_url('assets/'); ?>/img/dashboardbg.svg'); height:200px;">
-                    <h1 style="margin-right:150px; color:white; font-size: 30px; font-family:Roboto Slab;">Selamat Datang, Admin</h1>
+                    <h1 style="margin-right:150px; color:white; font-size: 30px; font-family:Roboto Slab;">Selamat Datang, Kepala Sekolah</h1>
 
                 </nav>
                 <!-- End of Topbar -->

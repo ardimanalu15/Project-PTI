@@ -36,7 +36,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center">
 
-                <div class="sidebar-brand-text mx-3" style="font-family:Roboto Slab;">ADMIN</div>
+                <div class="sidebar-brand-text mx-3" style="font-family:Roboto Slab;">Kepala Sekolah</div>
             </a>
 
             <!-- Divider -->
@@ -44,24 +44,24 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="<?= base_url('Welcome/DashAdminCon'); ?>">
+                <a class="nav-link" href="<?= base_url('Welcome/DashKepsekCon'); ?>">
 
                     <span>Dashboard</span></a>
             </li>
             <li class="nav-item active" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="<?= base_url('Welcome/DataGuruCon'); ?>">
+                <a class="nav-link" href="<?= base_url('Welcome/DataGuruKepsekCon'); ?>">
 
                     <span>Data Guru</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="<?= base_url('Welcome/DataSiswaCon'); ?>">
+                <a class="nav-link" href="<?= base_url('Welcome/DataSiswaKepsekCon'); ?>">
 
                     <span>Data Siswa</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="<?= base_url('Welcome/StatusSppCon'); ?>">
+                <a class="nav-link" href="<?= base_url('Welcome/StatusSppKepsekCon'); ?>">
 
                     <span>Status SPP Siswa</span></a>
             </li>
@@ -178,7 +178,7 @@
                                         <th>Kategori</th>
                                         <th>Kas Masuk</th>
                                         <th>Kas Keluar</th>
-                                        <th>Tindakan</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -189,14 +189,7 @@
                                         <td>Beli</td>
                                         <td>None</td>
                                         <td>Rp. 10.000</td>
-                                        <td>
-                                            <button type="submit" style="height: 30px; width:35px; margin-top:3px;" data-toggle="modal" data-target="#deleteModal">
-                                                <img src="<?= base_url('assets/'); ?>/img/delete.svg">
-                                            </button>
-                                            <a href="<?= base_url('Welcome/EditDataSiswaCon'); ?>" type="submit" style="height: 25px;width:27px; margin-top:2px;">
-                                                <img src="<?= base_url('assets/'); ?>/img/edit.svg">
-                                            </a>
-                                        </td>
+
                                     </tr>
 
                                 </tbody>

@@ -47,17 +47,57 @@ class Welcome extends CI_Controller
 	{
 		$this->load->view('home/dashAdmin');
 	}
+	public function DashKepsekCon()
+	{
+		$this->load->view('home/dashKepsek');
+	}
 	public function DataSiswaCon()
 	{
 		$this->load->view('home/datasiswa');
+	}
+	public function DataSiswaKepsekCon()
+	{
+		$this->load->view('home/datasiswakepsek');
+	}
+	public function DataGuruCon()
+	{
+		$this->load->view('home/dataguru');
+	}
+	public function DataGuruKepsekCon()
+	{
+		$this->load->view('home/datagurukepsek');
 	}
 	public function StatusSppCon()
 	{
 		$this->load->view('home/StatusSpp');
 	}
+	public function StatusSppKepsekCon()
+	{
+		$this->load->view('home/statussppkepsek');
+	}
 	public function LapKeuCon()
 	{
 		$this->load->view('home/LapKeu');
+	}
+	public function LapKeuKepsekCon()
+	{
+		$this->load->view('home/lapkeukepsek');
+	}
+	public function DashUserCon()
+	{
+		$this->load->view('home/dashUser');
+	}
+	public function StatusSppUserCon()
+	{
+		$this->load->view('home/statusSppUser');
+	}
+	public function TambahDataSiswaCon()
+	{
+		$this->load->view('home/tambahDataMurid');
+	}
+	public function EditDataSiswaCon()
+	{
+		$this->load->view('home/editdatasiswa');
 	}
 	public function halamanpendaf()
 	{

@@ -196,12 +196,29 @@ halaman-utama .navbar .menu-toggle input:checked ~ span:nth-child(3) {
 }
 
 @media screen and (max-width: 1440px) {
-	.halaman-utama .navbar .menu-toggle input {
-		background-color: rgba(173, 216, 222, 1);
+	body {
+		width: 100%;
 	}
 }
 
 @media screen and (max-width: 992px) {
+	.brand img {
+		
+	}
+	.halaman-utama .navbar {
+		width: 992px;
+	}
+	.halaman-utama .navbar ul {
+		display: flex;
+		margin-left: -800px;
+		font-size: 13px;
+	}
+	.halaman-utama .navbar ul li {
+		padding-left: 15px;
+	}
+	.halaman-utama .navbar ul li .butt {
+		padding: 5px 10px;
+	}
 }
 
 .halaman-utama #main {
