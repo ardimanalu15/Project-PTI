@@ -5,31 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Utama</title>
-    <link rel="stylesheet" href="css/landingpage.css">
+    <title>Halaman Utama - TK Melati Putih</title>
+    <link rel="stylesheet" href="<?= base_url() ?>css/landingpage.css">
 </head>
+
 
 <body>
     <div class="halaman-utama">
-
-        <div class="navbar">
-            <div class="brand"> </div>
-            <ul class="nav-link">
-                <li> <a href="<?= base_url() ?>" class="navbar-link"> Home </a></li>
-                <li> <a href="Welcome/ProfileCon" class="navbar-link"> Profil </a></li>
-                <li> <a href="Welcome/profilgurucon" class="navbar-link"> Guru </a></li>
-                <li> <a href="Welcome/InfoDaftarCon" class="navbar-link">Info Pendaftaran </a></li>
-                <li> <a href="Welcome/LoginCon" class="butt" type="button">Login</a>
-            </ul>
-            <div class="menu-toggle">
-                <input type="checkbox" />
-                <span></span>
-                <span></span>
-                <span></span>
+        <nav class="navbar">
+            <div class="brand">
+                <img src="<?= base_url() ?>img/Group67.png" alt="">
             </div>
-        </div>
+            <ul>
+                <li> <a class="active" href="<?= base_url() ?>"> Home </a></li>
+                <li> <a href="<?= base_url() ?>Welcome/ProfileCon"> Profil </a></li>
+                <li> <a href="<?= base_url() ?>Welcome/profilgurucon"> Guru </a></li>
+                <li> <a href="<?= base_url() ?>Welcome/InfoDaftarCon">Info Pendaftaran </a></li>
+                <li> <a href="<?= base_url() ?>Welcome/LoginCon" class="butt" type="button">Login</a>
+            </ul>
+            <!-- <div class="menu-toggle">
+                <input type="checkbox" />
+                <span> </span>
+                <span> </span>
+                <span> </span>
+            </div>
+            -->
+        </nav>
         <!--Header -->
-        <section class="main">
+        <section id="main">
             <div class="container">
                 <div class="main-content">
                     <div class="text">
@@ -59,7 +62,7 @@
 
 
         <!-- akhir isi -->
-        <section class="content">
+        <section id="content">
             <div class="contain">
                 <div class="batang"></div>
                 <div class="batang2"></div>
@@ -86,7 +89,7 @@
         <!-- akhir isi -->
 
         <!-- profile guru -->
-        <section class="guru">
+        <section id="guru">
             <div class="contenguru">
                 <div class="batang4"></div>
                 <div class="batang5"></div>
@@ -146,7 +149,7 @@
         </section>
 
         <!-- akhir guru -->
-        <section class="info">
+        <section id="info">
             <div class="isi-info">
                 <div class="batang7"></div>
                 <div class="batang8"></div>
@@ -195,7 +198,8 @@
             </div>
         </section>
     </div>
-    <script src="script.js"></script>
+    <script src="script/script.js"></script>
+    <script src="script/nav.js"></script>
 </body>
 
 </html>
