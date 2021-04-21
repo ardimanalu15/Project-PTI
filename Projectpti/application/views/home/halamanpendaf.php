@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Info Pendaftaran</title>
     <link rel="stylesheet" href="<?= base_url() ?>css/halamanpendaftaran.css">
+    <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="<?= base_url('assets/'); ?>https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
 </head>
 
 <body>
@@ -18,7 +24,7 @@
         </div>
         <div class="isi">
             <div class="isikiri">
-                <table class="tabel" border="1" cellspacing="0" cellpading="0">
+                <table class="tabel" cellspacing="0" cellpading="0">
                     <tr>
                         <td> <a href="<?= base_url() ?>" class="tabelisi"> home </a></td>
                     </tr>
@@ -34,117 +40,148 @@
                 </table>
             </div>
             <div class="garis"></div>
-            <dir class="isikanan">
-                <form action="" method="">
+            <div class="isikanan">
+
+                <form action="<?= base_url('Welcome/halamanpendaf'); ?>" method="post">
                     <table>
-                        <tr>
+                        <tr style="border-spacing: 15px;">
                             <td class="isitabelnya">Nama Calon Siswa</td>
                             <td style="color: red;">*</td>
-                            <td><input type="text" name="Nama_Calon_Siswa" class="input"></td>
+                            <td>
+                                <input type="text" name="Nama_Calon_Siswa" class="input" value="<?= set_value('Nama_Calon_Siswa'); ?>">
+                            </td>
+                            <td><?= form_error('Nama_Calon_Siswa', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Tanggal Lahir Siswa</td>
                             <td>*</td>
-                            <td><input type="date" name="ttl" placeholder="" class="input"></td>
+                            <td><input type="date" name="ttl" placeholder="" class="input" value="<?= set_value('ttl'); ?>"></td>
+                            <td><?= form_error('ttl', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Alamat</td>
                             <td>*</td>
-                            <td><textarea name="alamat" id="" cols="30" rows="2" class="input"></textarea></td>
+                            <td><input name="alamat" id="alamat" cols="30" rows="2" class="input" value="<?= set_value('alamat'); ?>"></input></td>
+                            <td><?= form_error('alamat', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Umur </td>
                             <td>*</td>
-                            <td><input type="number" max="10" min="3" name="umur" class="input"> Tahun</td>
+                            <td><input type="text" name="umur" id="umur" class="input" value="<?= set_value('umur'); ?>"> Tahun</td>
+                            <td><?= form_error('umur', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Nomor Akte Kelahiran</td>
                             <td>*</td>
-                            <td><input type="text" name="noakte" placeholder="Angka" class="input"></td>
+                            <td><input type="text" name="noakte" placeholder="Angka" class="input" value="<?= set_value('noakte'); ?>"></td>
+                            <td><?= form_error('noakte', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">No Kartu Keluarga</td>
                             <td>*</td>
-                            <td><input type="text" name="nokk" class="input"></td>
+                            <td><input type="text" name="nokk" class="input" value="<?= set_value('nokk'); ?>"></td>
+                            <td><?= form_error('nokk', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Tinggi/Berat Badan</td>
                             <td>*</td>
-                            <td><input type="number" max="300" min="50" name="tinggi" class="input"> cm</td>
+                            <td><input type="number" max="300" min="50" name="tinggi" class="input" value="<?= set_value('tinggi'); ?>"> cm</td>
+                            <td><?= form_error('tinggi', '<small style="color:red;">', '</small>'); ?></td>
                             <td>/</td>
-                            <td><input type="number" max="150" min="10" name="berat" class="input"> kg</td>
+                            <td><input type="number" max="150" min="10" name="berat" class="input" value="<?= set_value('berat'); ?>"> kg
+                            <td><?= form_error('berat', '<small style="color:red;">', '</small>'); ?></td>
+                            </td>
+
                         </tr>
                         <tr>
                             <td class="isitabelnya">Jenis kelamin</td>
                             <td>*</td>
-                            <td><select name="jeniskelamin" id="jenis_kelamin" class="select" class="input">
+                            <td><select name="jeniskelamin" id="jenis_kelamin" class="select" class="input" value="<?= set_select('jeniskelamin'); ?>">
                                     <option class="input" value="Laki-Laki" selected>Laki-Laki</option>
                                     <option class="input" value="Perempuan" selected>Perempuan</option>
-                                    <option class="input" value="" selected>-Pilih</option>
+                                    <option class="input" value="" disabled selected>-Pilih</option>
                                 </select>
                             </td>
+                            <td><?= form_error('jeniskelamin', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Nama Lengkap Ayah</td>
                             <td>*</td>
-                            <td><input type="text" name="nama_ayah" class="input"></td>
+                            <td><input type="text" name="nama_ayah" class="input" value="<?= set_value('nama_ayah'); ?>"></td>
+                            <td><?= form_error('nama_ayah', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Nama Lengkap Ibu</td>
                             <td>*</td>
-                            <td><input type="text" name="nama_ibu" class="input"></td>
+                            <td><input type="text" name="nama_ibu" class="input" value="<?= set_value('nama_ibu'); ?>"></td>
+                            <td><?= form_error('nama_ibu', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Pendidikan Terakhir Ayah</td>
                             <td>*</td>
-                            <td><input type="text" name="pendidikan_ayah" class="input"></td>
+                            <td><input type="text" name="pendidikan_ayah" class="input" value="<?= set_value('pendidikan_ayah'); ?>"></td>
+                            <td><?= form_error('pendidikan_ayah', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Pendidikan Terakhir Ibu</td>
                             <td>*</td>
-                            <td><input type="text" name="pendidikan_ibu" class="input"></td>
+                            <td><input type="text" name="pendidikan_ibu" class="input" value="<?= set_value('pendidikan_ibu'); ?>"></td>
+                            <td><?= form_error('pendidikan_ibu', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Pekerjaan Ayah</td>
                             <td>*</td>
-                            <td><input type="text" name="pekerjaan_ayah" class="input"></td>
+                            <td><input type="text" name="pekerjaan_ayah" class="input" value="<?= set_value('pekerjaan_ayah'); ?>"></td>
+                            <td><?= form_error('pekerjaan_ayah', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Pekerjaan Ibu</td>
                             <td>*</td>
-                            <td><input type="text" name="pekerjaan_ibu" class="input"></td>
+                            <td><input type="text" name="pekerjaan_ibu" class="input" value="<?= set_value('pekerjaan_ibu'); ?>"></td>
+                            <td><?= form_error('pekerjaan_ibu', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Penghasilan Ayah</td>
                             <td>*</td>
-                            <td><input type="text" name="penghasilan_ayah" class="input"></td>
+                            <td><input type="text" name="penghasilan_ayah" class="input" value="<?= set_value('penghasilan_ayah'); ?>"></td>
+                            <td><?= form_error('penghasilan_ayah', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Pernghasilan Ibu</td>
                             <td>*</td>
-                            <td><input type="text" name="penghasilan_ibu" class="input"></td>
+                            <td><input type="text" name="penghasilan_ibu" class="input" value="<?= set_value('penghasilan_ibu'); ?>"></td>
+                            <td><?= form_error('penghasilan_ibu', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Tanggal Lahir Ayah </td>
                             <td>*</td>
-                            <td><input type="date" name="ttl_ayah" class="input"></td>
+                            <td><input type="date" name="ttl_ayah" class="input" value="<?= set_value('ttl_ayah'); ?>"></td>
+                            <td><?= form_error('ttl_ayah', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">Tanggal Lahir Ibu</td>
                             <td>*</td>
-                            <td><input type="date" name="ttl_ibu" class="input"></td>
+                            <td><input type="date" name="ttl_ibu" class="input" value="<?= set_value('ttl_ibu'); ?>"></td>
+                            <td><?= form_error('ttl_ibu', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
                             <td class="isitabelnya">No. Telep. Ayah/ibu</td>
                             <td>*</td>
-                            <td><input type="text" name="notelpon" placeholder="+62" class="input"></td>
+                            <td><input type="text" name="notelpon" placeholder="+62" class="input" value="<?= set_value('notelpon'); ?>"></td>
+                            <td><?= form_error('notelpon', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
-                            <td><Button type="submit" name="kirim" class="kirim">Kirim</Button></td>
+                            <td class="isitabelnya">Foto</td>
+                            <td>*</td>
+                            <td><input type="file" name="foto" class="input" "></td>
+                            <td><?= form_error('foto', '<small style="color:red;">', '</small>'); ?></td>
+                        </tr>
+                        <tr>
+                            <td><Button type=" submit" name="kirim" class="kirim">Kirim</Button></td>
                         </tr>
                     </table>
                 </form>
-            </dir>
+            </div>
         </div>
         <section class="footer">
             <div class="backgroundfooter">
@@ -165,6 +202,44 @@
             </div>
         </section>
     </div>
+
+    <div class="modal fade" style="margin-top:150px;" id="tambahModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="margin-left:200px;"><img src="<?= base_url('assets/'); ?>/img/successIcon.svg"></div>
+                <div class="modal-body">Selamat Pendaftaran Anda Berhasil, Silahkan Menunggu Konfirmasi Dari Kami</div>
+                <div class="modal-footer">
+                    <a class="btn btn-primary" href="<?= base_url('Welcome/DataSiswaCon'); ?>">Oke</a>
+                    <!-- <a class="btn btn-primary" onclick="Swal('Data Berhasil Dihapus', 'Data telah dihapus', 'success')">Hapus</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
+    <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="<?= base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="<?= base_url('assets/'); ?>vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="<?= base_url('assets/'); ?>js/demo/chart-area-demo.js"></script>
+    <script src="<?= base_url('assets/'); ?>js/demo/chart-pie-demo.js"></script>
+
+    <script src="<?= base_url('assets'); ?> alert/sweetalert2.all.min.js"></script>
 </body>
 
 </html>

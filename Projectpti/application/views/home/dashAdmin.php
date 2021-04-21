@@ -20,6 +20,10 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
 </head>
 
+<style>
+
+</style>
+
 <body id="  ">
 
     <!-- Page Wrapper -->
@@ -27,11 +31,8 @@
 
         <!-- Sidebar -->
         <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style=" background-color: #569BB1; font-family:Roboto Slab;;">
-            <div class="mt-3" style="color:white; font-size: 20px; font-family:Roboto Slab;">
-                <p>
-                    <img style=" height:25pt" src='<?= base_url('assets/'); ?>/img/tkMelati.svg'>
-
-                </p>
+            <div class="brand">
+                <img class="img-fluid" style="height: 23pt; margin-top:11px;margin-left:14px;" src="<?= base_url() ?>img/Group67.png" alt="">
             </div>
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center">
@@ -43,38 +44,38 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="#">
-
+            <li class="nav-item " style="font-family:Roboto Slab;background-color: #3278a0;">
+                <a class="nav-link " href="#">
+                    <i class="fas fa-fw "></i>
                     <span>Dashboard</span></a>
             </li>
-            <li class="nav-item active" style="font-family:Roboto Slab;">
+            <li class="nav-item " style="font-family:Roboto Slab;">
                 <a class="nav-link" href="<?= base_url('Welcome/DataGuruCon'); ?>">
-
+                    <i class="fas fa-fw "></i>
                     <span>Data Guru</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active" style="font-family:Roboto Slab;">
+            <li class="nav-item " style="font-family:Roboto Slab;">
                 <a class="nav-link" href="<?= base_url('Welcome/DataSiswaCon'); ?>">
-
+                    <i class="fas fa-fw "></i>
                     <span>Data Siswa</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active" style="font-family:Roboto Slab;">
+            <li class="nav-item " style="font-family:Roboto Slab;">
                 <a class="nav-link" href="<?= base_url('Welcome/StatusSppCon'); ?>">
-
+                    <i class="fas fa-fw "></i>
                     <span>Status SPP Siswa</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active" style="font-family:Roboto Slab;">
+            <li class="nav-item " style="font-family:Roboto Slab;">
                 <a class="nav-link" href="<?= base_url('Welcome/LapKeuCon'); ?>">
-
+                    <i class="fas fa-fw "></i>
                     <span>Laporan Keuangan</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active" style="font-family:Roboto Slab;">
+            <li class="nav-item " style="font-family:Roboto Slab;">
                 <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
-
+                    <i class="fas fa-fw "></i>
                     <span>Logout</span></a>
             </li>
         </ul>
@@ -87,7 +88,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light  mb-5  shadow justify-content-end " style=" background-image: url('<?= base_url('assets/'); ?>/img/dashboardbg.svg'); height:200px;">
+                <nav class="navbar navbar-expand navbar-light  mb-5  shadow justify-content-end " style=" background-image: url('<?= base_url('assets/'); ?>/img/dashboardbg.svg'); height:200px;position: relative;display: flex;">
                     <h1 style="margin-right:150px; color:white; font-size: 30px; font-family:Roboto Slab;">Selamat Datang, Admin</h1>
 
                 </nav>

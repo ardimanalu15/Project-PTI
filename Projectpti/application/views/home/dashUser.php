@@ -23,10 +23,8 @@
 </style>
 
 <body id="page-top">
-    <div style="margin-top: 35px;">
-
-        <img style=" height:60px; margin-bottom:25px;" src='<?= base_url('assets/'); ?>/img/tkMelati.svg'>
-
+    <div class="brand">
+        <img class="img-fluid" style="height: 74px;width:542px; margin-top:11px;margin-left:14px;" src="<?= base_url() ?>img/Group67.png" alt="">
     </div>
     <div id="wrapper" style="background-color: #ADD8DE;">
         <nav class="navbar navbar-expand-lg navbar-light ml-auto " style="background-color: #ADD8DE; margin-left:0px ">
@@ -75,7 +73,7 @@
                 <hr class="sidebar-divider my-0">
 
                 <!-- Nav Item - Dashboard -->
-                <li class="nav-item active" style="font-family:Roboto Slab;">
+                <li class="nav-item active" style="font-family:Roboto Slab;background-color: #ADD8DE;">
                     <a class="nav-link" href="#">
 
                         <span style="color: black;">Data Diri Siswa</span></a>

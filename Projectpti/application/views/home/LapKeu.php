@@ -20,6 +20,13 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
 </head>
 
+<style>
+    .a:hover {
+        background-color: black;
+        text-decoration: none;
+    }
+</style>
+
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -27,11 +34,8 @@
 
         <!-- Sidebar -->
         <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #569BB1; font-family:Roboto Slab;">
-            <div class="mt-3" style="color:white; font-size: 20px; font-family:Roboto Slab;">
-                <p>
-                    <img style=" height:25pt" src='<?= base_url('assets/'); ?>/img/tkMelati.svg'>
-
-                </p>
+            <div class="brand">
+                <img class="img-fluid" style="height: 23pt; margin-top:11px;margin-left:14px;" src="<?= base_url() ?>img/Group67.png" alt="">
             </div>
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center">
@@ -43,38 +47,38 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active" style="font-family:Roboto Slab;">
+            <li class="nav-item " style="font-family:Roboto Slab;">
                 <a class="nav-link" href="<?= base_url('Welcome/DashAdminCon'); ?>">
-
+                    <i class="fas fa-fw "></i>
                     <span>Dashboard</span></a>
             </li>
-            <li class="nav-item active" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="<?= base_url('Welcome/DataGuruCon'); ?>">
-
+            <li class="nav-item" style="font-family:Roboto Slab;">
+                <a class="nav-link " href="<?= base_url('Welcome/DataGuruCon'); ?>">
+                    <i class="fas fa-fw "></i>
                     <span>Data Guru</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active" style="font-family:Roboto Slab;">
+            <li class="nav-item " style="font-family:Roboto Slab;">
                 <a class="nav-link" href="<?= base_url('Welcome/DataSiswaCon'); ?>">
-
+                    <i class="fas fa-fw "></i>
                     <span>Data Siswa</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active" style="font-family:Roboto Slab;">
+            <li class="nav-item " style="font-family:Roboto Slab;">
                 <a class="nav-link" href="<?= base_url('Welcome/StatusSppCon'); ?>">
-
+                    <i class="fas fa-fw "></i>
                     <span>Status SPP Siswa</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active" style="font-family:Roboto Slab;">
+            <li class="nav-item " style="font-family:Roboto Slab;background-color: #3278a0;">
                 <a class="nav-link" href="#">
-
+                    <i class="fas fa-fw "></i>
                     <span>Laporan Keuangan</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active" style="font-family:Roboto Slab;">
+            <li class="nav-item " style="font-family:Roboto Slab;">
                 <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
-
+                    <i class="fas fa-fw "></i>
                     <span>Logout</span></a>
             </li>
         </ul>
@@ -129,9 +133,9 @@
                                     </a>
 
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" href="#">Beli</a>
+                                        <a class="dropdown-item" href="#">Jual</a>
+                                        <a class="dropdown-item" href="#">Pemasukan</a>
                                     </div>
                                 </div>
                                 <button type="button" class="btn btn-primary col-sm-3 float-right" style="margin-right: 0px;">Tampilkan</button>
@@ -176,8 +180,8 @@
                                         <th>Tanggal</th>
                                         <th>Jenis Transaksi</th>
                                         <th>Kategori</th>
-                                        <th>Kas Masuk</th>
-                                        <th>Kas Keluar</th>
+                                        <th>Jenis Kas</th>
+                                        <th>Jumlah</th>
                                         <th>Tindakan</th>
                                     </tr>
                                 </thead>
@@ -187,13 +191,13 @@
                                         <td>10-10-2020</td>
                                         <td>Pembelian Spidol</td>
                                         <td>Beli</td>
-                                        <td>None</td>
+                                        <td>Kas Keluar</td>
                                         <td>Rp. 10.000</td>
                                         <td>
                                             <button type="submit" style="height: 30px; width:35px; margin-top:3px;" data-toggle="modal" data-target="#deleteModal">
                                                 <img src="<?= base_url('assets/'); ?>/img/delete.svg">
                                             </button>
-                                            <a href="<?= base_url('Welcome/EditDataSiswaCon'); ?>" type="submit" style="height: 25px;width:27px; margin-top:2px;">
+                                            <a href="<?= base_url('Welcome/EditDataKeuCon'); ?>" type="submit" style="height: 25px;width:27px; margin-top:2px;">
                                                 <img src="<?= base_url('assets/'); ?>/img/edit.svg">
                                             </a>
                                         </td>
@@ -201,7 +205,7 @@
 
                                 </tbody>
                             </table>
-
+                            <a class="btn btn-info col-sm-2 float-right" style="margin-right: 0px;" href="<?= base_url('Welcome/TambahDataKeuCon') ?>">Tambah Data</a>
                         </div>
                     </div>
                 </div>
@@ -247,6 +251,26 @@
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <a class="btn btn-primary" href="<?= base_url('Welcome/LoginCon'); ?>">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" style="margin-top:150px;" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Apakah Anda Yakin Ingin Menghapus Data?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="margin-left:200px;"><img src="<?= base_url('assets/'); ?>/img/warningIcon.svg"></div>
+                <div class="modal-body">Pilih "Hapus" untuk menghapus data.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="<?= base_url('Welcome/LapKeuCon'); ?>">Hapus</a>
+                    <!-- <a class="btn btn-primary" onclick="Swal('Data Berhasil Dihapus', 'Data telah dihapus', 'success')">Hapus</a> -->
                 </div>
             </div>
         </div>

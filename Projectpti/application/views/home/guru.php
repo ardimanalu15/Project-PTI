@@ -18,7 +18,7 @@
                 <li> <a href="<?= base_url('Welcome'); ?>" class="navbar-link"> Home </a></li>
                 <li> <a href="<?= base_url('Welcome'); ?>#profilePage" class="navbar-link"> Profil </a></li>
                 <li> <a href="#" class="navbar-link"> Guru </a></li>
-                <li> <a href="<?= base_url('Welcome'); ?>#infoPage" class="navbar-link">Info Pendaftaran </a></li>
+                <li> <a href="<?= base_url('Welcome'); ?>" class="navbar-link">Info Pendaftaran </a></li>
                 <li> <a href="<?= base_url('Welcome/LoginCon'); ?>" class="butt" type="button">Login</a>
             </ul>
         </div>
