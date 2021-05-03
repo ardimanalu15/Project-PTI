@@ -185,11 +185,15 @@ body {
 	margin-left: 130px;
 	position: absolute;
 	margin-top: 35px;
+	color: rgba(33, 69, 81, 1);
+	font-size: 20px;
 }
 .footer .backgroundfooter .nohp2 {
 	margin-left: 130px;
 	position: absolute;
 	margin-top: 55px;
+	color: rgba(33, 69, 81, 1);
+	font-size: 20px;
 }
 .footer .backgroundfooter .whattsap {
 	margin-left: 440px;
@@ -200,6 +204,8 @@ body {
 	margin-left: 490px;
 	position: absolute;
 	margin-top: 45px;
+	color: rgba(33, 69, 81, 1);
+	font-size: 20px;
 }
 .footer .backgroundfooter .facebook {
 	margin-left: 440px;
@@ -210,6 +216,8 @@ body {
 	margin-left: 490px;
 	position: absolute;
 	margin-top: 90px;
+	color: rgba(33, 69, 81, 1);
+	font-size: 20px;
 }
 .footer .backgroundfooter .igg {
 	margin-left: 440px;
@@ -220,6 +228,8 @@ body {
 	margin-left: 490px;
 	position: absolute;
 	margin-top: 135px;
+	color: rgba(33, 69, 81, 1);
+	font-size: 20px;
 }
 .footer .backgroundfooter .location {
 	margin-left: 810px;
@@ -231,6 +241,8 @@ body {
 	margin-left: 850px;
 	position: absolute;
 	margin-top: 40px;
+	color: rgba(33, 69, 81, 1);
+	font-size: 20px;
 }
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");

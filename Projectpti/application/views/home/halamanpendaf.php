@@ -45,46 +45,46 @@
                 <form action="<?= base_url('Welcome/halamanpendaf'); ?>" method="post">
                     <table>
                         <tr style="border-spacing: 15px;">
-                            <td class="isitabelnya">Nama Calon Siswa</td>
-                            <td style="color: red;">*</td>
+                            <td class="isitabelnya">Nama Calon Siswa <span style="color:red">*</span></td>
+                            <td></td>
                             <td>
                                 <input type="text" name="Nama_Calon_Siswa" class="input" value="<?= set_value('Nama_Calon_Siswa'); ?>">
                             </td>
                             <td><?= form_error('Nama_Calon_Siswa', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
-                            <td class="isitabelnya">Tanggal Lahir Siswa</td>
-                            <td>*</td>
+                            <td class="isitabelnya">Tanggal Lahir Siswa <span style="color:red">*</span> </td>
+                            <td></td>
                             <td><input type="date" name="ttl" placeholder="" class="input" value="<?= set_value('ttl'); ?>"></td>
                             <td><?= form_error('ttl', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
-                            <td class="isitabelnya">Alamat</td>
-                            <td>*</td>
+                            <td class="isitabelnya">Alamat <span style="color:red">*</span></td>
+                            <td></td>
                             <td><input name="alamat" id="alamat" cols="30" rows="2" class="input" value="<?= set_value('alamat'); ?>"></input></td>
                             <td><?= form_error('alamat', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
-                            <td class="isitabelnya">Umur </td>
-                            <td>*</td>
+                            <td class="isitabelnya">Umur <span style="color:red">*</span></td>
+                            <td></td>
                             <td><input type="text" name="umur" id="umur" class="input" value="<?= set_value('umur'); ?>"> Tahun</td>
                             <td><?= form_error('umur', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
-                            <td class="isitabelnya">Nomor Akte Kelahiran</td>
-                            <td>*</td>
+                            <td class="isitabelnya">Nomor Akte Kelahiran <span style="color:red">*</span></td>
+                            <td></td>
                             <td><input type="text" name="noakte" placeholder="Angka" class="input" value="<?= set_value('noakte'); ?>"></td>
                             <td><?= form_error('noakte', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
-                            <td class="isitabelnya">No Kartu Keluarga</td>
-                            <td>*</td>
+                            <td class="isitabelnya">No Kartu Keluarga <span style="color:red">*</span></td>
+                            <td></td>
                             <td><input type="text" name="nokk" class="input" value="<?= set_value('nokk'); ?>"></td>
                             <td><?= form_error('nokk', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
-                            <td class="isitabelnya">Tinggi/Berat Badan</td>
-                            <td>*</td>
+                            <td class="isitabelnya">Tinggi/Berat Badan <span style="color:red">*</span></td>
+                            <td></td>
                             <td><input type="number" max="300" min="50" name="tinggi" class="input" value="<?= set_value('tinggi'); ?>"> cm</td>
                             <td><?= form_error('tinggi', '<small style="color:red;">', '</small>'); ?></td>
                             <td>/</td>
@@ -94,9 +94,9 @@
 
                         </tr>
                         <tr>
-                            <td class="isitabelnya">Jenis kelamin</td>
-                            <td>*</td>
-                            <td><select name="jeniskelamin" id="jenis_kelamin" class="select" class="input" value="<?= set_select('jeniskelamin'); ?>">
+                            <td class="isitabelnya">Jenis kelamin <span style="color:red">*</span></td>
+                            <td></td>
+                            <td><select name="jeniskelamin" id="jenis_kelamin" class="select" style="margin-bottom: 20px;background-color: whitesmoke;border-radius: 10px;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);height: 40px;width: 149px;" value="<?= set_select('jeniskelamin'); ?>">
                                     <option class="input" value="Laki-Laki" selected>Laki-Laki</option>
                                     <option class="input" value="Perempuan" selected>Perempuan</option>
                                     <option class="input" value="" disabled selected>-Pilih</option>
@@ -105,68 +105,68 @@
                             <td><?= form_error('jeniskelamin', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
-                            <td class="isitabelnya">Nama Lengkap Ayah</td>
-                            <td>*</td>
+                            <td class="isitabelnya">Nama Lengkap Ayah <span style="color:red">*</span></td>
+                            <td></td>
                             <td><input type="text" name="nama_ayah" class="input" value="<?= set_value('nama_ayah'); ?>"></td>
                             <td><?= form_error('nama_ayah', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
-                            <td class="isitabelnya">Nama Lengkap Ibu</td>
-                            <td>*</td>
+                            <td class="isitabelnya">Nama Lengkap Ibu <span style="color:red">*</span></td>
+                            <td></td>
                             <td><input type="text" name="nama_ibu" class="input" value="<?= set_value('nama_ibu'); ?>"></td>
                             <td><?= form_error('nama_ibu', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
-                            <td class="isitabelnya">Pendidikan Terakhir Ayah</td>
-                            <td>*</td>
+                            <td class="isitabelnya">Pendidikan Terakhir Ayah <span style="color:red">*</span></td>
+                            <td></td>
                             <td><input type="text" name="pendidikan_ayah" class="input" value="<?= set_value('pendidikan_ayah'); ?>"></td>
                             <td><?= form_error('pendidikan_ayah', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
-                            <td class="isitabelnya">Pendidikan Terakhir Ibu</td>
-                            <td>*</td>
+                            <td class="isitabelnya">Pendidikan Terakhir Ibu <span style="color:red">*</span></td>
+                            <td></td>
                             <td><input type="text" name="pendidikan_ibu" class="input" value="<?= set_value('pendidikan_ibu'); ?>"></td>
                             <td><?= form_error('pendidikan_ibu', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
-                            <td class="isitabelnya">Pekerjaan Ayah</td>
-                            <td>*</td>
+                            <td class="isitabelnya">Pekerjaan Ayah <span style="color:red">*</span></td>
+                            <td></td>
                             <td><input type="text" name="pekerjaan_ayah" class="input" value="<?= set_value('pekerjaan_ayah'); ?>"></td>
                             <td><?= form_error('pekerjaan_ayah', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
-                            <td class="isitabelnya">Pekerjaan Ibu</td>
-                            <td>*</td>
+                            <td class="isitabelnya">Pekerjaan Ibu <span style="color:red">*</span></td>
+                            <td></td>
                             <td><input type="text" name="pekerjaan_ibu" class="input" value="<?= set_value('pekerjaan_ibu'); ?>"></td>
                             <td><?= form_error('pekerjaan_ibu', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
-                            <td class="isitabelnya">Penghasilan Ayah</td>
-                            <td>*</td>
+                            <td class="isitabelnya">Penghasilan Ayah <span style="color:red">*</span></td>
+                            <td></td>
                             <td><input type="text" name="penghasilan_ayah" class="input" value="<?= set_value('penghasilan_ayah'); ?>"></td>
                             <td><?= form_error('penghasilan_ayah', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
-                            <td class="isitabelnya">Pernghasilan Ibu</td>
-                            <td>*</td>
+                            <td class="isitabelnya">Pernghasilan Ibu <span style="color:red">*</span></td>
+                            <td></td>
                             <td><input type="text" name="penghasilan_ibu" class="input" value="<?= set_value('penghasilan_ibu'); ?>"></td>
                             <td><?= form_error('penghasilan_ibu', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
-                            <td class="isitabelnya">Tanggal Lahir Ayah </td>
-                            <td>*</td>
+                            <td class="isitabelnya">Tanggal Lahir Ayah <span style="color:red">*</span></td>
+                            <td></td>
                             <td><input type="date" name="ttl_ayah" class="input" value="<?= set_value('ttl_ayah'); ?>"></td>
                             <td><?= form_error('ttl_ayah', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
-                            <td class="isitabelnya">Tanggal Lahir Ibu</td>
-                            <td>*</td>
+                            <td class="isitabelnya">Tanggal Lahir Ibu <span style="color:red">*</span></td>
+                            <td></td>
                             <td><input type="date" name="ttl_ibu" class="input" value="<?= set_value('ttl_ibu'); ?>"></td>
                             <td><?= form_error('ttl_ibu', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
-                            <td class="isitabelnya">No. Telep. Ayah/ibu</td>
-                            <td>*</td>
+                            <td class="isitabelnya">No. Telep. Ayah/ibu <span style="color:red">*</span></td>
+                            <td></td>
                             <td><input type="text" name="notelpon" placeholder="+62" class="input" value="<?= set_value('notelpon'); ?>"></td>
                             <td><?= form_error('notelpon', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>

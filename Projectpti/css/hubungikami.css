@@ -114,6 +114,8 @@ body {
 	position: absolute;
 	margin-left: 50px;
 	margin-top: -245px;
+	color: rgba(33, 69, 81, 1);
+	font-size: 20px;
 }
 
 .isi .isinya .isinyakanan .isinyakanansosmed .facebook {
@@ -125,6 +127,8 @@ body {
 	position: absolute;
 	margin-left: 50px;
 	margin-top: -190px;
+	color: rgba(33, 69, 81, 1);
+	font-size: 20px;
 }
 .isi .isinya .isinyakanan .isinyakanansosmed .igg {
 	position: absolute;
@@ -135,6 +139,8 @@ body {
 	position: absolute;
 	margin-left: 50px;
 	margin-top: -145px;
+	color: rgba(33, 69, 81, 1);
+	font-size: 20px;
 }
 .isi .isinya .isinyakanan .isinyakanansosmed .telephone {
 	position: absolute;
@@ -144,8 +150,12 @@ body {
 .isi .isinya .isinyakanan .isinyakanansosmed .nohp1 {
 	margin-left: 50px;
 	margin-top: -100px;
+	color: rgba(33, 69, 81, 1);
+	font-size: 20px;
 }
 .isi .isinya .isinyakanan .isinyakanansosmed .nohp2 {
 	margin-left: 50px;
 	margin-top: -20px;
+	color: rgba(33, 69, 81, 1);
+	font-size: 20px;
 }
