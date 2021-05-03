@@ -60,6 +60,8 @@ class Welcome extends CI_Controller
 	}
 	public function DataSiswaCon()
 	{
+
+
 		$this->load->view('home/datasiswa');
 	}
 	public function DataSiswaKepsekCon()
