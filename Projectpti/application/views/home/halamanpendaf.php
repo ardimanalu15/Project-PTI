@@ -177,7 +177,7 @@
                             
                         </tr> -->
                         <tr>
-                            <td><Button type=" submit" name="kirim" class="kirim" data-toggle="modal" data-target="#tambahModal" <?= base_url() ?>Welcome">Kirim</Button></td>
+                            <td><Button type=" submit" name="kirim" class="kirim" data-toggle="modal" data-target="#tambahModal" <?= base_url() ?>">Kirim</Button></td>
                         </tr>
                     </table>
                 </form>
