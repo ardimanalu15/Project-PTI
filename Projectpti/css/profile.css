@@ -13,53 +13,53 @@ body {
 }
 .halaman-utama .navbar {
 	display: flex;
-	justify-content: space-between;
+	background-color: rgba(173, 216, 222, 1);
+	justify-content: space-around;
+	height: 50px;
 	align-items: center;
 	position: fixed;
-	width: 1440px;
-	background-color: rgba(173, 216, 222, 1);
-
-	margin-left: 0px;
-	position: static;
+	width: 100%;
 }
-
 .halaman-utama .navbar .brand {
-	font-family: "Roboto", sans-serif;
-	font-weight: bold;
-	font-size: 25px;
-	text-decoration: none;
-	cursor: pointer;
+	margin-left: 10px;
 }
 
-.halaman-utama .navbar .nav-link {
+.halaman-utama .navbar ul {
+	display: flex;
 	list-style: none;
-	margin-right: 100px;
-}
-.halaman-utama .navbar .nav-link li {
-	display: inline-block;
-	padding: 0px 25px;
-}
-.halaman-utama .navbar .nav-link li .navbar-link {
+	width: 40%;
+	justify-content: space-between;
 	font-family: "Roboto Slab", serif;
 	font-weight: 500px;
 	font-size: 20px;
+	margin-left: 35%;
+}
+.halaman-utama .navbar ul li a {
 	text-decoration: none;
 	color: rgba(33, 69, 81, 1);
 }
-.halaman-utama .navbar .nav-link li .butt {
+
+.halaman-utama .navbar ul li .butt {
 	color: rgba(33, 69, 81, 1);
 	background: rgba(160, 194, 82, 1);
 	padding: 10px 40px;
 	text-decoration: none;
 	border-radius: 0.5em;
 	font-family: "Roboto Slab", serif;
+	border: rgba(160, 194, 82, 1);
 }
-.halaman-utama .navbar .nav-link li .navbar-link:hover::after {
+
+.halaman-utama .navbar ul li:hover::after {
 	content: "";
 	display: block;
 	border-bottom: 3px solid blue;
 	width: 30px;
 	margin: auto;
+	padding-bottom: 5px;
+	margin-bottom: -10px;
+}
+.halaman-utama .navbar ul li .active {
+	border-bottom: 3px solid blue;
 	padding-bottom: 5px;
 	margin-bottom: -10px;
 }
@@ -95,7 +95,7 @@ body {
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
-	line-height: 47px;
+	line-height: 35px;
 	color: #214551;
 	margin-top: 50px;
 	width: 800px;
@@ -108,8 +108,8 @@ body {
 	margin-top: 100px;
 }
 .halaman-utama .isi .kepsek .kepsekkanan .gambarkepsek {
-	width: 308px;
-	height: 417px;
+	width: 270px;
+	height: 317px;
 	border-radius: 100%;
 	margin-left: 100px;
 }
@@ -137,19 +137,19 @@ body {
 	font-weight: normal;
 	font-size: 36px;
 	line-height: 47px;
-
 	color: #214551;
 }
 .halaman-utama .isi .visi .visikanan .isivisimisi {
-	font-family: Roboto Slab;
+	font-family: "Roboto Slab", sans-serif;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
 	line-height: 32px;
-	width: 800px;
+	color: #214551;
+	margin-top: 15px;
+	width: 750px;
 	letter-spacing: 0px;
 	min-height: 193px;
-	color: #214551;
 }
 .footer {
 	float: left;

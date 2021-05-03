@@ -24,7 +24,7 @@
         </div>
         <div class="isi">
             <div class="isikiri">
-                <table class="tabel" cellspacing="0" cellpading="0">
+                <table class="tabel" border="1" cellspacing="0" cellpading="0">
                     <tr>
                         <td> <a href="<?= base_url() ?>" class="tabelisi"> home </a></td>
                     </tr>
