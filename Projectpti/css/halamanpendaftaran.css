@@ -71,11 +71,11 @@
 	box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 	transform: rotate(89.97deg);
 	float: left;
-	margin-left: -470px;
+	margin-left: -520px;
 }
 .halaman .isi .isikanan {
 	float: left;
-	margin-left: 120px;
+	margin-left: 60px;
 	margin-top: 90px;
 }
 
@@ -121,6 +121,21 @@
 }
 :root {
 	--mountain-mist: rgba(147, 147, 147, 1);
+}
+
+.halaman .isi .isikanan .inputt {
+	background-color: whitesmoke;
+	border-radius: 10px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	height: 40px;
+	width: 60px;
+}
+.halaman .isi .isikanan .inputt {
+	border: 1px solid var(--mountain-mistt);
+	margin-bottom: 20px;
+}
+:root {
+	--mountain-mistt: rgba(147, 147, 147, 1);
 }
 
 .halaman .footer {

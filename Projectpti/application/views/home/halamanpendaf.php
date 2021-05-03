@@ -67,7 +67,7 @@
                         <tr>
                             <td class="isitabelnya">Umur <span style="color:red">*</span></td>
                             <td></td>
-                            <td><input type="text" name="umur" id="umur" class="input" value="<?= set_value('umur'); ?>"> Tahun</td>
+                            <td><input type="text" name="umur" id="umur" class="inputt" value="<?= set_value('umur'); ?>"> Tahun</td>
                             <td><?= form_error('umur', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
@@ -85,10 +85,10 @@
                         <tr>
                             <td class="isitabelnya">Tinggi/Berat Badan <span style="color:red">*</span></td>
                             <td></td>
-                            <td><input type="number" max="300" min="50" name="tinggi" class="input" value="<?= set_value('tinggi'); ?>"> cm</td>
+                            <td><input type="number" max="300" min="50" name="tinggi" class="inputt" value="<?= set_value('tinggi'); ?>"> cm</td>
                             <td><?= form_error('tinggi', '<small style="color:red;">', '</small>'); ?></td>
-                            <td>/</td>
-                            <td><input type="number" max="150" min="10" name="berat" class="input" value="<?= set_value('berat'); ?>"> kg
+                            <td style="color:rgba(147, 147, 147, 1); font-size: 24px;">/</td>
+                            <td><input type="number" max="150" min="10" name="berat" class="inputt" value="<?= set_value('berat'); ?>"> kg
                             <td><?= form_error('berat', '<small style="color:red;">', '</small>'); ?></td>
                             </td>
 
