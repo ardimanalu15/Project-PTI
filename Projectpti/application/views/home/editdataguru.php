@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>EditDataGuru</title>
+    <title>TambahDataGuru</title>
 
     <!-- Custom fonts for this template-->
     <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -19,6 +19,12 @@
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
 </head>
+<style>
+    .a:hover {
+        color: black;
+        text-decoration: none;
+    }
+</style>
 
 <body id="page-top">
 
@@ -40,7 +46,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item" style="font-family:Roboto Slab;">
+            <li class="nav-item " style="font-family:Roboto Slab;">
                 <a class="nav-link" href="<?= base_url('Welcome/DashAdminCon'); ?>">
                     <i class="fas fa-fw "></i>
                     <span>Dashboard</span></a>
@@ -57,19 +63,19 @@
                     <span>Data Siswa</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item " style="font-family:Roboto Slab;">
+            <li class="nav-item" style="font-family:Roboto Slab;">
                 <a class="nav-link" href="<?= base_url('Welcome/StatusSppCon'); ?>">
                     <i class="fas fa-fw "></i>
                     <span>Status SPP Siswa</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item " style="font-family:Roboto Slab;">
+            <li class="nav-item" style="font-family:Roboto Slab;">
                 <a class="nav-link" href="<?= base_url('Welcome/LapKeuCon'); ?>">
                     <i class="fas fa-fw "></i>
                     <span>Laporan Keuangan</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item" style="font-family:Roboto Slab;">
+            <li class="nav-item " style="font-family:Roboto Slab;">
                 <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
                     <i class="fas fa-fw "></i>
                     <span>Logout</span></a>
@@ -100,30 +106,32 @@
                             </div>
                             <hr style="border-width: 1px; border-color:black">
                             <!-- forms -->
-                            <form style=" font-size:18px; color:black">
-                                <div class="form-group">
+                            <form style=" font-size:18px; color:black" action="<?= base_url('Welcome/UpdateDataGuruCon'); ?>" method="post" enctype='multipart/form-data'>
+                                <!-- <div class="form-group">
                                     <label for="unggahFoto">Unggah Foto</label>
                                     <input style="width: 250px; height: 40px;" type="file" class="form-control" id="inputFoto">
+                                </div> -->
+                                <input type="hidden" name="id" value="<?= $guru['id']; ?>">
+                                <p>Nama Guru</p>
+
+                                <div class="form-group ">
+
+                                    <input type="text" style="width: 500px; height: 40px;" class="form-control" id="nama" name="nama" value="<?= $guru['namaguru']; ?>" required>
                                 </div>
 
-                                <p>Nama Guru</p>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="inputnamadepan" style="font-size: 12px;">Nama Depan</label>
-                                        <input type="text" class="form-control" id="namaDepan">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label style="font-size: 12px;" for="inputnamabelakang">Nama Belakang</label>
-                                        <input type="text" class="form-control" id="namaBelakang">
-                                    </div>
-                                </div>
-                                <div class="form-group">
+
+                                <div class=" form-group">
                                     <label for="inputjeniskelamin">Jenis Kelamin</label>
                                     <div class="dropdown show">
 
-                                        <select name="jk" id="jenisKelamin" class="form-control" id="inputAddress" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; color:black; width:150px;">
-                                            <option class="dropdown-item" href="#">Laki-Laki</option>
-                                            <option class="dropdown-item" href="#">Perempuan</option>
+                                        <select name="jeniskelamin" id="jenisKelamin" class="form-control" id="inputAddress" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; color:black; width: 200px; height: 40px;" required>
+                                            <option class="dropdown-item" href="#" disabled selected>Pilih Jenis Kelamin</option>
+                                            <option class="dropdown-item" href="#" value="Laki-Laki" <?php if ($guru['jk'] == 'Laki-Laki') {
+                                                                                                            echo "selected";
+                                                                                                        } ?>>Laki-Laki</option>
+                                            <option class="dropdown-item" href="#" value="Perempuan" <?php if ($guru['jk'] == 'Perempuan') {
+                                                                                                            echo "selected";
+                                                                                                        } ?>>Perempuan</option>
 
                                         </select>
 
@@ -131,53 +139,66 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="NIK">NIK</label>
-                                    <input type="text" class="form-control" id="inputNIK" name="NIK">
-                                </div>
-                                <div class="form-group">
-                                    <label for="NIP">NIP</label>
-                                    <input type="text" class="form-control" id="inputNIP" name="NIP">
-                                </div>
-                                <div class="form-group">
-                                    <label for="NUPTK">NUPTK</label>
-                                    <input type="text" class="form-control" id="inputNUPTK" name="NUPTK">
-                                </div>
-                                <label for="jenisPTK">Jenis PTK</label>
-                                <div class="dropdown show">
-
-                                    <select name="jenisPTK" id="inputJenisPTK" class="form-control" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; color:black; width:150px;">
-                                        <option class="dropdown-item" href="#" disabled selected>Pilih Jenis PTK</option>
-                                        <option class="dropdown-item" href="#">Kepala Sekolah</option>
-                                        <option class="dropdown-item" href="#">Guru</option>
-                                        <option class="dropdown-item" href="#">Administrasi</option>
-                                        <option class="dropdown-item" href="#">Operator</option>
-
-                                    </select>
-
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="NPSN">NPSN</label>
-                                    <input type="text" class="form-control" id="inputNPSN" name="NPSN">
-                                </div>
-                                <div class="form-group">
-                                    <label for="ttl">Tempat Tanggal Lahir</label>
-                                    <input type="text" class="form-control" id="inputttl" name="ttl">
+                                    <label for=" ttl">Tanggal Lahir</label>
+                                    <input type="date" class="form-control" id="inputttl" name="ttl" style="width: 500px; height: 40px;" value="<?= $guru['ttl']; ?>" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="alamatguru">Alamat tempat tinggal</label>
-                                    <input type="text" class="form-control" id="inputalamatguru" name="alamatguru">
+                                    <input type="text" class="form-control" id="inputalamatguru" name="alamatguru" style="width: 500px; height: 40px;" value="<?= $guru['alamat']; ?>" required>
                                 </div>
+                                <div class="form-group">
+                                    <label for="NIK">NIK</label>
+                                    <input type="text" class="form-control" id="inputNIK" name="NIK" style="width: 500px; height: 40px;" value="<?= $guru['NIK']; ?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="NIP">NIP</label>
+                                    <input type="text" class="form-control" id="inputNIP" name="NIP" style="width: 500px; height: 40px;" value="<?= $guru['NIP']; ?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="NUPTK">NUPTK</label>
+                                    <input type="text" class="form-control" id="inputNUPTK" name="NUPTK" style="width: 500px; height: 40px;" value="<?= $guru['NUPTK']; ?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="jenisPTK">Jenis PTK</label>
+                                    <div class="dropdown show">
+
+                                        <select name="jenisPTK" id="inputJenisPTK" class="form-control" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; color:black;width: 200px; height: 40px;" required>
+                                            <option class="dropdown-item" href="#" disabled selected>Pilih Jenis PTK</option>
+                                            <option class="dropdown-item" href="#" value="Kepala Sekolah" <?php if ($guru['JPTK'] == 'Kepala Sekolah') {
+                                                                                                                echo "selected";
+                                                                                                            } ?>>Kepala Sekolah</option>
+                                            <option class="dropdown-item" href="#" value="Guru" <?php if ($guru['JPTK']  == 'Guru') {
+                                                                                                    echo "selected";
+                                                                                                } ?>>Guru</option>
+                                            <option class="dropdown-item" href="#" value="Administrasi" <?php if ($guru['JPTK']  == 'Administrasi') {
+                                                                                                            echo "selected";
+                                                                                                        } ?>>Administrasi</option>
+                                            <option class="dropdown-item" href="#" value="Operator" <?php if ($guru['JPTK']  == 'Operator') {
+                                                                                                        echo "selected";
+                                                                                                    } ?>>Operator</option>
+
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="NPSN">NPSN</label>
+                                    <input type="text" class="form-control" id="inputNPSN" name="NPSN" style="width: 500px; height: 40px;" value="<?= $guru['NPSN']  ?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <br>
+                                    <button onclick="javascript:return confirm('Anda yakin ingin mengubah data?')" type="submit" class="btn btn-info col-sm-2 float-right" style="margin-right: 0px;">Ubah</button>
+                                </div>
+
+                                <div class="form-group">
+                                    <br>
+                                    <br>
+                                </div>
+                            </form>
                         </div>
 
                         <!-- End Forms -->
-                        <div class="card-body">
-                            <div class="table-responsive">
-
-                                <a class="btn btn-info col-sm-2 float-right" style="margin-right: 0px;" data-toggle="modal" data-target="#editModal">Ubah Data</a>
-                            </div>
-                        </div>
 
                     </div>
                 </div>
@@ -247,7 +268,7 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" style="margin-top:150px;" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" style="margin-top:150px;" id="tambahModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -257,7 +278,7 @@
                     </button>
                 </div>
                 <div class="modal-body" style="margin-left:200px;"><img src="<?= base_url('assets/'); ?>/img/successIcon.svg"></div>
-                <div class="modal-body">Sukses Mengubah Data</div>
+                <div class="modal-body">Sukses Menambah Data</div>
                 <div class="modal-footer">
                     <a class="btn btn-primary" href="<?= base_url('Welcome/DataGuruCon'); ?>">Oke</a>
                     <!-- <a class="btn btn-primary" onclick="Swal('Data Berhasil Dihapus', 'Data telah dihapus', 'success')">Hapus</a> -->

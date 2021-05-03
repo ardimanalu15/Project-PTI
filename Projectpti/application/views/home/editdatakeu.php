@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>DataSiswa</title>
+    <title>EditDataKeuangan</title>
 
     <!-- Custom fonts for this template-->
     <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -45,7 +45,7 @@
                     <i class="fas fa-fw "></i>
                     <span>Dashboard</span></a>
             </li>
-            <li class="nav-item" style="font-family:Roboto Slab;">
+            <li class="nav-item " style="font-family:Roboto Slab;">
                 <a class="nav-link" href="<?= base_url('Welcome/DataGuruCon'); ?>">
                     <i class="fas fa-fw "></i>
                     <span>Data Guru</span></a>
@@ -69,7 +69,7 @@
                     <span>Laporan Keuangan</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item" style="font-family:Roboto Slab;">
+            <li class="nav-item " style="font-family:Roboto Slab;">
                 <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
                     <i class="fas fa-fw "></i>
                     <span>Logout</span></a>
@@ -94,56 +94,97 @@
 
                             <div class="py-3">
                                 <div style="text-align:left; font-size:24px; color:black;">
-                                    <p>Ubah Data Keuangan</p>
+                                    <p>Edit Data Keuangan</p>
 
                                 </div>
                             </div>
                             <hr style="border-width: 1px; border-color:black">
                             <!-- forms -->
-                            <form style=" font-size:18px; color:black">
+                            <form style=" font-size:18px; color:black" action="<?= base_url('Welcome/UpdateDataKeuCon'); ?>" method="post">
+                                <input type="hidden" name="id" value="<?= $keuangan['id']; ?>">
                                 <div class="form-group">
                                     <label for="tanggalKeu">Tanggal</label>
-                                    <input style="width: 500px; height: 40px;" type="date" class="form-control" id="inputTanggalKeu" name="tanggalKeu" placeholder="dd/mm/yyyy">
+                                    <input style="width: 500px; height: 40px;" type="date" class="form-control" id="inputTanggalKeu" name="tanggalKeu" placeholder="dd/mm/yyyy" value="<?= $keuangan['tanggal']; ?>">
                                 </div>
-                                <div class="form-group">
+
+                                <div class=" form-group">
                                     <label for="jenisTransaksi">Jenis Transaksi</label>
-                                    <input style="width: 500px; height: 40px;" type="text" class="form-control" id="inputJenisTransaksi" name="jenisTransaksi" placeholder="Masukkan Jenis Transaksi">
+                                    <input style="width: 500px; height: 40px;" type="text" class="form-control" id="inputJenisTransaksi" name="jenisTransaksi" placeholder="Cth: Beli Spidol" value="<?= $keuangan['jenistransaksi']; ?>">
                                 </div>
+
+                                <div class="form-group">
+                                    <label for="banyak">Jumlah Barang</label>
+                                    <input style="width: 500px; height: 40px;" type="text" class="form-control" id="banyak" name="banyak" placeholder="Cth: 3" value="<?= $keuangan['banyak']; ?>">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="satuan">Harga Satuan</label>
+                                    <input style="width: 500px; height: 40px;" type="text" class="form-control" id="satuan" name="satuan" placeholder="Cth: 3" value="<?= $keuangan['satuan']; ?>">
+                                </div>
+
                                 <div class="form-group">
                                     <label for="kategori">Kategori</label>
-                                    <input style="width: 500px; height: 40px;" type="text" class="form-control" id="inputKategori" name="kategori" placeholder="Masukkan Kategori">
-                                </div>
+                                    <div class="dropdown show" style="width: 500px; height: 40px;">
 
-                                <div class="form-group">
-                                    <label for="jenisTransaksi">Jenis Transaksi</label>
-                                    <input style="width: 500px; height: 40px;" type="text" class="form-control" id="inputJenisTransaksi" name="jenisTransaksi" placeholder="Masukkan Jenis Transaksi">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputJenisKas">Jenis kas</label>
-                                    <div class="dropdown show">
-
-                                        <select name="kas" id="jenisKas" class="form-control" id="inputAddress" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; width:150px;">
-                                            <option class="dropdown-item" href="#" disabled selected>Pilih Jenis Kas</option>
-                                            <option style="background-color:white; color:black;" class="dropdown-item" href="#">Kas Masuk</option>
-                                            <option style="background-color:white; color:black;" class="dropdown-item" href="#">Kas Keluar</option>
+                                        <select name="kategori" id="kategori" class="form-control" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; width:250px;">
+                                            <option class="dropdown-item" href="#" disabled selected>-Pilih Kategori-</option>
+                                            <option class="dropdown-item" href="#" value="Pembelian Barang" <?php if ($keuangan['kategori'] == 'Pembelian Barang') {
+                                                                                                                echo "selected";
+                                                                                                            } ?>>Pembelian Barang</option>
+                                            <option class="dropdown-item" href="#" value="Operasional" <?php if ($keuangan['kategori'] == 'Operasional') {
+                                                                                                            echo "selected";
+                                                                                                        } ?>>Operasional</option>
+                                            <option class="dropdown-item" href="#" value="Gaji" <?php if ($keuangan['kategori'] == 'Gaji') {
+                                                                                                    echo "selected";
+                                                                                                } ?>>Gaji</option>
+                                            <option class="dropdown-item" href="#" value="Pemasukan SPP" <?php if ($keuangan['kategori'] == 'Pemasukan SPP') {
+                                                                                                                echo "selected";
+                                                                                                            } ?>>Pemasukan SPP</option>
+                                            <option class="dropdown-item" href="#" value="Pembelian Barang" <?php if ($keuangan['kategori'] == 'Pemasukan Pendaftaran') {
+                                                                                                                echo "selected";
+                                                                                                            } ?>>Pemasukan Pendaftaran</option>
+                                            <option class="dropdown-item" href="#" value="Pemasukan Dana Bantuan" <?php if ($keuangan['kategori'] == 'Pemasukan Dana Bantuan') {
+                                                                                                                        echo "selected";
+                                                                                                                    } ?>>Pemasukan Dana Bantuan</option>
 
                                         </select>
 
                                     </div>
                                 </div>
+
                                 <div class="form-group">
-                                    <label for="inputJumlah">Jumlah</label>
-                                    <input style="width: 500px; height: 40px;" type="text" class="form-control" id="inputJumlah" placeholder="Masukkan Jumlah Pengeluaran/Pemasukan">
+                                    <label for="inputJenisKas">Jenis kas</label>
+                                    <div class="dropdown show" style="width: 500px; height: 40px;">
+
+                                        <select name="kas" id="jenisKas" class="form-control" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; width:250px;">
+                                            <option class="dropdown-item" href="#" disabled selected>Pilih Jenis Kas</option>
+                                            <option style="background-color:white; color:black;" class="dropdown-item" href="#" value="Kas Masuk" <?php if ($keuangan['jeniskas'] == 'Kas Masuk') {
+                                                                                                                                                        echo "selected";
+                                                                                                                                                    } ?>>Kas Masuk</option>
+                                            <option style="background-color:white; color:black;" class="dropdown-item" href="#" value="Kas Keluar" <?php if ($keuangan['jeniskas'] == 'Kas Keluar') {
+                                                                                                                                                        echo "selected";
+                                                                                                                                                    } ?>>Kas Keluar</option>
+
+                                        </select>
+
+                                    </div>
                                 </div>
+
+                                <div class="form-group">
+                                    <br>
+                                    <button type="submit" class="btn btn-info col-sm-2 float-right" style="margin-right: 0px;">Ubah</button>
+                                </div>
+
+                                <div class="form-group">
+                                    <br>
+                                    <br>
+                                </div>
+                            </form>
+
                         </div>
 
                         <!-- End Forms -->
-                        <div class="card-body">
-                            <div class="table-responsive">
 
-                                <a class="btn btn-info col-sm-2 float-right" style="margin-right: 0px;" data-toggle="modal" data-target="#ubahModal">Ubah Data</a>
-                            </div>
-                        </div>
 
                     </div>
                 </div>
@@ -194,7 +235,7 @@
         </div>
     </div>
 
-    <div class="modal fade" style="margin-top:150px;" id="ubahModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" style="margin-top:150px;" id="tambahModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -204,7 +245,7 @@
                     </button>
                 </div>
                 <div class="modal-body" style="margin-left:200px;"><img src="<?= base_url('assets/'); ?>/img/successIcon.svg"></div>
-                <div class="modal-body">Sukses Mengubah Data</div>
+                <div class="modal-body">Sukses Menambah Data</div>
                 <div class="modal-footer">
                     <a class="btn btn-primary" href="<?= base_url('Welcome/LapKeuCon'); ?>">Oke</a>
                     <!-- <a class="btn btn-primary" onclick="Swal('Data Berhasil Dihapus', 'Data telah dihapus', 'success')">Hapus</a> -->

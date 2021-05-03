@@ -127,19 +127,31 @@
                         <p>Kategori</p>
                         <form>
                             <div class="form-row align-items-center">
-                                <div class="dropdown show">
-                                    <a class="border-0 btn  dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white;">
-                                        -semua jenis kategori-
-                                    </a>
+                                <div class="col-sm-3 my-1 ">
+                                    <div class="dropdown show" style="width: 500px; height: 40px;" value="<?= set_select('jeniskelamin'); ?>">
 
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Beli</a>
-                                        <a class="dropdown-item" href="#">Jual</a>
-                                        <a class="dropdown-item" href="#">Pemasukan</a>
+                                        <select name=" jeniskelamin" id="inputjk" class="form-control" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; color:black; width:250px;">
+                                            <option class="dropdown-item" href="#" disabled selected>-Semua kategori-</option>
+                                            <option class="dropdown-item" href="#">Pembelian Barang</option>
+                                            <option class="dropdown-item" href="#">Operasional</option>
+                                            <option class="dropdown-item" href="#">Gaji</option>
+                                            <option class="dropdown-item" href="#">Pemasukan SPP</option>
+                                            <option class="dropdown-item" href="#">Pemasukan Pendaftaran</option>
+                                            <option class="dropdown-item" href="#">Pemasukan Dana Bantuan</option>
+
+                                        </select>
+
                                     </div>
+
                                 </div>
-                                <button type="button" class="btn btn-primary col-sm-3 float-right" style="margin-right: 0px;">Tampilkan</button>
+
+                                <div class="col-sm-6">
+                                    <button type="button" class="btn btn-primary float-right" style="margin-right: 0px;">Tampilkan</button>
+
+                                </div>
                             </div>
+
+
                         </form>
                     </div>
                 </div>
@@ -167,8 +179,8 @@
                     <div class="card-header py-3">
                         <h6 class="m-0 ">Pertanggal : </h6>
                         <h6 class="m-0 ">Kategori : </h6>
-                        <button type="button" class="float-right" style="margin-right: 0px; background-color:#569BB1">Print Laporan</button>
-                        <button type="button" class="float-right" style="margin-right: 0px; background-color:#C32A2A">Cetak PDF</button>
+
+                        <button type="button" class="float-right btn btn-danger" style="margin-right: 0px;">Cetak PDF</button>
 
                     </div>
                     <div class="card-body">
@@ -179,6 +191,8 @@
                                         <th>No</th>
                                         <th>Tanggal</th>
                                         <th>Jenis Transaksi</th>
+                                        <th>Jumlah Barang</th>
+                                        <th>Harga Satuan</th>
                                         <th>Kategori</th>
                                         <th>Jenis Kas</th>
                                         <th>Jumlah</th>
@@ -186,22 +200,31 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1.</td>
-                                        <td>10-10-2020</td>
-                                        <td>Pembelian Spidol</td>
-                                        <td>Beli</td>
-                                        <td>Kas Keluar</td>
-                                        <td>Rp. 10.000</td>
-                                        <td>
-                                            <button type="submit" style="height: 30px; width:35px; margin-top:3px;" data-toggle="modal" data-target="#deleteModal">
-                                                <img src="<?= base_url('assets/'); ?>/img/delete.svg">
-                                            </button>
-                                            <a href="<?= base_url('Welcome/EditDataKeuCon'); ?>" type="submit" style="height: 25px;width:27px; margin-top:2px;">
-                                                <img src="<?= base_url('assets/'); ?>/img/edit.svg">
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    <?php
+                                    $no = 1;
+                                    foreach ($keuangan as $keu) : ?>
+                                        <tr>
+                                            <td><?php echo $no++; ?></td>
+                                            <td><?php echo $keu['tanggal']; ?></td>
+                                            <td><?php echo $keu['jenistransaksi']; ?></td>
+                                            <td><?php echo $keu['banyak']; ?></td>
+                                            <td><?php echo $keu['satuan']; ?></td>
+                                            <td><?php echo $keu['kategori']; ?></td>
+                                            <td><?php echo $keu['jeniskas']; ?></td>
+                                            <td><?php echo $keu['jumlah']; ?></td>
+
+                                            <td>
+                                                <a onclick="javascript:return confirm('Anda yakin ingin menghapus data?')" href="<?= base_url(); ?>/Welcome/DeleteDataKeuCon/<? echo $keu['id']; ?>" type="submit" style="height: 30px; width:35px; margin-top:3px;margin-left:5px;">
+                                                    <img src="<?= base_url('assets/'); ?>/img/delete.svg">
+                                                </a>
+                                                <a href="<?= base_url(); ?>/Welcome/EditDataKeuCon/<? echo $keu['id']; ?>" type="submit" style="height: 25px;width:27px; margin-top:2px; margin-left:10px;">
+                                                    <img src="<?= base_url('assets/'); ?>/img/edit.svg">
+                                                </a>
+                                            </td>
+
+                                        </tr>
+                                    <?php endforeach; ?>
+
 
                                 </tbody>
                             </table>

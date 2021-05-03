@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>DataSiswa</title>
+    <title>DataGuru</title>
 
     <!-- Custom fonts for this template-->
     <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -18,6 +18,7 @@
     <!-- Custom styles for this template-->
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+    <link href="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -92,10 +93,21 @@
                     <p></p>
                     <p></p>
                 </div>
-                <div style="font-family:Roboto Slab; justify-content: center;">
-                    <p>Total Guru : </p>
+                <div class="row" style="color: black; font-size:18px;">
+                    <div class="col-lg-2" style="margin-top:30px;">
+                        <p>Total Guru </p>
+
+
+                    </div>
+                    <div class="col" style="margin-top:30px;">
+                        <p>: <?= $jlh ?> </p>
+
+                    </div>
                 </div>
+
             </div>
+            <br>
+            <br>
             <!-- End of Main Content -->
             <!-- Content Row -->
 
@@ -130,40 +142,55 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Foto</th>
+                                            <!-- <th>Foto</th> -->
                                             <th>Nama Guru</th>
                                             <th>Jenis Kelamin</th>
+                                            <th>TTL</th>
+                                            <th>Alamat Tinggal</th>
                                             <th>NIK</th>
                                             <th>NIP</th>
                                             <th>NUPTK</th>
                                             <th>Jenis PTK</th>
                                             <th>NPSN</th>
-                                            <th>TTL</th>
-                                            <th>Alamat Tinggal</th>
-
+                                            <!-- <th>Tindakan</th> -->
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1.</td>
-                                            <td>
-                                                <img class="justify-content-center" style="height: 95px; width:71px" src="<?= base_url('assets/'); ?>/img/pace.JPG">
-                                            </td>
-                                            <td>Sri</td>
-                                            <td>Perempuan</td>
-                                            <td>231898491284</td>
-                                            <td>27632839427</td>
-                                            <td>J298dbxdh8221</td>
-                                            <td>Guru</td>
-                                            <td>J298d2421421412</td>
-                                            <td>Medan, 10 januari 1978</td>
-                                            <td>Jl. gagak</td>
+                                        <?php
+                                        $no = 1;
+                                        foreach ($guru as $gur) : ?>
+                                            <tr>
+                                                <td><?php echo $no++; ?></td>
+                                                <!-- <td>
+                                                    <?php echo "<img src='" . base_url("assets/fotosiswa/" . $sis['foto']) . "' width='100' height='100'>"; ?>
+                                                </td> -->
+                                                <td><?php echo $gur['namaguru']; ?></td>
+                                                <td><?php echo $gur['jk']; ?></td>
+                                                <td><?php echo $gur['ttl']; ?></td>
+                                                <td><?php echo $gur['alamat']; ?></td>
+                                                <td><?php echo $gur['NIK']; ?></td>
+                                                <td><?php echo $gur['NIP']; ?></td>
+                                                <td><?php echo $gur['NUPTK']; ?></td>
+                                                <td><?php echo $gur['JPTK']; ?></td>
+                                                <td><?php echo $gur['NPSN']; ?></td>
+                                                <!-- <td>
+                                                    <a onclick="javascript:return confirm('Anda yakin ingin menghapus data?')" href="<?= base_url(); ?>/Welcome/DeleteDataGuruCon/<? echo $gur['id']; ?>" type="submit" style="height: 30px; width:35px; margin-top:3px;margin-left:5px;">
+                                                        <img src="<?= base_url('assets/'); ?>/img/delete.svg">
+                                                    </a>
+                                                    <a href="<?= base_url(); ?>/Welcome/EditDataGuruCon/<? echo $gur['id']; ?>" type="submit" style="height: 25px;width:27px; margin-top:2px; margin-left:10px;">
+                                                        <img src="<?= base_url('assets/'); ?>/img/edit.svg">
+                                                    </a>
+                                                </td> -->
 
-                                        </tr>
+                                            </tr>
+                                        <?php endforeach; ?>
+
 
                                     </tbody>
                                 </table>
-
+                                <br>
+                                <br>
+                                <!-- <a class="btn btn-info col-sm-2 float-right" style="margin-right: 0px;" href="<?= base_url('Welcome/TambahDataGuruCon') ?>">Tambah Data Guru</a> -->
                             </div>
                         </div>
                     </div>
@@ -214,25 +241,6 @@
             </div>
         </div>
 
-        <div class="modal fade" style="margin-top:150px;" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Apakah Anda Yakin Ingin Menghapus Data?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body" style="margin-left:200px;"><img src="<?= base_url('assets/'); ?>/img/warningIcon.svg"></div>
-                    <div class="modal-body">Pilih "Hapus" untuk menghapus data.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="<?= base_url('Welcome/DataSiswaCon'); ?>">Hapus</a>
-                        <!-- <a class="btn btn-primary" onclick="Swal('Data Berhasil Dihapus', 'Data telah dihapus', 'success')">Hapus</a> -->
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div class="modal fade" style="margin-top:150px;" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -247,7 +255,7 @@
                     <div class="modal-body">Pilih "Hapus" untuk menghapus data.</div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="<?= base_url('Welcome/DataSiswaCon'); ?>">Hapus</a>
+                        <a class="btn btn-primary" href="<?= base_url('Welcome/DataGuruCon'); ?>">Hapus</a>
                         <!-- <a class="btn btn-primary" onclick="Swal('Data Berhasil Dihapus', 'Data telah dihapus', 'success')">Hapus</a> -->
                     </div>
                 </div>
@@ -273,6 +281,10 @@
         <script src="<?= base_url('assets/'); ?>js/demo/chart-pie-demo.js"></script>
 
         <script src="<?= base_url('assets'); ?> alert/sweetalert2.all.min.js"></script>
+        <script src="<?= base_url('assets/'); ?> alert/sweetalert2.all.min.js"></script>
+        <script src="<?= base_url('assets/'); ?>vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="<?= base_url('assets/'); ?>js/demo/datatables-demo.js"></script>
 
 </body>
 

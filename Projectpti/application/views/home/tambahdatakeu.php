@@ -100,50 +100,93 @@
                             </div>
                             <hr style="border-width: 1px; border-color:black">
                             <!-- forms -->
-                            <form style=" font-size:18px; color:black">
+                            <form style=" font-size:18px; color:black" action="<?= base_url('Welcome/TambahDataKeuCon'); ?>" method="post">
                                 <div class="form-group">
                                     <label for="tanggalKeu">Tanggal</label>
-                                    <input style="width: 500px; height: 40px;" type="date" class="form-control" id="inputTanggalKeu" name="tanggalKeu" placeholder="dd/mm/yyyy">
+                                    <input style="width: 500px; height: 40px;" type="date" class="form-control" id="inputTanggalKeu" name="tanggalKeu" placeholder="dd/mm/yyyy" value="<?= set_value('tanggalKeu'); ?>">
                                 </div>
+
                                 <div class="form-group">
                                     <label for="jenisTransaksi">Jenis Transaksi</label>
-                                    <input style="width: 500px; height: 40px;" type="text" class="form-control" id="inputJenisTransaksi" name="jenisTransaksi" placeholder="Masukkan Jenis Transaksi">
+                                    <input style="width: 500px; height: 40px;" type="text" class="form-control" id="inputJenisTransaksi" name="jenisTransaksi" placeholder="Cth: Beli Spidol" value="<?= set_value('jenisTransaksi'); ?>">
                                 </div>
+
+                                <div class="form-group">
+                                    <label for="banyak">Jumlah Barang</label>
+                                    <input style="width: 500px; height: 40px;" type="text" class="form-control" id="banyak" name="banyak" placeholder="Cth: 3" value="<?= set_value('banyak'); ?>">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="satuan">Harga Satuan</label>
+                                    <input style="width: 500px; height: 40px;" type="text" class="form-control" id="satuan" name="satuan" placeholder="Cth: 3" value="<?= set_value('satuan'); ?>">
+                                </div>
+
                                 <div class="form-group">
                                     <label for="kategori">Kategori</label>
-                                    <input style="width: 500px; height: 40px;" type="text" class="form-control" id="inputKategori" name="kategori" placeholder="Masukkan Kategori">
-                                </div>
+                                    <div class="dropdown show" style="width: 500px; height: 40px;">
 
-                                <div class="form-group">
-                                    <label for="jenisTransaksi">Jenis Transaksi</label>
-                                    <input style="width: 500px; height: 40px;" type="text" class="form-control" id="inputJenisTransaksi" name="jenisTransaksi" placeholder="Masukkan Jenis Transaksi">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputJenisKas">Jenis kas</label>
-                                    <div class="dropdown show">
-
-                                        <select name="kas" id="jenisKas" class="form-control" id="inputAddress" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; width:150px;">
-                                            <option class="dropdown-item" href="#" disabled selected>Pilih Jenis Kas</option>
-                                            <option style="background-color:white; color:black;" class="dropdown-item" href="#">Kas Masuk</option>
-                                            <option style="background-color:white; color:black;" class="dropdown-item" href="#">Kas Keluar</option>
+                                        <select name="kategori" id="kategori" class="form-control" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; width:250px;">
+                                            <option class="dropdown-item" href="#" disabled selected>-Pilih Kategori-</option>
+                                            <option class="dropdown-item" href="#" value="Pembelian Barang" <?php if (set_value('kategori') == 'Pembelian Barang') {
+                                                                                                                echo "selected";
+                                                                                                            } ?>>Pembelian Barang</option>
+                                            <option class="dropdown-item" href="#" value="Operasional" <?php if (set_value('kategori') == 'Operasional') {
+                                                                                                            echo "selected";
+                                                                                                        } ?>>Operasional</option>
+                                            <option class="dropdown-item" href="#" value="Gaji" <?php if (set_value('kategori') == 'Gaji') {
+                                                                                                    echo "selected";
+                                                                                                } ?>>Gaji</option>
+                                            <option class="dropdown-item" href="#" value="Pemasukan SPP" <?php if (set_value('kategori') == 'Pemasukan SPP') {
+                                                                                                                echo "selected";
+                                                                                                            } ?>>Pemasukan SPP</option>
+                                            <option class="dropdown-item" href="#" value="Pembelian Barang" <?php if (set_value('kategori') == 'Pemasukan Pendaftaran') {
+                                                                                                                echo "selected";
+                                                                                                            } ?>>Pemasukan Pendaftaran</option>
+                                            <option class="dropdown-item" href="#" value="Pemasukan Dana Bantuan" <?php if (set_value('kategori') == 'Pemasukan Dana Bantuan') {
+                                                                                                                        echo "selected";
+                                                                                                                    } ?>>Pemasukan Dana Bantuan</option>
 
                                         </select>
 
                                     </div>
                                 </div>
+
                                 <div class="form-group">
-                                    <label for="inputJumlah">Jumlah</label>
-                                    <input style="width: 500px; height: 40px;" type="text" class="form-control" id="inputJumlah" placeholder="Masukkan Jumlah Pengeluaran/Pemasukan">
+                                    <label for="inputJenisKas">Jenis kas</label>
+                                    <div class="dropdown show" style="width: 500px; height: 40px;">
+
+                                        <select name="kas" id="jenisKas" class="form-control" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; width:250px;">
+                                            <option class="dropdown-item" href="#" disabled selected>Pilih Jenis Kas</option>
+                                            <option style="background-color:white; color:black;" class="dropdown-item" href="#" value="Kas Masuk" <?php if (set_value('kas') == 'Kas Masuk') {
+                                                                                                                                                        echo "selected";
+                                                                                                                                                    } ?>>Kas Masuk</option>
+                                            <option style="background-color:white; color:black;" class="dropdown-item" href="#" value="Kas Keluar" <?php if (set_value('kas') == 'Kas Keluar') {
+                                                                                                                                                        echo "selected";
+                                                                                                                                                    } ?>>Kas Keluar</option>
+
+                                        </select>
+
+                                    </div>
                                 </div>
+                                <!-- <div class="form-group">
+                                    <label for="jlh">Jumlah</label>
+                                    <input style="width: 500px; height: 40px;" type="text" class="form-control" name="jlh" id="jlh" placeholder="Cth: 100000" value="<?= set_value('jlh'); ?>">
+                                </div> -->
+                                <div class="form-group">
+                                    <br>
+                                    <button type="submit" class="btn btn-info col-sm-2 float-right" style="margin-right: 0px;">Tambahkan</button>
+                                </div>
+
+                                <div class="form-group">
+                                    <br>
+                                    <br>
+                                </div>
+                            </form>
+
                         </div>
 
                         <!-- End Forms -->
-                        <div class="card-body">
-                            <div class="table-responsive">
 
-                                <a class="btn btn-info col-sm-2 float-right" style="margin-right: 0px;" data-toggle="modal" data-target="#tambahModal">Tambah Data</a>
-                            </div>
-                        </div>
 
                     </div>
                 </div>

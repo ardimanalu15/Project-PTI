@@ -106,31 +106,32 @@
                             </div>
                             <hr style="border-width: 1px; border-color:black">
                             <!-- forms -->
-                            <form style=" font-size:18px; color:black">
-                                <div class="form-group">
+                            <form style=" font-size:18px; color:black" action="<?= base_url('Welcome/TambahDataGuruCon'); ?>" method="post">
+                                <!-- <div class="form-group">
                                     <label for="unggahFoto">Unggah Foto</label>
                                     <input style="width: 250px; height: 40px;" type="file" class="form-control" id="inputFoto">
-                                </div>
+                                </div> -->
 
                                 <p>Nama Guru</p>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="inputnamadepan" style="font-size: 12px;">Nama Depan</label>
-                                        <input type="text" class="form-control" id="namaDepan">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label style="font-size: 12px;" for="inputnamabelakang">Nama Belakang</label>
-                                        <input type="text" class="form-control" id="namaBelakang">
-                                    </div>
+
+                                <div class="form-group ">
+
+                                    <input type="text" style="width: 500px; height: 40px;" class="form-control" id="nama" name="nama" value="<?= set_value('nama'); ?>" required>
                                 </div>
-                                <div class="form-group">
+
+
+                                <div class=" form-group">
                                     <label for="inputjeniskelamin">Jenis Kelamin</label>
                                     <div class="dropdown show">
 
-                                        <select name="jk" id="jenisKelamin" class="form-control" id="inputAddress" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; color:black; width:150px;">
+                                        <select name="jeniskelamin" id="jenisKelamin" class="form-control" id="inputAddress" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; color:black; width: 200px; height: 40px;" required>
                                             <option class="dropdown-item" href="#" disabled selected>Pilih Jenis Kelamin</option>
-                                            <option class="dropdown-item" href="#">Laki-Laki</option>
-                                            <option class="dropdown-item" href="#">Perempuan</option>
+                                            <option class="dropdown-item" href="#" value="Laki-Laki" <?php if (set_value('jeniskelamin') == 'Laki-Laki') {
+                                                                                                            echo "selected";
+                                                                                                        } ?>>Laki-Laki</option>
+                                            <option class="dropdown-item" href="#" value="Perempuan" <?php if (set_value('jeniskelamin') == 'Perempuan') {
+                                                                                                            echo "selected";
+                                                                                                        } ?>>Perempuan</option>
 
                                         </select>
 
@@ -138,27 +139,44 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label for=" ttl">Tanggal Lahir</label>
+                                    <input type="date" class="form-control" id="inputttl" name="ttl" style="width: 500px; height: 40px;" value="<?= set_value('ttl'); ?>" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="alamatguru">Alamat tempat tinggal</label>
+                                    <input type="text" class="form-control" id="inputalamatguru" name="alamatguru" style="width: 500px; height: 40px;" value="<?= set_value('alamatguru'); ?>" required>
+                                </div>
+                                <div class="form-group">
                                     <label for="NIK">NIK</label>
-                                    <input type="text" class="form-control" id="inputNIK" name="NIK">
+                                    <input type="text" class="form-control" id="inputNIK" name="NIK" style="width: 500px; height: 40px;" value="<?= set_value('NIK'); ?>" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="NIP">NIP</label>
-                                    <input type="text" class="form-control" id="inputNIP" name="NIP">
+                                    <input type="text" class="form-control" id="inputNIP" name="NIP" style="width: 500px; height: 40px;" value="<?= set_value('NIP'); ?>" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="NUPTK">NUPTK</label>
-                                    <input type="text" class="form-control" id="inputNUPTK" name="NUPTK">
+                                    <input type="text" class="form-control" id="inputNUPTK" name="NUPTK" style="width: 500px; height: 40px;" value="<?= set_value('NUPTK'); ?>" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="jenisPTK">Jenis PTK</label>
                                     <div class="dropdown show">
 
-                                        <select name="jenisPTK" id="inputJenisPTK" class="form-control" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; color:black; width:150px;">
+                                        <select name="jenisPTK" id="inputJenisPTK" class="form-control" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; color:black;width: 200px; height: 40px;" required>
                                             <option class="dropdown-item" href="#" disabled selected>Pilih Jenis PTK</option>
-                                            <option class="dropdown-item" href="#">Kepala Sekolah</option>
-                                            <option class="dropdown-item" href="#">Guru</option>
-                                            <option class="dropdown-item" href="#">Administrasi</option>
-                                            <option class="dropdown-item" href="#">Operator</option>
+                                            <option class="dropdown-item" href="#" value="Kepala Sekolah" <?php if (set_value('jenisPTK') == 'Kepala Sekolah') {
+                                                                                                                echo "selected";
+                                                                                                            } ?>>Kepala Sekolah</option>
+                                            <option class="dropdown-item" href="#" value="Guru" <?php if (set_value('jenisPTK') == 'Guru') {
+                                                                                                    echo "selected";
+                                                                                                } ?>>Guru</option>
+                                            <option class="dropdown-item" href="#" value="Administrasi" <?php if (set_value('jenisPTK') == 'Administrasi') {
+                                                                                                            echo "selected";
+                                                                                                        } ?>>Administrasi</option>
+                                            <option class="dropdown-item" href="#" value="Operator" <?php if (set_value('jenisPTK') == 'Operator') {
+                                                                                                        echo "selected";
+                                                                                                    } ?>>Operator</option>
 
                                         </select>
 
@@ -166,26 +184,21 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="NPSN">NPSN</label>
-                                    <input type="text" class="form-control" id="inputNPSN" name="NPSN">
+                                    <input type="text" class="form-control" id="inputNPSN" name="NPSN" style="width: 500px; height: 40px;" value="<?= set_value('NPSN'); ?>" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="ttl">Tempat Tanggal Lahir</label>
-                                    <input type="text" class="form-control" id="inputttl" name="ttl">
+                                    <br>
+                                    <button type="submit" class="btn btn-info col-sm-2 float-right" style="margin-right: 0px;">Tambahkan</button>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="alamatguru">Alamat tempat tinggal</label>
-                                    <input type="text" class="form-control" id="inputalamatguru" name="alamatguru">
+                                    <br>
+                                    <br>
                                 </div>
+                            </form>
                         </div>
 
                         <!-- End Forms -->
-                        <div class="card-body">
-                            <div class="table-responsive">
-
-                                <a class="btn btn-info col-sm-2 float-right" style="margin-right: 0px;" data-toggle="modal" data-target="#tambahModal">Tambahkan</a>
-                            </div>
-                        </div>
 
                     </div>
                 </div>

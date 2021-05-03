@@ -112,7 +112,7 @@
 
                                 <div class="card-body">
                                     <h4 class="card-title" style="text-align: center; font-family:Roboto Slab;">GURU AKTIF</h4>
-                                    <h4 class="card-text" style="text-align: center; font-family:Roboto Slab;">4</h4>
+                                    <h4 class="card-text" style="text-align: center; font-family:Roboto Slab;"><?= $jlhguru ?></h4>
                                 </div>
                             </div>
 
@@ -120,7 +120,7 @@
 
                                 <div class="card-body">
                                     <h4 class="card-title" style="text-align: center; font-family:Roboto Slab;">SISWA AKTIF</h4>
-                                    <h4 class="card-text" style="text-align: center; font-family:Roboto Slab;">20</h4>
+                                    <h4 class="card-text" style="text-align: center; font-family:Roboto Slab;"><?= $jlh ?> </h4>
                                 </div>
                             </div>
                         </div>

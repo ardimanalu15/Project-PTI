@@ -101,6 +101,7 @@
                             <hr style="border-width: 1px; border-color:black">
                             <!-- forms -->
                             <form style=" font-size:18px; color:black;" action="<?= base_url('Welcome/TambahDataSiswaCon'); ?>" method="post">
+                                <!-- <?php echo form_open_multipart('Welcome/TambahDataSiswaCon') ?> -->
                                 <div class="form-group ">
                                     <label for="inputnamasiswa" style="color:black;">Nama Siswa</label>
                                     <input style="width: 500px; height: 40px;" type="text" class="form-control" id="inputnamasiswa" name="Nama_Calon_Siswa" value="<?= set_value('Nama_Calon_Siswa'); ?>">
@@ -215,11 +216,11 @@
                                     <input style="width: 500px; height: 40px;" type="tel" class="form-control" id="inputnotelponwali" name="notelpon" value="<?= set_value('notelpon'); ?>">
                                     <?= form_error('notelpon', '<small style="color:red;">', '</small>'); ?>
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="inputFoto">Unggah Foto</label>
-                                    <input style="width: 250px; height: 40px;" type="file" class="form-control" id="inputFoto" name="foto">
+                                    <input style="width: 250px; height: 40px;" type="file" class="form-control" id="foto" name="foto" required>
                                     <?= form_error('foto', '<small style="color:red;">', '</small>'); ?>
-                                </div>
+                                </div> -->
                                 <div class="form-group">
                                     <br>
                                     <button type="submit" class="btn btn-info col-sm-2 float-right" style="margin-right: 0px;">Tambahkan</button>
@@ -339,6 +340,35 @@
     <script src="<?= base_url('assets/'); ?>js/demo/chart-pie-demo.js"></script>
 
     <script src="<?= base_url('assets'); ?> alert/sweetalert2.all.min.js"></script>
+    <!-- <script>
+        function upload_foto(a) {
+            var filePath = a.value;
+            var fileSize = a.files[0].size;
+            var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+            if (!allowedExtensions.exec(filePath)) {
+
+                Swal.fire({
+                    title: "Upload Gagal",
+                    icon: "error",
+                    text: "File Harus Berupa Gambar JPG,JPEG,PNG",
+                    type: "error",
+
+                });
+                a.value = '';
+            }
+            if (fileSize > 2000000) {
+                Swal.fire({
+                    title: "Upload Gagal",
+                    icon: "error",
+                    text: "Ukuran File Harus Kurang Dari 2 MB",
+                    type: "error",
+
+                });
+
+                a.value = '';
+            }
+        }
+    </script> -->
 
 </body>
 

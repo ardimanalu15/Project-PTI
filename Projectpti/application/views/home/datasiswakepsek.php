@@ -18,6 +18,7 @@
     <!-- Custom styles for this template-->
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+    <link href="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -87,14 +88,23 @@
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center mb-4" style="font-family:Roboto Slab; justify-content: center; ">
                     <p class="mb-0 text-gray-800" style="font-size: 50px;">Data Siswa</p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
+
                 </div>
                 <div style="font-family:Roboto Slab; justify-content: center;">
-                    <p>Total Siswa : </p>
-                    <p>Jumlah Siswa Laki-Laki : </p>
-                    <p>Jumlah Siswa Perempuan : </p>
+                    <div class="row">
+                        <div class="col-lg-3" style="margin-top:30px;">
+                            <p>Total Siswa </p>
+                            <p>Jumlah Siswa Laki-Laki </p>
+                            <p>Jumlah Siswa Perempuan </p>
+
+                        </div>
+                        <div class="col" style="margin-top:30px;">
+                            <p>: <?= $jlh ?> </p>
+                            <p>: <?= $laki ?></p>
+                            <p>: <?= $perempuan ?></p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <!-- End of Main Content -->
@@ -115,60 +125,54 @@
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <nav class="navbar navbar-light bg-light justify-content-end">
-
-                                <form class="form-inline">
-
-                                    <input class="form-control mr-sm-2 " type="search" placeholder="Cari..." aria-label="Search">
-                                    <button class="btn btn-info  my-2 my-sm-0" type="submit"><i class="fas fa-search fa-fw"></i></button>
-                                </form>
-                            </nav>
-                        </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="text-align: center;">
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Foto</th>
+                                            <!-- <th>Foto</th> -->
                                             <th>Nama Siswa</th>
                                             <th>Jenis Kelamin</th>
                                             <th>Nama Ayah</th>
                                             <th>Nama Ibu</th>
                                             <th>Alamat Tinggal</th>
-
+                                            <!-- <th>Tindakan</th> -->
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Foto</th>
-                                            <th>Nama Siswa</th>
-                                            <th>Jenis Kelamin</th>
-                                            <th>Nama Ayah</th>
-                                            <th>Nama Ibu</th>
-                                            <th>Alamat Tinggal</th>
 
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
-                                        <tr>
-                                            <td>1.</td>
-                                            <td>
-                                                <img class="justify-content-center" style="height: 95px; width:71px" src="<?= base_url('assets/'); ?>/img/pace.JPG">
-                                            </td>
-                                            <td>Ardi Gaya Manalu</td>
-                                            <td>Laki-Laki</td>
-                                            <td>Pace</td>
-                                            <td>Mace</td>
-                                            <td>Jayapura</td>
+                                        <?php
+                                        $no = 1;
+                                        foreach ($siswa as $sis) : ?>
+                                            <tr>
+                                                <td><?php echo $no++; ?></td>
+                                                <!-- <td>
+                                                    <?php echo "<img src='" . base_url("assets/fotosiswa/" . $sis['foto']) . "' width='100' height='100'>"; ?>
+                                                </td> -->
+                                                <td><?php echo $sis['nama']; ?></td>
+                                                <td><?php echo $sis['jk']; ?></td>
+                                                <td><?php echo $sis['namaayah']; ?></td>
+                                                <td><?php echo $sis['namaibu']; ?></td>
+                                                <td><?php echo $sis['alamat']; ?></td>
+                                                <!-- <td>
+                                                    <a onclick="javascript:return confirm('Anda yakin ingin menghapus data?')" href="<?= base_url(); ?>/Welcome/DeleteDataSiswaCon/<? echo $sis['id']; ?>" type="submit" style="height: 30px; width:35px; margin-top:3px;margin-left:5px;">
+                                                        <img src="<?= base_url('assets/'); ?>/img/delete.svg">
+                                                    </a>
+                                                    <a href="<?= base_url(); ?>/Welcome/EditDataSiswaCon/<? echo $sis['id']; ?>" type="submit" style="height: 25px;width:27px; margin-top:2px; margin-left:20px;">
+                                                        <img src="<?= base_url('assets/'); ?>/img/edit.svg">
+                                                    </a>
+                                                </td> -->
 
-                                        </tr>
-
+                                            </tr>
+                                        <?php endforeach; ?>
                                     </tbody>
-                                </table>
 
+                                </table>
+                                <br>
+                                <br>
+
+                                <!-- <a class="btn btn-info col-sm-2 float-right" style="margin-right: 0px;" href="<?= base_url('Welcome/TambahDataSiswaCon') ?>">Tambah Data Siswa</a> -->
                             </div>
                         </div>
                     </div>
@@ -277,7 +281,10 @@
         <script src="<?= base_url('assets/'); ?>js/demo/chart-area-demo.js"></script>
         <script src="<?= base_url('assets/'); ?>js/demo/chart-pie-demo.js"></script>
 
-        <script src="<?= base_url('assets'); ?> alert/sweetalert2.all.min.js"></script>
+        <script src="<?= base_url('assets/'); ?> alert/sweetalert2.all.min.js"></script>
+        <script src="<?= base_url('assets/'); ?>vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="<?= base_url('assets/'); ?>js/demo/datatables-demo.js"></script>
 
 </body>
 

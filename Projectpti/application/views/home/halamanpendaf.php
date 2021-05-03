@@ -170,14 +170,14 @@
                             <td><input type="text" name="notelpon" placeholder="+62" class="input" value="<?= set_value('notelpon'); ?>"></td>
                             <td><?= form_error('notelpon', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <td class="isitabelnya">Foto</td>
                             <td>*</td>
                             <td><input type="file" name="foto" class="input" "></td>
-                            <td><?= form_error('foto', '<small style="color:red;">', '</small>'); ?></td>
-                        </tr>
+                            
+                        </tr> -->
                         <tr>
-                            <td><Button type=" submit" name="kirim" class="kirim">Kirim</Button></td>
+                            <td><Button type=" submit" name="kirim" class="kirim" data-toggle="modal" data-target="#tambahModal" <?= base_url() ?>Welcome">Kirim</Button></td>
                         </tr>
                     </table>
                 </form>
