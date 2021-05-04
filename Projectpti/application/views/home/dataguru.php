@@ -70,6 +70,11 @@
                     <i class="fas fa-fw "></i>
                     <span>Laporan Keuangan</span></a>
             </li>
+            <li class="nav-item" style="font-family:Roboto Slab;">
+                <a class="nav-link" href="<?= base_url('Welcome/DataAkunCon'); ?>">
+                    <i class="fas fa-fw "></i>
+                    <span>Data Akun</span></a>
+            </li>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item " style="font-family:Roboto Slab;">
                 <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
@@ -145,13 +150,14 @@
                                             <!-- <th>Foto</th> -->
                                             <th>Nama Guru</th>
                                             <th>Jenis Kelamin</th>
-                                            <th>TTL</th>
-                                            <th>Alamat Tinggal</th>
+                                            <!-- <th>TTL</th>
+                                            <th>Alamat Tinggal</th> -->
                                             <th>NIK</th>
                                             <th>NIP</th>
                                             <th>NUPTK</th>
                                             <th>Jenis PTK</th>
                                             <th>NPSN</th>
+                                            <th>Waktu Pembaruan</th>
                                             <th>Tindakan</th>
                                         </tr>
                                     </thead>
@@ -166,13 +172,14 @@
                                                 </td> -->
                                                 <td><?php echo $gur['namaguru']; ?></td>
                                                 <td><?php echo $gur['jk']; ?></td>
-                                                <td><?php echo $gur['ttl']; ?></td>
-                                                <td><?php echo $gur['alamat']; ?></td>
+                                                <!-- <td><?php echo $gur['ttl']; ?></td>
+                                                <td><?php echo $gur['alamat']; ?></td> -->
                                                 <td><?php echo $gur['NIK']; ?></td>
                                                 <td><?php echo $gur['NIP']; ?></td>
                                                 <td><?php echo $gur['NUPTK']; ?></td>
                                                 <td><?php echo $gur['JPTK']; ?></td>
                                                 <td><?php echo $gur['NPSN']; ?></td>
+                                                <td><?php echo $gur['last']; ?></td>
                                                 <td>
                                                     <a onclick="javascript:return confirm('Anda yakin ingin menghapus data?')" href="<?= base_url(); ?>/Welcome/DeleteDataGuruCon/<? echo $gur['id']; ?>" type="submit" style="height: 30px; width:35px; margin-top:3px;margin-left:5px;">
                                                         <img src="<?= base_url('assets/'); ?>/img/delete.svg">

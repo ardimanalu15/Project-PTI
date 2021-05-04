@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>DataSiswa</title>
+    <title>DataAkun</title>
 
     <!-- Custom fonts for this template-->
     <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -52,8 +52,8 @@
                     <span>Data Guru</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item " style="font-family:Roboto Slab;background-color: #3278a0;">
-                <a class="nav-link" href="#">
+            <li class="nav-item " style="font-family:Roboto Slab;">
+                <a class="nav-link" href="<?= base_url('Welcome/DataSiswaCon'); ?>">
                     <i class="fas fa-fw "></i>
                     <span>Data Siswa</span></a>
             </li>
@@ -69,8 +69,8 @@
                     <i class="fas fa-fw "></i>
                     <span>Laporan Keuangan</span></a>
             </li>
-            <li class="nav-item" style="font-family:Roboto Slab;">
-                <a class="nav-link" href="<?= base_url('Welcome/DataAkunCon'); ?>">
+            <li class="nav-item" style="font-family:Roboto Slab;background-color: #3278a0;">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw "></i>
                     <span>Data Akun</span></a>
             </li>
@@ -93,20 +93,18 @@
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center mb-4" style="font-family:Roboto Slab; justify-content: center; ">
-                    <p class="mb-0 text-gray-800" style="font-size: 50px;">Data Siswa</p>
+                    <p class="mb-0 text-gray-800" style="font-size: 50px;">Data Akun</p>
                 </div>
                 <div style="font-family:Roboto Slab; justify-content: center;">
                     <div class="row">
-                        <div class="col-lg-3" style="margin-top:30px;">
-                            <p>Total Siswa </p>
-                            <p>Jumlah Siswa Laki-Laki </p>
-                            <p>Jumlah Siswa Perempuan </p>
+                        <div class="col-lg-2" style="margin-top:30px;">
+                            <p>Total Akun </p>
+
 
                         </div>
                         <div class="col" style="margin-top:30px;">
                             <p>: <?= $jlh ?> </p>
-                            <p>: <?= $laki ?></p>
-                            <p>: <?= $perempuan ?></p>
+
                         </div>
                     </div>
 
@@ -138,10 +136,8 @@
                                             <th>No</th>
                                             <!-- <th>Foto</th> -->
                                             <th>Nama Siswa</th>
-                                            <th>Jenis Kelamin</th>
-                                            <th>Nama Ayah</th>
-                                            <th>Nama Ibu</th>
-                                            <th>Alamat Tinggal</th>
+                                            <th>Username</th>
+                                            <!-- <th>Password</th> -->
                                             <th>Waktu Pembaruan</th>
                                             <th>Tindakan</th>
                                         </tr>
@@ -150,23 +146,20 @@
                                     <tbody>
                                         <?php
                                         $no = 1;
-                                        foreach ($siswa as $sis) : ?>
+                                        foreach ($akun as $kun) : ?>
                                             <tr>
                                                 <td><?php echo $no++; ?></td>
-                                                <!-- <td>
-                                                    <?php echo "<img src='" . base_url("assets/fotosiswa/" . $sis['foto']) . "' width='100' height='100'>"; ?>
-                                                </td> -->
-                                                <td><?php echo $sis['nama']; ?></td>
-                                                <td><?php echo $sis['jk']; ?></td>
-                                                <td><?php echo $sis['namaayah']; ?></td>
-                                                <td><?php echo $sis['namaibu']; ?></td>
-                                                <td><?php echo $sis['alamat']; ?></td>
-                                                <td><?php echo $sis['last'] ?></td>
+
+                                                <td><?php echo $kun['nama']; ?></td>
+                                                <td><?php echo $kun['username']; ?></td>
+                                                <!-- <td><?php echo $kun['password']; ?></td> -->
+                                                <td><?php echo $kun['last']; ?></td>
+
                                                 <td>
-                                                    <a onclick="javascript:return confirm('Anda yakin ingin menghapus data?')" href="<?= base_url(); ?>/Welcome/DeleteDataSiswaCon/<? echo $sis['id']; ?>" type="submit" style="height: 30px; width:35px; margin-top:3px;">
+                                                    <a onclick="javascript:return confirm('Anda yakin ingin menghapus data?')" href="<?= base_url(); ?>/Welcome/DeleteDataAkunCon/<?php echo $kun['id']; ?>" type="submit" style="height: 30px; width:35px; margin-top:3px;">
                                                         <img src="<?= base_url('assets/'); ?>/img/delete.svg">
                                                     </a>
-                                                    <a href="<?= base_url(); ?>/Welcome/EditDataSiswaCon/<? echo $sis['id']; ?>" type="submit" style="height: 25px;width:27px; margin-top:2px; margin-left:20px;">
+                                                    <a href="<?= base_url(); ?>/Welcome/EditDataAkunCon/<? echo $kun['id']; ?>" type="submit" style="height: 25px;width:27px; margin-top:2px; margin-left:20px;">
                                                         <img src="<?= base_url('assets/'); ?>/img/edit.svg">
                                                     </a>
                                                 </td>
@@ -179,7 +172,7 @@
                                 <br>
                                 <br>
 
-                                <a class="btn btn-info col-sm-2 float-right" style="margin-right: 0px;" href="<?= base_url('Welcome/TambahDataSiswaCon') ?>">Tambah Data Siswa</a>
+                                <a class="btn btn-info col-sm-2 float-right" style="margin-right: 0px;" href="<?= base_url('Welcome/TambahDataAkunCon') ?>">Tambah Data Akun</a>
                             </div>
                         </div>
                     </div>

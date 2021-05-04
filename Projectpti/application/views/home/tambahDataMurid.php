@@ -68,6 +68,11 @@
                     <i class="fas fa-fw "></i>
                     <span>Laporan Keuangan</span></a>
             </li>
+            <li class="nav-item" style="font-family:Roboto Slab;">
+                <a class="nav-link" href="<?= base_url('Welcome/DataAkunCon'); ?>">
+                    <i class="fas fa-fw "></i>
+                    <span>Data Akun</span></a>
+            </li>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item " style="font-family:Roboto Slab;">
                 <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
@@ -91,10 +96,10 @@
                         </div>
                         <div class="container-fluid">
 
-
                             <div class="py-3">
                                 <div style="text-align:left; font-size:24px; color:black;">
                                     <p>Tambah Data Siswa</p>
+
 
                                 </div>
                             </div>
@@ -216,6 +221,8 @@
                                     <input style="width: 500px; height: 40px;" type="tel" class="form-control" id="inputnotelponwali" name="notelpon" value="<?= set_value('notelpon'); ?>">
                                     <?= form_error('notelpon', '<small style="color:red;">', '</small>'); ?>
                                 </div>
+
+
                                 <!-- <div class="form-group">
                                     <label for="inputFoto">Unggah Foto</label>
                                     <input style="width: 250px; height: 40px;" type="file" class="form-control" id="foto" name="foto" required>
