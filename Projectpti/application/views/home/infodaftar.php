@@ -39,7 +39,7 @@
         </div>
         <div class="isi">
             <div class="gambarisi">
-                <img src="https://live.staticflickr.com/65535/48855837308_b39031cb98_z.jpg" alt="gambarpendaftaran">
+                <img src="" alt="gambarpendaftaran">
             </div>
             <div class="isinya">
                 Pendaftaran Siswa Baru di TK Melati Putih terdapat 2 jalur yakni ONLINE dan OFFLINE dengan ketentuan sebagai berikut:<br />

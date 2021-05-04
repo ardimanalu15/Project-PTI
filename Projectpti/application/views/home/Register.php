@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Login</title>
+    <title>Register</title>
 
     <!-- Custom fonts for this template-->
     <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -38,18 +38,24 @@
                             <div class="col-lg">
                                 <div class="p-5">
                                     <div>
-                                        <h1 style="text-align:center; font-family:Roboto Slab; color:white">Login</h1>
-                                        <?= $this->session->flashdata('message'); ?>
+                                        <h1 style="text-align:center; font-family:Roboto Slab; color:white">Register</h1>
                                         <hr>
 
-                                        <form>
+                                        <form method="POST" action="<?= base_url('Welcome/RegisterCon'); ?>">
+                                            <a style="text-align:left; font-family:Roboto Slab; color:white"> Nama</a>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control form-control-user" id="nama" name="nama" placeholder="Full Name" value="<?= set_value('nama'); ?> ">
+                                                <?= form_error('nama', '<small class="text-danger pl-3">', '</small>'); ?>
+                                            </div>
                                             <a style="text-align:left; font-family:Roboto Slab; color:white"> Email</a>
                                             <div class="form-group">
-                                                <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="user@gmail.com">
+                                                <input type="teks" class="form-control form-control-user" id="email" name="email" placeholder="user@gmail.com" value="<?= set_value('email'); ?>">
+                                                <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                             <a style="text-align:left; font-family:Roboto Slab; color:white"> Password</a>
                                             <div class="form-group">
-                                                <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                                <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">
+                                                <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                             <div class="form-group ">
                                                 <div class="custom-control custom-checkbox small text-left d-flex justify-content-start">
@@ -58,14 +64,10 @@
 
                                                 </div>
                                             </div>
-                                            <a href="<?= base_url('Welcome/DashAdminCon'); ?>" class="btn btn-primary btn-user btn-block" style="font-family:Roboto Slab;">
-                                                Login
-                                            </a>
+                                            <button type="submmit" class="btn btn-primary btn-user btn-block" style="font-family:Roboto Slab;">
+                                                Daftar
+                                            </button>
                                         </form>
-                                        <div>
-                                            <a href="<?= base_url() ?>Welcome/RegisterCon" class="btn btn-primary btn-user btn-block" style="font-family:Roboto Slab; margin-top:20px ">Register</a>
-                                        </div>
-
                                         <hr>
                                     </div>
                                 </div>

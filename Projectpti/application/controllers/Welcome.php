@@ -34,6 +34,29 @@ class Welcome extends CI_Controller
 	{
 		$this->load->view('home/login');
 	}
+	public function RegisterCon()
+	{
+		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[akun.email]', ['is_unique' => 'Email sudah dipakai!']);
+		$this->form_validation->set_rules('password', 'Password', 'required|trim');
+
+
+		if ($this->form_validation->run() == false) {
+			$this->load->view('home/Register');
+		} else {
+			$data = [
+				'nama' => $this->input->post('nama'),
+				'email' => $this->input->post('email'),
+				'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+				'role_id' => 2,
+				'is_active' => 1,
+			];
+
+			$this->db->insert('akun', $data);
+			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> Sukses! akun sudah berhasil ditambahkan. silahkan login</div>');
+			redirect('Welcome/LoginCon');
+		}
+	}
 	public function InfoDaftarCon()
 	{
 		$this->load->view('home/infodaftar');
@@ -280,7 +303,7 @@ class Welcome extends CI_Controller
 
 			];
 			$this->db->insert('siswa', $data);
-			redirect('Welcome/index');
+			redirect('Welcome/InfoDaftarCon');
 		}
 	}
 	public function hubungikami()
@@ -299,8 +322,6 @@ class Welcome extends CI_Controller
 		$this->form_validation->set_rules('satuan', 'Satuan', 'required|trim|integer');
 		$this->form_validation->set_rules('kategori', 'Kategori', 'required|trim');
 		$this->form_validation->set_rules('kas', 'Kas', 'required|trim');
-
-
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('home/tambahdatakeu');
