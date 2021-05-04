@@ -113,6 +113,18 @@ class Welcome extends CI_Controller
 		$data['guru'] = $this->Modelguru->Alldata();
 		$this->load->view('home/datagurukepsek', $data);
 	}
+	public function DataAkunCon()
+	{
+		$data['jlh'] = $this->Modelakun->jumlahdata();
+		$data['akun'] = $this->Modelakun->Alldata();
+		$this->load->view('home/dataakun', $data);
+	}
+	public function DataAkunKepsekCon()
+	{
+		$data['jlh'] = $this->Modelakun->jumlahdata();
+		$data['akun'] = $this->Modelakun->Alldata();
+		$this->load->view('home/dataakunkepsek', $data);
+	}
 	public function StatusSppCon()
 	{
 		$this->load->view('home/StatusSpp');
@@ -128,7 +140,8 @@ class Welcome extends CI_Controller
 	}
 	public function LapKeuKepsekCon()
 	{
-		$this->load->view('home/lapkeukepsek');
+		$data['keuangan'] = $this->Modelkeu->Alldata();
+		$this->load->view('home/lapkeukepsek', $data);
 	}
 	public function DashUserCon()
 	{
@@ -138,6 +151,43 @@ class Welcome extends CI_Controller
 	{
 		$this->load->view('home/statusSppUser');
 	}
+	public function TambahDataAkunCon()
+	{
+		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+		$this->form_validation->set_rules('nik', 'Nik', 'required|trim');
+		$this->form_validation->set_rules('username', 'Username', 'required|trim');
+		$this->form_validation->set_rules('password', 'Password', 'required');
+
+
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('home/tambahdataakun');
+		} else {
+
+
+			$nama = $this->input->post('nama', TRUE);
+			$nik = $this->input->post('nik', TRUE);
+			$username = $this->input->post('username', TRUE);
+			$password = $this->input->post('password', TRUE);
+			$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
+
+			$data = array(
+				'nama' => $nama,
+				'nik' => $nik,
+				'username' => $username,
+				'password' => $password,
+				'last' => $last,
+			);
+
+
+
+			$this->Modelakun->insert_data($data);
+			$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data Berhasil Ditambahkan!</div>');
+			redirect('Welcome/DataAkunCon');
+		}
+	}
+
+
 	public function TambahDataSiswaCon()
 	{
 		$this->form_validation->set_rules('Nama_Calon_Siswa', 'Nama', 'required|trim');
@@ -188,6 +238,7 @@ class Welcome extends CI_Controller
 			$ttlayah = $this->input->post('ttl_ayah', TRUE);
 			$ttlibu = $this->input->post('ttl_ibu', TRUE);
 			$telpon = $this->input->post('notelpon', TRUE);
+			$last = mdate('%d-%m-%Y/ %h:%i:%a', time());;
 			// $image = $_FILES['image']['name'];
 			// if ($image) {
 			// 	$config['upload_path'] = './assets/fotosiswa'; //letak folder file yang akan diupload
@@ -225,6 +276,7 @@ class Welcome extends CI_Controller
 				'ttlayah' => $ttlayah,
 				'ttlibu' => $ttlibu,
 				'telpon' => $telpon,
+				'last' => $last,
 				// 'foto' => 'default.jpg ',
 			);
 
@@ -234,6 +286,7 @@ class Welcome extends CI_Controller
 			redirect('Welcome/DataSiswaCon');
 		}
 	}
+
 	public function EditDataSiswaCon($id)
 	{
 		$data['siswa'] = $this->Modelsiswa->ambil_id_siswa($id);
@@ -241,13 +294,18 @@ class Welcome extends CI_Controller
 	}
 	public function EditDataGurucon($id)
 	{
-		$data['guru'] = $this->Modelguru->ambil_id_siswa($id);
+		$data['guru'] = $this->Modelguru->ambil_id_guru($id);
 		$this->load->view('home/editdataguru', $data);
 	}
 	public function EditDataKeucon($id)
 	{
-		$data['keuangan'] = $this->Modelkeu->ambil_id_siswa($id);
+		$data['keuangan'] = $this->Modelkeu->ambil_id_keu($id);
 		$this->load->view('home/editdatakeu', $data);
+	}
+	public function EditDataAkunCon($id)
+	{
+		$data['akun'] = $this->Modelakun->ambil_id_akun($id);
+		$this->load->view('home/editdataakun', $data);
 	}
 	public function halamanpendaf()
 	{
@@ -272,7 +330,7 @@ class Welcome extends CI_Controller
 		$this->form_validation->set_rules('ttl_ibu', 'Ttl_ibu', 'required|trim');
 		$this->form_validation->set_rules('notelpon', 'Notelpon', 'required|trim');
 		// $this->form_validation->set_rules('foto', 'Foto', 'required|trim');
-
+		$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('home/halamanpendaf');
@@ -298,6 +356,7 @@ class Welcome extends CI_Controller
 				'ttlayah' => $this->input->post('ttl_ayah'),
 				'ttlibu' => $this->input->post('ttl_ibu'),
 				'telpon' => $this->input->post('notelpon'),
+				'last' => $last,
 				// 'foto' => $this->input->post('foto'),
 
 
@@ -335,6 +394,7 @@ class Welcome extends CI_Controller
 			$ttl = $this->input->post('kategori', TRUE);
 			$alamat = $this->input->post('kas', TRUE);
 			$jlh = $banyak * $satuan;
+			$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
 
 			$data = array(
 				'tanggal' => $nama,
@@ -344,6 +404,7 @@ class Welcome extends CI_Controller
 				'kategori' => $ttl,
 				'jeniskas' => $alamat,
 				'jumlah' => $jlh,
+				'last' => $last,
 			);
 
 
@@ -391,6 +452,7 @@ class Welcome extends CI_Controller
 			$nuptk = $this->input->post('NUPTK', TRUE);
 			$jenis = $this->input->post('jenisPTK', TRUE);
 			$npsn = $this->input->post('NPSN', TRUE);
+			$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
 			// $namaayah = $this->input->post('nama_ayah', TRUE);
 			// $namaibu = $this->input->post('nama_ibu', TRUE);
 			// $pendidikanayah = $this->input->post('pendidikan_ayah', TRUE);
@@ -428,6 +490,7 @@ class Welcome extends CI_Controller
 				'NUPTK' => $nuptk,
 				'JPTK' => $jenis,
 				'NPSN' => $npsn,
+				'last' => $last,
 				// 'namaayah' => $namaayah,
 				// 'namaibu' => $namaibu,
 				// 'pendidikanayah' => $pendidikanayah,
@@ -462,6 +525,11 @@ class Welcome extends CI_Controller
 	{
 		$this->Modelkeu->hapus_data($id);
 		$this->LapKeuCon();
+	}
+	public function DeleteDataAkunCon($id)
+	{
+		$this->Modelakun->hapus_data($id);
+		$this->DataAkunCon();
 	}
 	public function UpdateDataSiswaCon()
 	{
@@ -512,6 +580,7 @@ class Welcome extends CI_Controller
 			$ttlayah = $this->input->post('ttl_ayah');
 			$ttlibu = $this->input->post('ttl_ibu');
 			$telpon = $this->input->post('notelpon');
+			$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
 			// if (isset($_FILES['image'])) {
 			// $upload_image = $_FILES['image']['name'];
 			// if ($upload_image) {
@@ -549,6 +618,7 @@ class Welcome extends CI_Controller
 				'ttlayah' => $ttlayah,
 				'ttlibu' => $ttlibu,
 				'telpon' => $telpon,
+				'last' => $last,
 				// 'foto' => $new_image,
 			);
 			$where = array('id' => $id);
@@ -597,6 +667,7 @@ class Welcome extends CI_Controller
 			$nuptk = $this->input->post('NUPTK', TRUE);
 			$jenis = $this->input->post('jenisPTK', TRUE);
 			$npsn = $this->input->post('NPSN', TRUE);
+			$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
 			// $namaayah = $this->input->post('nama_ayah', TRUE);
 			// $namaibu = $this->input->post('nama_ibu', TRUE);
 			// $pendidikanayah = $this->input->post('pendidikan_ayah', TRUE);
@@ -634,6 +705,7 @@ class Welcome extends CI_Controller
 				'NUPTK' => $nuptk,
 				'JPTK' => $jenis,
 				'NPSN' => $npsn,
+				'last' => $last,
 				// 'namaayah' => $namaayah,
 				// 'namaibu' => $namaibu,
 				// 'pendidikanayah' => $pendidikanayah,
@@ -680,6 +752,7 @@ class Welcome extends CI_Controller
 			$ttl = $this->input->post('kategori', TRUE);
 			$alamat = $this->input->post('kas', TRUE);
 			$jlh = $banyak * $satuan;
+			$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
 
 			$data = array(
 				'tanggal' => $nama,
@@ -689,12 +762,44 @@ class Welcome extends CI_Controller
 				'kategori' => $ttl,
 				'jeniskas' => $alamat,
 				'jumlah' => $jlh,
+				'last' => $last,
 			);
 
 			$where = array('id' => $id);
 			$this->Modelkeu->updatedata($where, $data, 'keuangan');
 			$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data Berhasil Ditambahkan!</div>');
 			redirect('Welcome/LapKeuCon');
+		}
+	}
+	public function UpdateDataAkunCon()
+	{
+		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+		$this->form_validation->set_rules('username', 'Username', 'required|trim');
+		$this->form_validation->set_rules('password', 'Password', 'required');
+
+
+		$id = $this->input->post('id');
+		if ($this->form_validation->run() == FALSE) {
+			$this->EditDataAkunCon($id);
+		} else {
+
+
+			$nama = $this->input->post('nama', TRUE);
+			$username = $this->input->post('username', TRUE);
+			$password = $this->input->post('password', TRUE);
+			$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
+
+			$data = array(
+				'nama' => $nama,
+				'username' => $username,
+				'password' => $password,
+				'last' => $last,
+			);
+
+			$where = array('id' => $id);
+			$this->Modelakun->updatedata($where, $data, 'akun');
+			$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data Berhasil Ditambahkan!</div>');
+			redirect('Welcome/DataAkunCon');
 		}
 	}
 }

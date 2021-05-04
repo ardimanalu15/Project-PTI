@@ -18,6 +18,7 @@
     <!-- Custom styles for this template-->
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+    <link href="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
 <style>
@@ -74,6 +75,11 @@
                 <a class="nav-link" href="#">
                     <i class="fas fa-fw "></i>
                     <span>Laporan Keuangan</span></a>
+            </li>
+            <li class="nav-item" style="font-family:Roboto Slab;">
+                <a class="nav-link" href="<?= base_url('Welcome/DataAkunCon'); ?>">
+                    <i class="fas fa-fw "></i>
+                    <span>Data Akun</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item " style="font-family:Roboto Slab;">
@@ -196,6 +202,7 @@
                                         <th>Kategori</th>
                                         <th>Jenis Kas</th>
                                         <th>Jumlah</th>
+                                        <th>Tanggal Pembaruan</th>
                                         <th>Tindakan</th>
                                     </tr>
                                 </thead>
@@ -212,12 +219,13 @@
                                             <td><?php echo $keu['kategori']; ?></td>
                                             <td><?php echo $keu['jeniskas']; ?></td>
                                             <td><?php echo $keu['jumlah']; ?></td>
+                                            <td><?php echo $keu['last']; ?></td>
 
                                             <td>
-                                                <a onclick="javascript:return confirm('Anda yakin ingin menghapus data?')" href="<?= base_url(); ?>/Welcome/DeleteDataKeuCon/<? echo $keu['id']; ?>" type="submit" style="height: 30px; width:35px; margin-top:3px;margin-left:5px;">
+                                                <a onclick="javascript:return confirm('Anda yakin ingin menghapus data?')" href="<?= base_url(); ?>/Welcome/DeleteDataKeuCon/<? echo $keu['id']; ?>" type="submit" style="height: 30px; width:35px; margin-top:3px;">
                                                     <img src="<?= base_url('assets/'); ?>/img/delete.svg">
                                                 </a>
-                                                <a href="<?= base_url(); ?>/Welcome/EditDataKeuCon/<? echo $keu['id']; ?>" type="submit" style="height: 25px;width:27px; margin-top:2px; margin-left:10px;">
+                                                <a href="<?= base_url(); ?>/Welcome/EditDataKeuCon/<? echo $keu['id']; ?>" type="submit" style="height: 25px;width:27px; margin-top:2px; margin-left:5px;">
                                                     <img src="<?= base_url('assets/'); ?>/img/edit.svg">
                                                 </a>
                                             </td>
@@ -315,6 +323,10 @@
     <!-- Page level custom scripts -->
     <script src="<?= base_url('assets/'); ?>js/demo/chart-area-demo.js"></script>
     <script src="<?= base_url('assets/'); ?>js/demo/chart-pie-demo.js"></script>
+
+    <script src="<?= base_url('assets/'); ?>vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="<?= base_url('assets/'); ?>js/demo/datatables-demo.js"></script>
 
 </body>
 

@@ -68,6 +68,11 @@
                     <i class="fas fa-fw "></i>
                     <span>Laporan Keuangan</span></a>
             </li>
+            <li class="nav-item" style="font-family:Roboto Slab;">
+                <a class="nav-link" href="<?= base_url('Welcome/DataAkunKepsekCon'); ?>">
+                    <i class="fas fa-fw "></i>
+                    <span>Data Akun</span></a>
+            </li>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item" style="font-family:Roboto Slab;">
                 <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">

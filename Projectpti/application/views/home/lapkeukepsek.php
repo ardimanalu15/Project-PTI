@@ -18,6 +18,7 @@
     <!-- Custom styles for this template-->
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+    <link href="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -67,6 +68,11 @@
                 <a class="nav-link" href="#">
                     <i class="fas fa-fw "></i>
                     <span>Laporan Keuangan</span></a>
+            </li>
+            <li class="nav-item" style="font-family:Roboto Slab;">
+                <a class="nav-link" href="<?= base_url('Welcome/DataAkunKepsekCon'); ?>">
+                    <i class="fas fa-fw "></i>
+                    <span>Data Akun</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item " style="font-family:Roboto Slab;">
@@ -160,8 +166,8 @@
                     <div class="card-header py-3">
                         <h6 class="m-0 ">Pertanggal : </h6>
                         <h6 class="m-0 ">Kategori : </h6>
-                        <button type="button" class="float-right" style="margin-right: 0px; background-color:#569BB1">Print Laporan</button>
-                        <button type="button" class="float-right" style="margin-right: 0px; background-color:#C32A2A">Cetak PDF</button>
+
+                        <button type="button" class="float-right btn btn-danger" style="margin-right: 0px;">Cetak PDF</button>
 
                     </div>
                     <div class="card-body">
@@ -172,26 +178,46 @@
                                         <th>No</th>
                                         <th>Tanggal</th>
                                         <th>Jenis Transaksi</th>
+                                        <th>Jumlah Barang</th>
+                                        <th>Harga Satuan</th>
                                         <th>Kategori</th>
-                                        <th>Kas Masuk</th>
-                                        <th>Kas Keluar</th>
-
+                                        <th>Jenis Kas</th>
+                                        <th>Jumlah</th>
+                                        <th>Tanggal Pembaruan</th>
+                                        <!-- <th>Tindakan</th> -->
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1.</td>
-                                        <td>10-10-2020</td>
-                                        <td>Pembelian Spidol</td>
-                                        <td>Beli</td>
-                                        <td>None</td>
-                                        <td>Rp. 10.000</td>
+                                    <?php
+                                    $no = 1;
+                                    foreach ($keuangan as $keu) : ?>
+                                        <tr>
+                                            <td><?php echo $no++; ?></td>
+                                            <td><?php echo $keu['tanggal']; ?></td>
+                                            <td><?php echo $keu['jenistransaksi']; ?></td>
+                                            <td><?php echo $keu['banyak']; ?></td>
+                                            <td><?php echo $keu['satuan']; ?></td>
+                                            <td><?php echo $keu['kategori']; ?></td>
+                                            <td><?php echo $keu['jeniskas']; ?></td>
+                                            <td><?php echo $keu['jumlah']; ?></td>
+                                            <td><?php echo $keu['last']; ?></td>
 
-                                    </tr>
+                                            <!-- <td>
+                                                <a onclick="javascript:return confirm('Anda yakin ingin menghapus data?')" href="<?= base_url(); ?>/Welcome/DeleteDataKeuCon/<? echo $keu['id']; ?>" type="submit" style="height: 30px; width:35px; margin-top:3px;">
+                                                    <img src="<?= base_url('assets/'); ?>/img/delete.svg">
+                                                </a>
+                                                <a href="<?= base_url(); ?>/Welcome/EditDataKeuCon/<? echo $keu['id']; ?>" type="submit" style="height: 25px;width:27px; margin-top:2px; margin-left:5px;">
+                                                    <img src="<?= base_url('assets/'); ?>/img/edit.svg">
+                                                </a>
+                                            </td> -->
+
+                                        </tr>
+                                    <?php endforeach; ?>
+
 
                                 </tbody>
                             </table>
-
+                            <!-- <a class="btn btn-info col-sm-2 float-right" style="margin-right: 0px;" href="<?= base_url('Welcome/TambahDataKeuCon') ?>">Tambah Data</a> -->
                         </div>
                     </div>
                 </div>
@@ -258,6 +284,10 @@
     <!-- Page level custom scripts -->
     <script src="<?= base_url('assets/'); ?>js/demo/chart-area-demo.js"></script>
     <script src="<?= base_url('assets/'); ?>js/demo/chart-pie-demo.js"></script>
+
+    <script src="<?= base_url('assets/'); ?>vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="<?= base_url('assets/'); ?>js/demo/datatables-demo.js"></script>
 
 </body>
 
