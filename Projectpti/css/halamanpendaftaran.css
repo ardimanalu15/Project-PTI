@@ -50,6 +50,7 @@
 	color: rgba(33, 69, 81, 1);
 	font-size: 18px;
 	font-family: "Roboto Slab", serif;
+	padding: 10px;
 }
 .halaman .isi .isikiri .tabel tr:hover {
 	background-color: rgba(0, 102, 255, 1);
@@ -63,18 +64,19 @@
 }
 .halaman .isi .garis {
 	position: absolute;
-	width: 1285px;
+	width: 1570px;
 	height: 0px;
-	margin-top: 640px;
+	margin-top: 783px;
 	border: 1.5px solid #9acdd0;
 	box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 	transform: rotate(89.97deg);
 	float: left;
-	margin-left: -325px;
+	margin-left: -520px;
 }
 .halaman .isi .isikanan {
 	float: left;
-	margin-left: 120px;
+	margin-left: 60px;
+	margin-top: 90px;
 }
 
 .halaman .isi .isikanan .isitabelnya {
@@ -111,9 +113,25 @@
 }
 .halaman .isi .isikanan .input {
 	border: 1px solid var(--mountain-mist);
+	margin-bottom: 20px;
 }
 :root {
 	--mountain-mist: rgba(147, 147, 147, 1);
+}
+
+.halaman .isi .isikanan .inputt {
+	background-color: whitesmoke;
+	border-radius: 10px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	height: 40px;
+	width: 60px;
+}
+.halaman .isi .isikanan .inputt {
+	border: 1px solid var(--mountain-mistt);
+	margin-bottom: 20px;
+}
+:root {
+	--mountain-mistt: rgba(147, 147, 147, 1);
 }
 
 .halaman .footer {
@@ -150,11 +168,15 @@
 	margin-left: 130px;
 	position: absolute;
 	margin-top: 35px;
+	color: rgba(33, 69, 81, 1);
+	font-size: 20px;
 }
 .halaman .footer .backgroundfooter .nohp2 {
 	margin-left: 130px;
 	position: absolute;
 	margin-top: 55px;
+	color: rgba(33, 69, 81, 1);
+	font-size: 20px;
 }
 .halaman .footer .backgroundfooter .whattsap {
 	margin-left: 440px;
@@ -165,6 +187,8 @@
 	margin-left: 490px;
 	position: absolute;
 	margin-top: 45px;
+	color: rgba(33, 69, 81, 1);
+	font-size: 20px;
 }
 .halaman .footer .backgroundfooter .facebook {
 	margin-left: 440px;
@@ -175,6 +199,8 @@
 	margin-left: 490px;
 	position: absolute;
 	margin-top: 90px;
+	color: rgba(33, 69, 81, 1);
+	font-size: 20px;
 }
 .halaman .footer .backgroundfooter .igg {
 	margin-left: 440px;
@@ -185,6 +211,8 @@
 	margin-left: 490px;
 	position: absolute;
 	margin-top: 135px;
+	color: rgba(33, 69, 81, 1);
+	font-size: 20px;
 }
 .halaman .footer .backgroundfooter .location {
 	margin-left: 810px;
@@ -196,4 +224,6 @@
 	margin-left: 850px;
 	position: absolute;
 	margin-top: 40px;
+	color: rgba(33, 69, 81, 1);
+	font-size: 20px;
 }

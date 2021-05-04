@@ -13,48 +13,44 @@ body {
 }
 .halaman-utama .navbar {
 	display: flex;
-	justify-content: space-between;
+	background-color: rgba(173, 216, 222, 1);
+	justify-content: space-around;
+	height: 50px;
 	align-items: center;
 	position: fixed;
-	width: 1440px;
-	background-color: rgba(173, 216, 222, 1);
-
-	margin-left: 0px;
-	position: static;
+	width: 100%;
+	top: 0;
 }
-
 .halaman-utama .navbar .brand {
-	font-family: "Roboto", sans-serif;
-	font-weight: bold;
-	font-size: 25px;
-	text-decoration: none;
-	cursor: pointer;
+	margin-left: 10px;
 }
 
-.halaman-utama .navbar .nav-link {
+.halaman-utama .navbar ul {
+	display: flex;
 	list-style: none;
-	margin-right: 100px;
-}
-.halaman-utama .navbar .nav-link li {
-	display: inline-block;
-	padding: 0px 25px;
-}
-.halaman-utama .navbar .nav-link li .navbar-link {
+	width: 40%;
+	justify-content: space-between;
 	font-family: "Roboto Slab", serif;
 	font-weight: 500px;
 	font-size: 20px;
+	margin-left: 35%;
+}
+.halaman-utama .navbar ul li a {
 	text-decoration: none;
 	color: rgba(33, 69, 81, 1);
 }
-.halaman-utama .navbar .nav-link li .butt {
+
+.halaman-utama .navbar ul li .butt {
 	color: rgba(33, 69, 81, 1);
 	background: rgba(160, 194, 82, 1);
 	padding: 10px 40px;
 	text-decoration: none;
 	border-radius: 0.5em;
 	font-family: "Roboto Slab", serif;
+	border: rgba(160, 194, 82, 1);
 }
-.halaman-utama .navbar .nav-link li .navbar-link:hover::after {
+
+.halaman-utama .navbar ul li:hover::after {
 	content: "";
 	display: block;
 	border-bottom: 3px solid blue;
@@ -63,9 +59,15 @@ body {
 	padding-bottom: 5px;
 	margin-bottom: -10px;
 }
+.halaman-utama .navbar ul li .active {
+	border-bottom: 3px solid blue;
+	padding-bottom: 5px;
+	margin-bottom: -10px;
+}
 .halaman-utama .header {
 	text-align: center;
 	align-items: center;
+	margin-top: 100px;
 }
 .halaman-utama .header .headerisi {
 	font-family: "Roboto Slab", sans-serif;

@@ -768,11 +768,15 @@ halaman-utama #guru .contenguru .batang6 {
 	margin-left: 130px;
 	position: absolute;
 	margin-top: 35px;
+	color: rgba(33, 69, 81, 1);
+	font-size: 20px;
 }
 .halaman-utama .footer .backgroundfooter .nohp2 {
 	margin-left: 130px;
 	position: absolute;
 	margin-top: 55px;
+	color: rgba(33, 69, 81, 1);
+	font-size: 20px;
 }
 .halaman-utama .footer .backgroundfooter .whattsap {
 	margin-left: 440px;
@@ -783,6 +787,8 @@ halaman-utama #guru .contenguru .batang6 {
 	margin-left: 490px;
 	position: absolute;
 	margin-top: 45px;
+	color: rgba(33, 69, 81, 1);
+	font-size: 20px;
 }
 .halaman-utama .footer .backgroundfooter .facebook {
 	margin-left: 440px;
@@ -793,6 +799,8 @@ halaman-utama #guru .contenguru .batang6 {
 	margin-left: 490px;
 	position: absolute;
 	margin-top: 90px;
+	color: rgba(33, 69, 81, 1);
+	font-size: 20px;
 }
 .halaman-utama .footer .backgroundfooter .igg {
 	margin-left: 440px;
@@ -803,6 +811,8 @@ halaman-utama #guru .contenguru .batang6 {
 	margin-left: 490px;
 	position: absolute;
 	margin-top: 135px;
+	color: rgba(33, 69, 81, 1);
+	font-size: 20px;
 }
 .halaman-utama .footer .backgroundfooter .location {
 	margin-left: 810px;
@@ -814,5 +824,7 @@ halaman-utama #guru .contenguru .batang6 {
 	margin-left: 850px;
 	position: absolute;
 	margin-top: 40px;
+	color: rgba(33, 69, 81, 1);
+	font-size: 20px;
 }
 /* mengatur responsive */

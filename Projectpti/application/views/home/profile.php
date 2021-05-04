@@ -14,18 +14,25 @@
 
 <body>
     <div class="halaman-utama">
-        <div class="navbar">
+        <nav class="navbar">
             <div class="brand">
                 <img src="<?= base_url() ?>img/Group67.png" alt="">
             </div>
-            <ul class="nav-link">
-                <li> <a href="<?= base_url() ?>" class="navbar-link"> Home </a></li>
-                <li> <a href="<?= base_url() ?>Welcome/ProfileCon" class="navbar-link" style="border-bottom: 3px solid blue;padding-bottom: 5px;margin-bottom: -10px;"> Profil </a></li>
-                <li> <a href="<?= base_url() ?>Welcome/profilgurucon" class="navbar-link"> Guru </a></li>
-                <li> <a href="<?= base_url('Welcome/InfoDaftarCon') ?>" class="navbar-link">Info Pendaftaran </a></li>
+            <ul>
+                <li> <a href="<?= base_url() ?>"> Home </a></li>
+                <li> <a class="active" href="<?= base_url() ?>Welcome/ProfileCon"> Profil </a></li>
+                <li> <a href="<?= base_url() ?>Welcome/profilgurucon"> Guru </a></li>
+                <li> <a href="<?= base_url() ?>Welcome/InfoDaftarCon">Info Pendaftaran </a></li>
                 <li> <a href="<?= base_url() ?>Welcome/LoginCon" class="butt" type="button">Login</a>
             </ul>
-        </div>
+            <!-- <div class="menu-toggle">
+                <input type="checkbox" />
+                <span> </span>
+                <span> </span>
+                <span> </span>
+            </div>
+            -->
+        </nav>
         <div class="header">
             <img class="headergambar1" src="<?= base_url() ?>img/image21.svg" alt="gambarheader">
             <img class="headergambar2" src="<?= base_url() ?>img/Group135.svg" alt="gambarheader">
