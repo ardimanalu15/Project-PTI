@@ -47,10 +47,15 @@
                                                 <input type="text" class="form-control form-control-user" id="nama" name="nama" placeholder="Full Name" value="<?= set_value('nama'); ?> ">
                                                 <?= form_error('nama', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
-                                            <a style="text-align:left; font-family:Roboto Slab; color:white"> Email</a>
+                                            <a style="text-align:left; font-family:Roboto Slab; color:white"> Nik</a>
                                             <div class="form-group">
-                                                <input type="teks" class="form-control form-control-user" id="email" name="email" placeholder="user@gmail.com" value="<?= set_value('email'); ?>">
-                                                <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
+                                                <input type="text" class="form-control form-control-user" id="nik" name="nik" placeholder="Full Name" value="<?= set_value('nik'); ?> ">
+                                                <?= form_error('nik', '<small class="text-danger pl-3">', '</small>'); ?>
+                                            </div>
+                                            <a style="text-align:left; font-family:Roboto Slab; color:white"> Username</a>
+                                            <div class="form-group">
+                                                <input type="teks" class="form-control form-control-user" id="username" name="username" placeholder="user@gmail.com" value="<?= set_value('username'); ?>">
+                                                <?= form_error('username', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                             <a style="text-align:left; font-family:Roboto Slab; color:white"> Password</a>
                                             <div class="form-group">

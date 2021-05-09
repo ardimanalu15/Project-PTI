@@ -42,14 +42,16 @@
                                         <?= $this->session->flashdata('message'); ?>
                                         <hr>
 
-                                        <form>
-                                            <a style="text-align:left; font-family:Roboto Slab; color:white"> Email</a>
+                                        <form method="POST" action="<?= base_url('Welcome/LoginCon'); ?>">
+                                            <a style="text-align:left; font-family:Roboto Slab; color:white"> Username(Email)</a>
                                             <div class="form-group">
-                                                <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="user@gmail.com">
+                                                <input type="text" name="username" class="form-control form-control-user" id="username" placeholder="user@gmail.com" value="<?= set_value('username'); ?>">
+                                                <?= form_error('username', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                             <a style="text-align:left; font-family:Roboto Slab; color:white"> Password</a>
                                             <div class="form-group">
-                                                <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                                <input type="password" name="password" class="form-control form-control-user" id="password" placeholder="Password">
+                                                <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
                                             </div>
                                             <div class="form-group ">
                                                 <div class="custom-control custom-checkbox small text-left d-flex justify-content-start">
@@ -58,9 +60,9 @@
 
                                                 </div>
                                             </div>
-                                            <a href="<?= base_url('Welcome/DashAdminCon'); ?>" class="btn btn-primary btn-user btn-block" style="font-family:Roboto Slab;">
+                                            <button type="submmit" class="btn btn-primary btn-user btn-block" style="font-family:Roboto Slab;">
                                                 Login
-                                            </a>
+                                            </button>
                                         </form>
                                         <div>
                                             <a href="<?= base_url() ?>Welcome/RegisterCon" class="btn btn-primary btn-user btn-block" style="font-family:Roboto Slab; margin-top:20px ">Register</a>

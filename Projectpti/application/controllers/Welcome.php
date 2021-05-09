@@ -32,28 +32,90 @@ class Welcome extends CI_Controller
 	}
 	public function LoginCon()
 	{
-		$this->load->view('home/login');
+		$this->form_validation->set_rules('username', 'Username', 'trim|required');
+		$this->form_validation->set_rules('password', 'Password', 'required|trim');
+
+		if ($this->form_validation->run() == false) {
+			$this->load->view('home/login');
+		} else {
+			$this->_login();
+		}
 	}
+
+	private function _login()
+	{
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+
+		$user = $this->db->get_where('akun', ['username' => $username])->row_array();
+
+		if ($user) {
+			if ($user['is_active'] == 1) {
+				//cek password
+				if (password_verify($password, $user['password'])) {
+					$data = [
+						'username' => $user['username'],
+						'role_id' => $user['role_id'],
+					];
+					$this->session->set_userdata($data);
+					if ($user['role_id'] == 1) {
+						redirect('Welcome/DashAdminCon');
+					} else if ($user['role_id'] == 3) {
+						redirect('Welcome/DashKepsekCon');
+					} else {
+						redirect('Welcome/DashUserCon');
+					}
+				} else {
+					$this->session->set_flashdata('message', '<div class="alert
+			 			alert-danger" role="alert">Password salah! </div>');
+					redirect('Welcome/LoginCon');
+				}
+			} else {
+				$this->session->set_flashdata('message', '<div class="alert
+			 	alert-danger" role="alert">Email belum diactifkan!</div>');
+				redirect('Welcome/LoginCon');
+			}
+		} else {
+			$this->session->set_flashdata('message', '<div class="alert
+			 alert-danger" role="alert">Email belum terdaftar!</div>');
+			redirect('Welcome/LoginCon');
+		}
+	}
+
+
+
 	public function RegisterCon()
 	{
 		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
-		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[akun.email]', ['is_unique' => 'Email sudah dipakai!']);
+		$this->form_validation->set_rules('nik', 'Nik', 'required|trim');
+		$this->form_validation->set_rules('username', 'Username', 'required|trim|valid_email|is_unique[akun.username]', ['is_unique' => 'Email sudah dipakai!']);
 		$this->form_validation->set_rules('password', 'Password', 'required|trim');
 
 
-		if ($this->form_validation->run() == false) {
+
+
+		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('home/Register');
 		} else {
-			$data = [
-				'nama' => $this->input->post('nama'),
-				'email' => $this->input->post('email'),
-				'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+
+
+			$nama = $this->input->post('nama', TRUE);
+			$nik = $this->input->post('nik', TRUE);
+			$username =  htmlspecialchars($this->input->post('username', true));
+			$password =  password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+			$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
+
+			$data = array(
+				'nama' => $nama,
+				'nik' => $nik,
+				'username' => $username,
+				'password' => $password,
+				'last' => $last,
 				'role_id' => 2,
 				'is_active' => 1,
-			];
-
-			$this->db->insert('akun', $data);
-			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> Sukses! akun sudah berhasil ditambahkan. silahkan login</div>');
+			);
+			$this->Modelakun->insert_data($data);
+			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Akun sudah Berhasil Ditambahkan!</div>');
 			redirect('Welcome/LoginCon');
 		}
 	}
