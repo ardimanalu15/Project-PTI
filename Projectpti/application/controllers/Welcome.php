@@ -140,20 +140,12 @@ class Welcome extends CI_Controller
 	}
 	public function DashAdminCon()
 	{
-		parent::__construct();
-		if (!$this->session->userdata('username')) {
-			redirect('Welcome/LoginCon');
-		}
 		$data['jlh'] = $this->Modelsiswa->jumlahdata();
 		$data['jlhguru'] = $this->Modelguru->jumlahdata();
 		$this->load->view('home/dashAdmin', $data);
 	}
 	public function DashKepsekCon()
 	{
-		parent::__construct();
-		if (!$this->session->userdata('username')) {
-			redirect('Welcome/LoginCon');
-		}
 		$data['jlh'] = $this->Modelsiswa->jumlahdata();
 		$data['jlhguru'] = $this->Modelguru->jumlahdata();
 		$this->load->view('home/dashKepsek', $data);
@@ -218,10 +210,6 @@ class Welcome extends CI_Controller
 	}
 	public function DashUserCon()
 	{
-		parent::__construct();
-		if (!$this->session->userdata('username')) {
-			redirect('Welcome/LoginCon');
-		}
 		$this->load->view('home/dashUser');
 	}
 	public function StatusSppUserCon()
