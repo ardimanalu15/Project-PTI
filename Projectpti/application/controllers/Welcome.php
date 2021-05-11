@@ -23,6 +23,12 @@ class Welcome extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->library('form_validation');
+<<<<<<< HEAD
+=======
+		// if (!$this->session->userdata('username')) {
+		// 	redirect('Welcome/LoginCon');
+		// }
+>>>>>>> d5bee8e9af6bfc8b02b1db55a2274e9af51ab526
 	}
 
 
@@ -72,12 +78,15 @@ class Welcome extends CI_Controller
 				}
 			} else {
 				$this->session->set_flashdata('message', '<div class="alert
-			 	alert-danger" role="alert">Email belum diactifkan!</div>');
+			 	alert-danger" role="alert">Akun belum diaktifkan!</div>');
 				redirect('Welcome/LoginCon');
 			}
 		} else {
 			$this->session->set_flashdata('message', '<div class="alert
-			 alert-danger" role="alert">Email belum terdaftar!</div>');
+			 alert-danger" role="alert">Akun belum terdaftar!</div>');
+			redirect('Welcome/LoginCon');
+		}
+		if (!$this->session->userdata('username')) {
 			redirect('Welcome/LoginCon');
 		}
 	}
@@ -88,7 +97,7 @@ class Welcome extends CI_Controller
 	{
 		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
 		$this->form_validation->set_rules('nik', 'Nik', 'required|trim');
-		$this->form_validation->set_rules('username', 'Username', 'required|trim|valid_email|is_unique[akun.username]', ['is_unique' => 'Email sudah dipakai!']);
+		$this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[akun.username]', ['is_unique' => 'username sudah dipakai!']);
 		$this->form_validation->set_rules('password', 'Password', 'required|trim');
 
 		if ($this->form_validation->run() == FALSE) {
@@ -184,11 +193,15 @@ class Welcome extends CI_Controller
 	}
 	public function StatusSppCon()
 	{
-		$this->load->view('home/StatusSpp');
+		$data['jlh'] = $this->Modelsiswa->jumlahdata();
+		$data['status'] = $this->Modelspp->Alldata();
+		$this->load->view('home/StatusSpp', $data);
 	}
 	public function StatusSppKepsekCon()
 	{
-		$this->load->view('home/statussppkepsek');
+		$data['jlh'] = $this->Modelsiswa->jumlahdata();
+		$data['status'] = $this->Modelspp->Alldata();
+		$this->load->view('home/statussppkepsek', $data);
 	}
 	public function LapKeuCon()
 	{
@@ -215,8 +228,9 @@ class Welcome extends CI_Controller
 	{
 		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
 		$this->form_validation->set_rules('nik', 'Nik', 'required|trim');
-		$this->form_validation->set_rules('username', 'Username', 'required|trim');
-		$this->form_validation->set_rules('password', 'Password', 'required');
+		$this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[akun.username]', ['is_unique' => 'username sudah dipakai!']);
+		$this->form_validation->set_rules('password', 'Password', 'required|trim');
+
 
 
 
@@ -227,8 +241,8 @@ class Welcome extends CI_Controller
 
 			$nama = $this->input->post('nama', TRUE);
 			$nik = $this->input->post('nik', TRUE);
-			$username = $this->input->post('username', TRUE);
-			$password = $this->input->post('password', TRUE);
+			$username =  htmlspecialchars($this->input->post('username', true));
+			$password =  password_hash($this->input->post('password'), PASSWORD_DEFAULT);
 			$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
 
 			$data = array(
@@ -237,14 +251,45 @@ class Welcome extends CI_Controller
 				'username' => $username,
 				'password' => $password,
 				'last' => $last,
+				'role_id' => 2,
+				'is_active' => 1,
 			);
-
-
-
 			$this->Modelakun->insert_data($data);
-			$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data Berhasil Ditambahkan!</div>');
+			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Akun sudah Berhasil Ditambahkan!</div>');
 			redirect('Welcome/DataAkunCon');
 		}
+		// $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+		// $this->form_validation->set_rules('nik', 'Nik', 'required|trim');
+		// $this->form_validation->set_rules('username', 'Username', 'required|trim');
+		// $this->form_validation->set_rules('password', 'Password', 'required');
+
+
+
+		// if ($this->form_validation->run() == FALSE) {
+		// 	$this->load->view('home/tambahdataakun');
+		// } else {
+
+
+		// 	$nama = $this->input->post('nama', TRUE);
+		// 	$nik = $this->input->post('nik', TRUE);
+		// 	$username = $this->input->post('username', TRUE);
+		// 	$password = $this->input->post('password', TRUE);
+		// 	$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
+
+		// 	$data = array(
+		// 		'nama' => $nama,
+		// 		'nik' => $nik,
+		// 		'username' => $username,
+		// 		'password' => $password,
+		// 		'last' => $last,
+		// 	);
+
+
+
+		// 	$this->Modelakun->insert_data($data);
+		// 	$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data Berhasil Ditambahkan!</div>');
+		// 	redirect('Welcome/DataAkunCon');
+		// }
 	}
 
 
@@ -356,6 +401,11 @@ class Welcome extends CI_Controller
 	{
 		$data['guru'] = $this->Modelguru->ambil_id_guru($id);
 		$this->load->view('home/editdataguru', $data);
+	}
+	public function EditDataSppCon($id)
+	{
+		$data['status'] = $this->Modelspp->ambil_id_spp($id);
+		$this->load->view('home/editdataspp', $data);
 	}
 	public function EditDataKeucon($id)
 	{
@@ -571,6 +621,43 @@ class Welcome extends CI_Controller
 			redirect('Welcome/DataGuruCon');
 		}
 	}
+
+	public function TambahDataSppCon()
+	{
+		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+		$this->form_validation->set_rules('nik', 'Nik', 'required|trim');
+		$this->form_validation->set_rules('nominal', 'Nominal', 'required|trim|integer');
+		$this->form_validation->set_rules('tanggalbayar', 'Tanggalbayar', 'required|trim');
+		$this->form_validation->set_rules('status', 'Status', 'required|trim');
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('home/tambahdataspp');
+		} else {
+
+
+			$nama = $this->input->post('nama', TRUE);
+			$nik = $this->input->post('nik', TRUE);
+			$nominal = $this->input->post('nominal', TRUE);
+			$tanggal = $this->input->post('tanggalbayar', TRUE);
+			$status = $this->input->post('status', TRUE);
+			$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
+
+			$data = array(
+				'nama' => $nama,
+				'nik' => $nik,
+				'nominal' => $nominal,
+				'tglbayar' => $tanggal,
+				'status' => $status,
+				'last' => $last,
+			);
+
+
+			$this->Modelspp->insert_data($data);
+			$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data Berhasil Ditambahkan!</div>');
+			redirect('Welcome/StatusSppCon');
+		}
+	}
+
 	public function DeleteDataSiswaCon($id)
 	{
 		$this->Modelsiswa->hapus_data($id);
@@ -590,6 +677,11 @@ class Welcome extends CI_Controller
 	{
 		$this->Modelakun->hapus_data($id);
 		$this->DataAkunCon();
+	}
+	public function DeleteDataSppCon($id)
+	{
+		$this->Modelspp->hapus_data($id);
+		$this->StatusSppCon();
 	}
 	public function UpdateDataSiswaCon()
 	{
@@ -827,15 +919,20 @@ class Welcome extends CI_Controller
 
 			$where = array('id' => $id);
 			$this->Modelkeu->updatedata($where, $data, 'keuangan');
-			$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data Berhasil Ditambahkan!</div>');
+			$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data Berhasil Diubah!</div>');
 			redirect('Welcome/LapKeuCon');
 		}
 	}
 	public function UpdateDataAkunCon()
 	{
+
 		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+		$this->form_validation->set_rules('nik', 'Nik', 'required|trim');
 		$this->form_validation->set_rules('username', 'Username', 'required|trim');
-		$this->form_validation->set_rules('password', 'Password', 'required');
+		$this->form_validation->set_rules('password', 'Password', 'required|trim');
+		// $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+		// $this->form_validation->set_rules('username', 'Username', 'required|trim');
+		// $this->form_validation->set_rules('password', 'Password', 'required');
 
 
 		$id = $this->input->post('id');
@@ -845,8 +942,8 @@ class Welcome extends CI_Controller
 
 
 			$nama = $this->input->post('nama', TRUE);
-			$username = $this->input->post('username', TRUE);
-			$password = $this->input->post('password', TRUE);
+			$username = htmlspecialchars($this->input->post('username', true));
+			$password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
 			$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
 
 			$data = array(
@@ -854,12 +951,51 @@ class Welcome extends CI_Controller
 				'username' => $username,
 				'password' => $password,
 				'last' => $last,
+				'role_id' => 2,
+				'is_active' => 1,
+
 			);
 
 			$where = array('id' => $id);
 			$this->Modelakun->updatedata($where, $data, 'akun');
-			$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data Berhasil Ditambahkan!</div>');
+			$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data Berhasil Diubah!</div>');
 			redirect('Welcome/DataAkunCon');
+		}
+	}
+	public function UpdateDataSppCon()
+	{
+		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+		$this->form_validation->set_rules('nik', 'Nik', 'required|trim');
+		$this->form_validation->set_rules('nominal', 'Nominal', 'required|trim|integer');
+		$this->form_validation->set_rules('tanggalbayar', 'Tanggalbayar', 'required|trim');
+		$this->form_validation->set_rules('status', 'Status', 'required|trim');
+
+		$id = $this->input->post('id');
+		if ($this->form_validation->run() == FALSE) {
+			$this->EditDataSppCon($id);
+		} else {
+
+
+			$nama = $this->input->post('nama', TRUE);
+			$nik = $this->input->post('nik', TRUE);
+			$nominal = $this->input->post('nominal', TRUE);
+			$tanggal = $this->input->post('tanggalbayar', TRUE);
+			$status = $this->input->post('status', TRUE);
+			$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
+
+			$data = array(
+				'nama' => $nama,
+				'nik' => $nik,
+				'nominal' => $nominal,
+				'tglbayar' => $tanggal,
+				'status' => $status,
+				'last' => $last,
+			);
+
+			$where = array('id' => $id);
+			$this->Modelspp->updatedata($where, $data, 'spp');
+			$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data Berhasil Diubah!</div>');
+			redirect('Welcome/StatusSppCon');
 		}
 	}
 }
