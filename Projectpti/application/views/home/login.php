@@ -43,7 +43,7 @@
                                         <hr>
 
                                         <form method="POST" action="<?= base_url('Welcome/LoginCon'); ?>">
-                                            <a style="text-align:left; font-family:Roboto Slab; color:white"> Username(Email)</a>
+                                            <a style="text-align:left; font-family:Roboto Slab; color:white"> Email</a>
                                             <div class="form-group">
                                                 <input type="text" name="username" class="form-control form-control-user" id="username" placeholder="user@gmail.com" value="<?= set_value('username'); ?>">
                                                 <?= form_error('username', '<small class="text-danger pl-3">', '</small>'); ?>

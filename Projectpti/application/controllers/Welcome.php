@@ -23,9 +23,6 @@ class Welcome extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->library('form_validation');
-		if (!$this->session->userdata('username')) {
-			redirect('Welcome/LoginCon');
-		}
 	}
 
 
@@ -94,14 +91,9 @@ class Welcome extends CI_Controller
 		$this->form_validation->set_rules('username', 'Username', 'required|trim|valid_email|is_unique[akun.username]', ['is_unique' => 'Email sudah dipakai!']);
 		$this->form_validation->set_rules('password', 'Password', 'required|trim');
 
-
-
-
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('home/Register');
 		} else {
-
-
 			$nama = $this->input->post('nama', TRUE);
 			$nik = $this->input->post('nik', TRUE);
 			$username =  htmlspecialchars($this->input->post('username', true));
@@ -210,7 +202,10 @@ class Welcome extends CI_Controller
 	}
 	public function DashUserCon()
 	{
-		$this->load->view('home/dashUser');
+		$data['user'] = $this->db->get_where('akun', ['username' =>
+		$this->session->userdata('username')])->row_array();
+
+		$this->load->view('home/dashUser', $data);
 	}
 	public function StatusSppUserCon()
 	{

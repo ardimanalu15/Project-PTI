@@ -34,7 +34,7 @@
                 <form class="form-inline my-2 my-lg-0">
 
                     <div>
-                        <samp style="color: black; margin-right:100px; ">Selamat Datang, Ardi Gaya Manalu</samp>
+                        <samp style="color: black; margin-right:100px; ">Selamat Datang, <?= $user['nama']; ?></samp>
 
                     </div>
 
