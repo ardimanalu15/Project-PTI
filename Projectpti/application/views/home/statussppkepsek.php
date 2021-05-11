@@ -137,7 +137,7 @@
                                             <th>Tanggal Terakhir Bayar</th>
                                             <th>Status</th>
                                             <th>Tanggal Perubahan</th>
-                                            <!-- <th>Tindakan</th> -->
+
 
 
                                         </tr>
