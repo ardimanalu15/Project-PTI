@@ -23,12 +23,6 @@ class Welcome extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->library('form_validation');
-<<<<<<< HEAD
-=======
-		// if (!$this->session->userdata('username')) {
-		// 	redirect('Welcome/LoginCon');
-		// }
->>>>>>> d5bee8e9af6bfc8b02b1db55a2274e9af51ab526
 	}
 
 
