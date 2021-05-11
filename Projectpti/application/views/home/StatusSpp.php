@@ -18,6 +18,7 @@
     <!-- Custom styles for this template-->
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+    <link href="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -91,51 +92,22 @@
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center mb-4" style="font-family:Roboto Slab; justify-content: center; ">
                     <p class="mb-0 text-gray-800" style="font-size: 50px;">Status SPP Siswa</p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
+
                 </div>
                 <div style="font-family:Roboto Slab; justify-content: center;">
-                    <div class="col">
-                        <form>
-                            <div class="form-row align-items-center">
+                    <div class="row">
+                        <div class="col-lg-3" style="margin-top:30px; margin-left:5px;">
+                            <p>Total Siswa </p>
 
-                                <p class="my-1" style="font-size: 18px;">Total Siswa : </p>
-                            </div>
-                        </form>
+                        </div>
+                        <div class="col" style="margin-top:30px;">
+                            <p>: <?= $jlh ?> </p>
+                        </div>
                     </div>
-                    <div class="col">
-                        <form>
-                            <div class="form-row align-items-center">
-
-                                <p class="my-1" style="font-size: 18px;">Bayaran SPP periode bulan : </p>
-                                <div class="col-sm-5 my-1">
-                                    <div class=" dropdown show">
-
-                                        <select name=" cars" id="cars" class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; color:black; width:150px;">
-                                            <option class="dropdown-item" href="#">Januari</option>
-                                            <option class="dropdown-item" href="#">Februari</option>
-                                            <option class="dropdown-item" href="#">Maret</option>
-                                            <option class="dropdown-item" href="#">April</option>
-                                            <option class="dropdown-item" href="#">Mei</option>
-                                            <option class="dropdown-item" href="#">Juni</option>
-                                            <option class="dropdown-item" href="#">Juli</option>
-                                            <option class="dropdown-item" href="#">Agustus</option>
-                                            <option class="dropdown-item" href="#">September</option>
-                                            <option class="dropdown-item" href="#">Oktober</option>
-                                            <option class="dropdown-item" href="#">November</option>
-                                            <option class="dropdown-item" href="#">Desember</option>
-                                        </select>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-
-
                 </div>
             </div>
+            <br>
+            <br>
             <!-- End of Main Content -->
             <!-- Content Row -->
 
@@ -154,16 +126,6 @@
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <nav class="navbar navbar-light bg-light justify-content-end">
-
-                                <form class="form-inline">
-
-                                    <input class="form-control mr-sm-2 " type="search" placeholder="Cari..." aria-label="Search">
-                                    <button class="btn btn-info  my-2 my-sm-0" type="submit"><i class="fas fa-search fa-fw"></i></button>
-                                </form>
-                            </nav>
-                        </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -174,32 +136,44 @@
                                             <th>Nominal Bayar</th>
                                             <th>Tanggal Terakhir Bayar</th>
                                             <th>Status</th>
+                                            <th>Tanggal Perubahan</th>
+                                            <th>Tindakan</th>
+
 
                                         </tr>
                                     </thead>
 
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Ardi Gaya Manalu</td>
-                                            <td>Rp.100.000</td>
-                                            <td>12/04/2021</td>
-                                            <td>
-                                                <div class="dropdown show">
+                                        <?php
+                                        $no = 1;
+                                        foreach ($status as $spp) : ?>
+                                            <tr>
+                                                <td><?php echo $no++; ?></td>
+                                                <td><?php echo $spp['nama']; ?></td>
+                                                <td><?php echo $spp['nominal']; ?></td>
+                                                <td><?php echo $spp['tglbayar']; ?></td>
+                                                <td><?php echo $spp['status']; ?></td>
+                                                <td><?php echo $spp['last']; ?></td>
 
-                                                    <select name="cars" id="cars" class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; color:black; width:150px;">
-                                                        <option class="dropdown-item" href="#" style="background-color:yellowgreen;">Lunas</option>
-                                                        <option class="dropdown-item" href="#">Hutang</option>
+                                                <td>
+                                                    <a onclick="javascript:return confirm('Anda yakin ingin menghapus data?')" href="<?= base_url(); ?>/Welcome/DeleteDataSppCon/<? echo $spp['id']; ?>" type="submit" style="height: 30px; width:35px; margin-top:3px;">
+                                                        <img src="<?= base_url('assets/'); ?>/img/delete.svg">
+                                                    </a>
+                                                    <a href="<?= base_url(); ?>/Welcome/EditDataSppCon/<? echo $spp['id']; ?>" type="submit" style="height: 25px;width:27px; margin-top:2px; margin-left:5px;">
+                                                        <img src="<?= base_url('assets/'); ?>/img/edit.svg">
+                                                    </a>
+                                                </td>
 
-                                                    </select>
+                                            </tr>
+                                        <?php endforeach; ?>
 
-                                                </div>
-                                            </td>
-
-                                        </tr>
 
                                     </tbody>
                                 </table>
+                                <br>
+                                <br>
+
+                                <a class="btn btn-info col-sm-2 float-right" style="margin-right: 0px;" href="<?= base_url('Welcome/TambahDataSppCon') ?>">Tambah Data</a>
                             </div>
                         </div>
                     </div>
@@ -266,6 +240,10 @@
         <!-- Page level custom scripts -->
         <script src="<?= base_url('assets/'); ?>js/demo/chart-area-demo.js"></script>
         <script src="<?= base_url('assets/'); ?>js/demo/chart-pie-demo.js"></script>
+
+        <script src="<?= base_url('assets/'); ?>vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="<?= base_url('assets/'); ?>js/demo/datatables-demo.js"></script>
 
 </body>
 
