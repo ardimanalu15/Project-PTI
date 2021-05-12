@@ -1008,4 +1008,9 @@ class Welcome extends CI_Controller
 		$this->dompdf->render();
 		$this->dompdf->stream("Laporan_Keuangan.pdf", array('Attachment' => 0));
 	}
+
+	public function print()
+	{
+		$this->load->view('home/print');
+	}
 }
