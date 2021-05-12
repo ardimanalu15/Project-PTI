@@ -186,7 +186,7 @@
                         <h6 class="m-0 ">Pertanggal : </h6>
                         <h6 class="m-0 ">Kategori : </h6>
 
-                        <button type="button" class="float-right btn btn-danger" style="margin-right: 0px;">Cetak PDF</button>
+                        <a href="print.php" class="float-right btn btn-danger" style="margin-right: 0px;" target="_blank">Cetak PDF</a>
 
                     </div>
                     <div class="card-body">
@@ -251,7 +251,7 @@
         <footer class="sticky-footer bg-white font-family:Roboto Slab;">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; TK MElLATI PUTIH MEDAN</span>
+                    <span>Copyright &copy; TK MELATI PUTIH MEDAN</span>
                 </div>
             </div>
         </footer>
