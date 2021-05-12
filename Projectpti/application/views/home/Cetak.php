@@ -17,8 +17,8 @@
 	<table style="width: 100%;">
     <tr>
       <td align="center">
-        <span style="line-height: 1.6; font-weight: bold; font-size=64px;">
-    <h1><b>LAPORAN DATA KEUANGAN TK MELATI PUTIH</b></h1>
+        <span style="line-height: 1.6; font-weight: bold; ">
+    <h2><b>LAPORAN DATA KEUANGAN TK MELATI PUTIH</b></h2>
         </span>
       </td>
     </tr>
