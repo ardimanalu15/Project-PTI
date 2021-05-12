@@ -186,7 +186,7 @@
                         <h6 class="m-0 ">Pertanggal : </h6>
                         <h6 class="m-0 ">Kategori : </h6>
 
-                        <a href="print.php" class="float-right btn btn-danger" style="margin-right: 0px;" target="_blank">Cetak PDF</a>
+                        <a href="<?= base_url('Welcome/Cetakpdf'); ?>" class="float-right btn btn-danger" style="margin-right: 0px;" target="_blank">Cetak PDF</a>
 
                     </div>
                     <div class="card-body">

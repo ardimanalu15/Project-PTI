@@ -30,7 +30,6 @@
         <nav class="navbar navbar-expand-lg navbar-light ml-auto " style="background-color: #ADD8DE; margin-left:0px ">
 
             <div class="collapse navbar-collapse" id=" navbarSupportedContent">
-
                 <form class="form-inline my-2 my-lg-0">
 
                     <div>
