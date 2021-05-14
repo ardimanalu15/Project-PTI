@@ -116,10 +116,60 @@
                                     <label for="banyak">NIK</label>
                                     <input style="width: 500px; height: 40px;" type="text" class="form-control" id="banyak" name="nik" placeholder="Cth: 12341225" value="<?= set_value('nik'); ?>">
                                 </div>
+                                <div class="form-group">
+                                    <label for="bulan">Pembayaran (Bulan)</label>
+                                    <div class="dropdown show" style="width: 500px; height: 40px;">
 
+                                        <select name="bulan" id="bulan" class="form-control" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; width:250px;">
+                                            <option class="dropdown-item" href="#" disabled selected>-Pilih Bulan-</option>
+                                            <option class="dropdown-item" href="#" value="Januari" <?php if (set_value('bulan') == 'Januari') {
+                                                                                                        echo "selected";
+                                                                                                    } ?>>Januari</option>
+                                            <option class="dropdown-item" href="#" value="Februari" <?php if (set_value('bulan') == 'Februari') {
+                                                                                                        echo "selected";
+                                                                                                    } ?>>Februari</option>
+                                            <option class="dropdown-item" href="#" value="Maret" <?php if (set_value('bulan') == 'Maret') {
+                                                                                                        echo "selected";
+                                                                                                    } ?>>Maret</option>
+                                            <option class="dropdown-item" href="#" value="April" <?php if (set_value('bulan') == 'April') {
+                                                                                                        echo "selected";
+                                                                                                    } ?>>April</option>
+                                            <option class="dropdown-item" href="#" value="Mei" <?php if (set_value('bulan') == 'Mei') {
+                                                                                                    echo "selected";
+                                                                                                } ?>>Mei</option>
+                                            <option class="dropdown-item" href="#" value="Juni" <?php if (set_value('bulan') == 'Juni') {
+                                                                                                    echo "selected";
+                                                                                                } ?>>Juni</option>
+                                            <option class="dropdown-item" href="#" value="Juli" <?php if (set_value('bulan') == 'Juli') {
+                                                                                                    echo "selected";
+                                                                                                } ?>>Juli</option>
+                                            <option class="dropdown-item" href="#" value="Agustus" <?php if (set_value('bulan') == 'Agustus') {
+                                                                                                        echo "selected";
+                                                                                                    } ?>>Agustus</option>
+                                            <option class="dropdown-item" href="#" value="September" <?php if (set_value('bulan') == 'September') {
+                                                                                                            echo "selected";
+                                                                                                        } ?>>September</option>
+                                            <option class="dropdown-item" href="#" value="Oktober" <?php if (set_value('bulan') == 'Oktober') {
+                                                                                                        echo "selected";
+                                                                                                    } ?>>Oktober</option>
+                                            <option class="dropdown-item" href="#" value="November" <?php if (set_value('bulan') == 'November') {
+                                                                                                        echo "selected";
+                                                                                                    } ?>>November</option>
+                                            <option class="dropdown-item" href="#" value="Desember" <?php if (set_value('bulan') == 'Desember') {
+                                                                                                        echo "selected";
+                                                                                                    } ?>>Desember</option>
+
+                                        </select>
+
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <label for="satuan">Nominal</label>
                                     <input style="width: 500px; height: 40px;" type="text" class="form-control" id="satuan" name="nominal" placeholder="Cth: 100000" value="<?= set_value('nominal'); ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="tanggalbayar">Jatuh Tempo</label>
+                                    <input style="width: 500px; height: 40px;" type="date" class="form-control" id="tempo" name="tempo" placeholder="dd/mm/yyyy" value="<?= set_value('tempo'); ?>">
                                 </div>
 
                                 <div class="form-group">

@@ -83,6 +83,12 @@
                             <td><?= form_error('nokk', '<small style="color:red;">', '</small>'); ?></td>
                         </tr>
                         <tr>
+                            <td class="isitabelnya">NIK <span style="color:red">*</span></td>
+                            <td></td>
+                            <td><input type="text" name="nik" class="input" value="<?= set_value('nik'); ?>"></td>
+                            <td><?= form_error('nokk', '<small style="color:red;">', '</small>'); ?></td>
+                        </tr>
+                        <tr>
                             <td class="isitabelnya">Tinggi/Berat Badan <span style="color:red">*</span></td>
                             <td></td>
                             <td><input type="number" max="300" min="50" name="tinggi" class="inputt" value="<?= set_value('tinggi'); ?>"> cm</td>

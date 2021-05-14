@@ -17,7 +17,7 @@ class Modelkeu extends CI_Model
         $this->db->delete('keuangan');
     }
 
-    public function ambil_id_siswa($id)
+    public function ambil_id_keu($id)
     {
         return $this->db->get_where('keuangan', ['id' => $id])->row_array();
     }

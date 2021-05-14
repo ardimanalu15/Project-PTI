@@ -133,7 +133,9 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nama Siswa</th>
+                                            <th>Bulan</th>
                                             <th>Nominal Bayar</th>
+                                            <th>Jatuh Tempo</th>
                                             <th>Tanggal Terakhir Bayar</th>
                                             <th>Status</th>
                                             <th>Tanggal Perubahan</th>
@@ -150,7 +152,9 @@
                                             <tr>
                                                 <td><?php echo $no++; ?></td>
                                                 <td><?php echo $spp['nama']; ?></td>
+                                                <td><?php echo $spp['bulan']; ?></td>
                                                 <td><?php echo $spp['nominal']; ?></td>
+                                                <td><?php echo $spp['tempo']; ?></td>
                                                 <td><?php echo $spp['tglbayar']; ?></td>
                                                 <td><?php echo $spp['status']; ?></td>
                                                 <td><?php echo $spp['last']; ?></td>

@@ -17,7 +17,7 @@ class Modelguru extends CI_Model
         $this->db->delete('guru');
     }
 
-    public function ambil_id_siswa($id)
+    public function ambil_id_guru($id)
     {
         return $this->db->get_where('guru', ['id' => $id])->row_array();
     }

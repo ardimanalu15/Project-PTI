@@ -23,9 +23,10 @@ class Welcome extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->library('form_validation');
-		// if (!$this->session->userdata('username')) {
+		// if (!$this->session->userdata('username') == null) {
 		// 	redirect('Welcome/LoginCon');
 		// }
+		// is_logged_in();
 	}
 
 
@@ -143,6 +144,7 @@ class Welcome extends CI_Controller
 	}
 	public function DashAdminCon()
 	{
+
 		$data['jlh'] = $this->Modelsiswa->jumlahdata();
 		$data['jlhguru'] = $this->Modelguru->jumlahdata();
 		$this->load->view('home/dashAdmin', $data);
@@ -152,6 +154,13 @@ class Welcome extends CI_Controller
 		$data['jlh'] = $this->Modelsiswa->jumlahdata();
 		$data['jlhguru'] = $this->Modelguru->jumlahdata();
 		$this->load->view('home/dashKepsek', $data);
+	}
+	public function DashUserCon()
+	{
+		$data['akun'] = $this->db->get_where('akun', ['username' => $this->session->userdata('username')])->row_array();
+		$take = $data['akun']['nik'];
+		$data['siswa'] = $this->Modelsiswa->ambildata($take);
+		$this->load->view('home/dashUser', $data);
 	}
 	public function DataSiswaCon()
 	{
@@ -205,6 +214,14 @@ class Welcome extends CI_Controller
 		$data['status'] = $this->Modelspp->Alldata();
 		$this->load->view('home/statussppkepsek', $data);
 	}
+	public function StatusSppUserCon()
+	{
+		$data_['akun'] = $this->db->get_where('akun', ['username' => $this->session->userdata('username')])->row_array();
+		$take = $data_['akun']['nik'];
+		$data_['siswa'] = $this->Modelsiswa->ambildata($take);
+		$data_['spp'] = $this->Modelspp->ambildata($take);
+		$this->load->view('home/statusSppUser', $data_);
+	}
 	public function LapKeuCon()
 	{
 		$data['keuangan'] = $this->Modelkeu->Alldata();
@@ -214,14 +231,6 @@ class Welcome extends CI_Controller
 	{
 		$data['keuangan'] = $this->Modelkeu->Alldata();
 		$this->load->view('home/lapkeukepsek', $data);
-	}
-	public function DashUserCon()
-	{
-		$this->load->view('home/dashUser');
-	}
-	public function StatusSppUserCon()
-	{
-		$this->load->view('home/statusSppUser');
 	}
 	public function TambahDataAkunCon()
 	{
@@ -300,6 +309,7 @@ class Welcome extends CI_Controller
 		$this->form_validation->set_rules('umur', 'Umur', 'required|trim|integer');
 		$this->form_validation->set_rules('noakte', 'Nomor akte', 'required|trim');
 		$this->form_validation->set_rules('nokk', 'Nomor KK', 'required|trim');
+		$this->form_validation->set_rules('nik', 'Nik', 'required|trim');
 		$this->form_validation->set_rules('tinggi', 'Tinggi', 'required|trim|integer');
 		$this->form_validation->set_rules('berat', 'Berat', 'required|trim|integer');
 		$this->form_validation->set_rules('jeniskelamin', 'Jenis kelamin', 'required|trim');
@@ -328,6 +338,7 @@ class Welcome extends CI_Controller
 			$umur = $this->input->post('umur', TRUE);
 			$akte = $this->input->post('noakte', TRUE);
 			$kk = $this->input->post('nokk', TRUE);
+			$nik = $this->input->post('nik', TRUE);
 			$tinggi = $this->input->post('tinggi', TRUE);
 			$berat = $this->input->post('berat', TRUE);
 			$jk = $this->input->post('jeniskelamin', TRUE);
@@ -366,6 +377,7 @@ class Welcome extends CI_Controller
 				'umur' => $umur,
 				'akte' => $akte,
 				'kk' => $kk,
+				'nik' => $nik,
 				'tinggi' => $tinggi,
 				'berat' => $berat,
 				'jk' => $jk,
@@ -424,6 +436,7 @@ class Welcome extends CI_Controller
 		$this->form_validation->set_rules('umur', 'Umur', 'required|trim|integer');
 		$this->form_validation->set_rules('noakte', 'Noakte', 'required|trim');
 		$this->form_validation->set_rules('nokk', 'Nokk', 'required|trim');
+		$this->form_validation->set_rules('nik', 'Nik', 'required|trim');
 		$this->form_validation->set_rules('tinggi', 'Tinggi', 'required|trim|integer');
 		$this->form_validation->set_rules('berat', 'Berat', 'required|trim|integer');
 		$this->form_validation->set_rules('jeniskelamin', 'Jeniskelamin', 'required|trim');
@@ -451,6 +464,7 @@ class Welcome extends CI_Controller
 				'umur' => $this->input->post('umur'),
 				'akte' => $this->input->post('noakte'),
 				'kk' => $this->input->post('nokk'),
+				'nik' => $this->input->post('nik'),
 				'tinggi' => $this->input->post('tinggi'),
 				'berat' => $this->input->post('berat'),
 				'jk' => $this->input->post('jeniskelamin'),
@@ -625,8 +639,9 @@ class Welcome extends CI_Controller
 	{
 		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
 		$this->form_validation->set_rules('nik', 'Nik', 'required|trim');
+		$this->form_validation->set_rules('bulan', 'Bulan', 'required|trim');
 		$this->form_validation->set_rules('nominal', 'Nominal', 'required|trim|integer');
-		$this->form_validation->set_rules('tanggalbayar', 'Tanggalbayar', 'required|trim');
+		$this->form_validation->set_rules('tempo', 'Tempo', 'required|trim');
 		$this->form_validation->set_rules('status', 'Status', 'required|trim');
 
 		if ($this->form_validation->run() == FALSE) {
@@ -636,7 +651,9 @@ class Welcome extends CI_Controller
 
 			$nama = $this->input->post('nama', TRUE);
 			$nik = $this->input->post('nik', TRUE);
+			$bulan = $this->input->post('bulan', TRUE);
 			$nominal = $this->input->post('nominal', TRUE);
+			$tempo = $this->input->post('tempo', TRUE);
 			$tanggal = $this->input->post('tanggalbayar', TRUE);
 			$status = $this->input->post('status', TRUE);
 			$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
@@ -644,7 +661,9 @@ class Welcome extends CI_Controller
 			$data = array(
 				'nama' => $nama,
 				'nik' => $nik,
+				'bulan' => $bulan,
 				'nominal' => $nominal,
+				'tempo' => $tempo,
 				'tglbayar' => $tanggal,
 				'status' => $status,
 				'last' => $last,
@@ -690,6 +709,7 @@ class Welcome extends CI_Controller
 		$this->form_validation->set_rules('umur', 'Umur', 'required|trim|integer');
 		$this->form_validation->set_rules('noakte', 'Noakte', 'required|trim');
 		$this->form_validation->set_rules('nokk', 'Nokk', 'required|trim');
+		$this->form_validation->set_rules('nik', 'Nik', 'required|trim');
 		$this->form_validation->set_rules('tinggi', 'Tinggi', 'required|trim|integer');
 		$this->form_validation->set_rules('berat', 'Berat', 'required|trim|integer');
 		$this->form_validation->set_rules('jeniskelamin', 'Jeniskelamin', 'required|trim');
@@ -717,6 +737,7 @@ class Welcome extends CI_Controller
 			$umur = $this->input->post('umur');
 			$akte = $this->input->post('noakte');
 			$kk = $this->input->post('nokk');
+			$nik = $this->input->post('nik');
 			$tinggi = $this->input->post('tinggi');
 			$berat = $this->input->post('berat');
 			$jk = $this->input->post('jeniskelamin');
@@ -755,6 +776,7 @@ class Welcome extends CI_Controller
 				'umur' => $umur,
 				'akte' => $akte,
 				'kk' => $kk,
+				'nik' => $nik,
 				'tinggi' => $tinggi,
 				'berat' => $berat,
 				'jk' => $jk,
@@ -965,8 +987,9 @@ class Welcome extends CI_Controller
 	{
 		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
 		$this->form_validation->set_rules('nik', 'Nik', 'required|trim');
+		$this->form_validation->set_rules('bulan', 'Bulan', 'required|trim');
 		$this->form_validation->set_rules('nominal', 'Nominal', 'required|trim|integer');
-		$this->form_validation->set_rules('tanggalbayar', 'Tanggalbayar', 'required|trim');
+		$this->form_validation->set_rules('tempo', 'Tempo', 'required|trim');
 		$this->form_validation->set_rules('status', 'Status', 'required|trim');
 
 		$id = $this->input->post('id');
@@ -977,7 +1000,9 @@ class Welcome extends CI_Controller
 
 			$nama = $this->input->post('nama', TRUE);
 			$nik = $this->input->post('nik', TRUE);
+			$bulan = $this->input->post('bulan', TRUE);
 			$nominal = $this->input->post('nominal', TRUE);
+			$tempo = $this->input->post('tempo', TRUE);
 			$tanggal = $this->input->post('tanggalbayar', TRUE);
 			$status = $this->input->post('status', TRUE);
 			$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
@@ -985,7 +1010,9 @@ class Welcome extends CI_Controller
 			$data = array(
 				'nama' => $nama,
 				'nik' => $nik,
+				'bulan' => $bulan,
 				'nominal' => $nominal,
+				'tempo' => $tempo,
 				'tglbayar' => $tanggal,
 				'status' => $status,
 				'last' => $last,

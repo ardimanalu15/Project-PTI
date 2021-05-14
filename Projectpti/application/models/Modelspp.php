@@ -21,6 +21,10 @@ class Modelspp extends CI_Model
     {
         return $this->db->get_where('spp', ['id' => $id])->row_array();
     }
+    public function ambildata($nik)
+    {
+        return $this->db->get_where('spp', ['nik' => $nik])->result_array();
+    }
     public function updatedata($where, $data, $table)
     {
 

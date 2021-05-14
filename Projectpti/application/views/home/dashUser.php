@@ -34,7 +34,7 @@
                 <form class="form-inline my-2 my-lg-0">
 
                     <div>
-                        <samp style="color: black; margin-right:100px; ">Selamat Datang, Ardi Gaya Manalu</samp>
+                        <samp style="color: black; margin-right:100px; ">Selamat Datang, <?php echo $siswa['nama'] ?></samp>
 
                     </div>
 
@@ -87,23 +87,52 @@
 
             </ul>
             <div class="col border-left">
-                <div style="margin-left : 400px; margin-top:40px;">
-                    <img style="width: 168px; height:188px; " src='<?= base_url('assets/'); ?>/img/pace.JPG'>
-                </div>
                 <div class="row" style="margin-left: 120px;">
-                    <div class="col-lg-2" style="margin-top:70px;">
+                    <div class="col-lg-2" style="margin-top:70px;color:black;">
                         <p>Nama</p>
-                        <p>Tempat/Tgl Lahir</p>
-                        <p>Ayah</p>
-                        <p>Ibu</p>
+                        <p>Tanggal Lahir</p>
+                        <p>Alamat</p>
+                        <p>Umur</p>
+                        <p>Nomor Akte</p>
+                        <p>Nomor KK</p>
+                        <p>NIK</p>
+                        <p>Tinggi Badan</p>
+                        <p>Berat Badan</p>
+                        <p>Jenis Kelamin</p>
+                        <p>Nama Ayah</p>
+                        <p>Nama Ibu</p>
+                        <p>Pendidikan Ayah</p>
+                        <p>Pendidikan Ibu</p>
+                        <p>Pekerjaan Ayah</p>
+                        <p>Pekerjaan Ibu</p>
+                        <p>Penghasilan Ayah</p>
+                        <p>Penghasilan Ibu</p>
+                        <p>Tanggal Lahir Ayah</p>
+                        <p>Tanggal Lahir Ayah</p>
                         <p>Nomor Telpon Wali</p>
                     </div>
-                    <div class="col" style="margin-top:70px;">
-                        <p>: Ardi Gaya Manalu</p>
-                        <p>: Jayapura, 30 Februari 2000</p>
-                        <p>: Pace</p>
-                        <p>: Mace</p>
-                        <p>: 081266666666</p>
+                    <div class="col" style="margin-top:70px;color:black;">
+                        <p>: <?php echo $siswa['nama'] ?></p>
+                        <p>: <?php echo $siswa['ttl'] ?></p>
+                        <p>: <?php echo $siswa['alamat'] ?></p>
+                        <p>: <?php echo $siswa['umur'] ?></p>
+                        <p>: <?php echo $siswa['akte'] ?></p>
+                        <p>: <?php echo $siswa['kk'] ?></p>
+                        <p>: <?php echo $siswa['nik'] ?></p>
+                        <p>: <?php echo $siswa['tinggi'] ?></p>
+                        <p>: <?php echo $siswa['berat'] ?></p>
+                        <p>: <?php echo $siswa['jk'] ?></p>
+                        <p>: <?php echo $siswa['namaayah'] ?></p>
+                        <p>: <?php echo $siswa['namaibu'] ?></p>
+                        <p>: <?php echo $siswa['pendidikanayah'] ?></p>
+                        <p>: <?php echo $siswa['pendidikanibu'] ?></p>
+                        <p>: <?php echo $siswa['pekerjaanayah'] ?></p>
+                        <p>: <?php echo $siswa['pekerjaanibu'] ?></p>
+                        <p>: <?php echo $siswa['penghasilanayah'] ?></p>
+                        <p>: <?php echo $siswa['penghasilanibu'] ?></p>
+                        <p>: <?php echo $siswa['ttlayah'] ?></p>
+                        <p>: <?php echo $siswa['ttlibu'] ?></p>
+                        <p>: <?php echo $siswa['telpon'] ?></p>
 
                     </div>
                 </div>

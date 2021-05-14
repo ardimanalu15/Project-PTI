@@ -137,6 +137,11 @@
                                     <input style="width: 500px; height: 40px;" type="text" class="form-control" id="inputkk" name="nokk" value="<?= set_value('nokk'); ?>">
                                     <?= form_error('nokk', '<small style="color:red;">', '</small>'); ?>
                                 </div>
+                                <div class="form-group">
+                                    <label for="inputkk">NIK</label>
+                                    <input style="width: 500px; height: 40px;" type="text" class="form-control" id="nik" name="nik" value="<?= set_value('nik'); ?>">
+                                    <?= form_error('nokk', '<small style="color:red;">', '</small>'); ?>
+                                </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="tinggi">Tinggi Badan (cm)</label>

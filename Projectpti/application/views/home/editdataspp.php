@@ -116,15 +116,65 @@
                                     <label for="banyak">NIK</label>
                                     <input style="width: 500px; height: 40px;" type="text" class="form-control" id="banyak" name="nik" placeholder="Cth: 12341225" value="<?= $status['nik']; ?>" required>
                                 </div>
+                                <div class="form-group">
+                                    <label for="bulan">Pembayaran (Bulan)</label>
+                                    <div class="dropdown show" style="width: 500px; height: 40px;">
 
+                                        <select name="bulan" id="bulan" class="form-control" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; width:250px;">
+                                            <option class="dropdown-item" href="#" disabled selected>-Pilih Bulan-</option>
+                                            <option class="dropdown-item" href="#" value="Januari" <?php if ($status['bulan'] == 'Januari') {
+                                                                                                        echo "selected";
+                                                                                                    } ?>>Januari</option>
+                                            <option class="dropdown-item" href="#" value="Februari" <?php if ($status['bulan'] == 'Februari') {
+                                                                                                        echo "selected";
+                                                                                                    } ?>>Februari</option>
+                                            <option class="dropdown-item" href="#" value="Maret" <?php if ($status['bulan'] == 'Maret') {
+                                                                                                        echo "selected";
+                                                                                                    } ?>>Maret</option>
+                                            <option class="dropdown-item" href="#" value="April" <?php if ($status['bulan'] == 'April') {
+                                                                                                        echo "selected";
+                                                                                                    } ?>>April</option>
+                                            <option class="dropdown-item" href="#" value="Mei" <?php if ($status['bulan'] == 'Mei') {
+                                                                                                    echo "selected";
+                                                                                                } ?>>Mei</option>
+                                            <option class="dropdown-item" href="#" value="Juni" <?php if ($status['bulan'] == 'Juni') {
+                                                                                                    echo "selected";
+                                                                                                } ?>>Juni</option>
+                                            <option class="dropdown-item" href="#" value="Juli" <?php if ($status['bulan'] == 'Juli') {
+                                                                                                    echo "selected";
+                                                                                                } ?>>Juli</option>
+                                            <option class="dropdown-item" href="#" value="Agustus" <?php if ($status['bulan'] == 'Agustus') {
+                                                                                                        echo "selected";
+                                                                                                    } ?>>Agustus</option>
+                                            <option class="dropdown-item" href="#" value="September" <?php if ($status['bulan'] == 'September') {
+                                                                                                            echo "selected";
+                                                                                                        } ?>>September</option>
+                                            <option class="dropdown-item" href="#" value="Oktober" <?php if ($status['bulan'] == 'Oktober') {
+                                                                                                        echo "selected";
+                                                                                                    } ?>>Oktober</option>
+                                            <option class="dropdown-item" href="#" value="November" <?php if ($status['bulan'] == 'November') {
+                                                                                                        echo "selected";
+                                                                                                    } ?>>November</option>
+                                            <option class="dropdown-item" href="#" value="Desember" <?php if ($status['bulan'] == 'Desember') {
+                                                                                                        echo "selected";
+                                                                                                    } ?>>Desember</option>
+
+                                        </select>
+
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <label for="satuan">Nominal</label>
                                     <input style="width: 500px; height: 40px;" type="text" class="form-control" id="satuan" name="nominal" placeholder="Cth: 100000" value="<?= $status['nominal']; ?>" required>
                                 </div>
+                                <div class="form-group">
+                                    <label for="tanggalbayar">Jatuh Tempo</label>
+                                    <input style="width: 500px; height: 40px;" type="date" class="form-control" id="tempo" name="tempo" placeholder="dd/mm/yyyy" value="<?= $status['tempo']; ?>">
+                                </div>
 
                                 <div class="form-group">
                                     <label for="tanggalbayar">Tanggal Bayar</label>
-                                    <input style="width: 500px; height: 40px;" type="date" class="form-control" id="tanggalbayar" name="tanggalbayar" placeholder="dd/mm/yyyy" value="<?= $status['tglbayar']; ?>" required>
+                                    <input style="width: 500px; height: 40px;" type="date" class="form-control" id="tanggalbayar" name="tanggalbayar" placeholder="dd/mm/yyyy" value="<?= $status['tglbayar']; ?>">
                                 </div>
 
                                 <div class="form-group">

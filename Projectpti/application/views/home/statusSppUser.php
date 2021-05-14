@@ -14,6 +14,7 @@
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
     <link rel="stylesheet" href="<?= base_url('css/'); ?>/landingpage.css">
+    <link href="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 <style>
     a:hover {
@@ -34,7 +35,7 @@
                 <form class="form-inline my-2 my-lg-0">
 
                     <div>
-                        <samp style="color: black; margin-right:100px; ">Selamat Datang, Ardi Gaya Manalu</samp>
+                        <samp style="color: black; margin-right:100px; ">Selamat Datang, <?php echo $siswa['nama'] ?></samp>
 
                     </div>
 
@@ -64,6 +65,9 @@
             </div>
         </div>
     </div>
+
+
+
     <div class="container-fluid">
         <div class="row">
             <ul class="navbar-nav sidebar border" id="accordionSidebar" style=" font-family:Roboto Slab;;">
@@ -90,13 +94,15 @@
                 <div class="row" style="margin-left: 120px;">
                     <div class="col-lg-2" style="margin-top:70px;">
                         <p>Nama</p>
-                        <p>Tahun Ajaran</p>
                         <p>Status</p>
                     </div>
                     <div class="col" style="margin-top:70px;">
-                        <p>: Ardi Gaya Manalu</p>
-                        <p>: 2021</p>
-                        <p>: Aktif</p>
+                        <p>: <?php echo $siswa['nama'] ?></p>
+                        <p>: <?php if ($akun['is_active'] == 1) {
+                                    echo "Aktif";
+                                } else {
+                                    echo "Tidak Aktif";
+                                } ?></p>
 
                     </div>
                 </div>
@@ -114,32 +120,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td style="background-color: #ADD8DE;">1.</td>
-                                    <td>Januari</td>
-                                    <td>Rp. 100.000</td>
-                                    <td>2021-01-23</td>
-                                    <td>2021-01-04</td>
-                                    <td style="background-color: #6EAA52;">Lunas</td>
-                                </tr>
-                                <tr>
-                                    <td style="background-color: #ADD8DE;">2.</td>
-                                    <td>Feb</td>
-                                    <td>Rp. 100.000</td>
-                                    <td>2021-02-23</td>
-                                    <td>2021-02-20</td>
-                                    <td style="background-color: #6EAA52;">Lunas</td>
-                                </tr>
-                                <tr>
-                                    <td style="background-color: #ADD8DE;">3.</td>
-                                    <td>maret</td>
-                                    <td>Rp. 100.000</td>
-                                    <td>2021-03-23</td>
-                                    <td>None</td>
-                                    <td style="background-color: #C32A2A;">Hutang</td>
-                                </tr>
+                                <?php
+                                $no = 1;
+                                foreach ($spp as $sp) : ?>
+                                    <tr>
+                                        <td style="background-color: #ADD8DE;"><?php echo $no++; ?></td>
+                                        <td><?= $sp['bulan']; ?></td>
+                                        <td><?php echo $sp['nominal']; ?></td>
+                                        <td><?php echo $sp['tempo']; ?></td>
+                                        <td><?php echo $sp['tglbayar']; ?></td>
+                                        <td><?php echo $sp['status']; ?></td>
 
-
+                                    </tr>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
 
@@ -169,6 +162,9 @@
     <script src="<?= base_url('assets/'); ?>js/demo/chart-area-demo.js"></script>
     <script src="<?= base_url('assets/'); ?>js/demo/chart-pie-demo.js"></script>
 
+    <script src="<?= base_url('assets/'); ?>vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="<?= base_url('assets/'); ?>js/demo/datatables-demo.js"></script>
 
 </body>
 
