@@ -18,17 +18,17 @@
  * 
  */
 
-class dompdf_gen
+class Gen
 {
 
-	public function __construct()
-	{
+    public function __construct()
+    {
 
-		require_once APPPATH . 'third_party/dompdf/dompdf_config.inc.php';
+        require_once APPPATH . 'third_party/dompdf/dompdf_config.inc.php';
 
-		$pdf = new DOMPDF();
+        $pdf = new DOMPDF();
 
-		$CI = &get_instance();
-		$CI->dompdf = $pdf;
-	}
+        $CI = &get_instance();
+        $CI->dompdf = $pdf;
+    }
 }

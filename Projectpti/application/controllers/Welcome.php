@@ -1026,7 +1026,6 @@ class Welcome extends CI_Controller
 	}
 	public function Cetakpdf()
 	{
-		$this->load->library('dompdf_gen');
 
 		$data['keuangan'] =  $this->db->get('keuangan')->result_array();
 
@@ -1039,8 +1038,19 @@ class Welcome extends CI_Controller
 
 		$this->dompdf->load_html($html);
 		$this->dompdf->render();
+		ob_end_clean();
 		$this->dompdf->stream("Laporan_Keuangan.pdf", array('Attachment' => 0));
 	}
+	// public function Cetakpdf()
+	// {
+	// 	$this->load->library('pdfgenerator');
+
+	// 	$data['keuangan'] =  $this->db->get('keuangan')->result_array();
+
+	//     $html = $this->load->view('table_report', $data, true);
+
+	//     $this->pdfgenerator->generate($html,'contoh');
+	// }
 
 	public function filter()
 	{
