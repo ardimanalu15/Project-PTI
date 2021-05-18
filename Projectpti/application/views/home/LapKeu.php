@@ -1,3 +1,12 @@
+<?php
+$connect = mysqli_connect("localhost", "root", "", "tkmelati");
+$querry = "SELECT * FROM keuangan ORDER BY id desc";
+$result = mysqli_query($connect, $querry);
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,6 +28,12 @@
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
     <link href="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+
 </head>
 
 <style>
@@ -117,24 +132,28 @@
                             <div class="form-row align-items-center">
                                 <div class="col-sm-6 my-1 ">
                                     <label class="sr-only" for="inlineFormInputDate">Date</label>
-                                    <input type="date" name="begin" placeholder="dd-mm-yyyy" value="" min="1997-01-01" max="2030-12-31">
+                                    <input type="text" name="tanggalawal" id="tanggalawal" class="form-control" placeholder="dd-mm-yyyy" value="">
 
                                 </div>
                                 <p class="my-1" style="font-size: 18px;">s/d</p>
                                 <div class="col-sm-5 my-1">
                                     <label class="sr-only" for="inlineFormInputDate">Date</label>
-                                    <input type="date" name="begin" placeholder="dd-mm-yyyy" value="" min="1997-01-01" max="2030-12-31">
+                                    <input type="text" name="tanggalakhir" id="tanggalakhir" class="form-control" placeholder="dd-mm-yyyy" value="">
+
                                 </div>
                             </div>
                         </form>
+                        <div style=" clear:both">
+                        </div>
                     </div>
                     <div class="col">
-
-                        <p>Kategori</p>
+                        <p style="color:rgba(250, 244, 244, 1);">.</p>
+                        <!--  -->
                         <form>
+                            <!--  -->
                             <div class="form-row align-items-center">
                                 <div class="col-sm-3 my-1 ">
-                                    <div class="dropdown show" style="width: 500px; height: 40px;" value="<?= set_select('jeniskelamin'); ?>">
+                                    <!--   <div class="dropdown show" style="width: 500px; height: 40px;" value="<?= set_select('jeniskelamin'); ?>">
 
                                         <select name=" jeniskelamin" id="inputjk" class="form-control" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; color:black; width:250px;">
                                             <option class="dropdown-item" href="#" disabled selected>-Semua kategori-</option>
@@ -147,12 +166,13 @@
 
                                         </select>
 
-                                    </div>
+                                    </div>-->
 
                                 </div>
+                                <p></p>
 
                                 <div class="col-sm-6">
-                                    <button type="button" class="btn btn-primary float-right" style="margin-right: 0px;">Tampilkan</button>
+                                    <button type="button" name="filter" id="filter" class="btn btn-primary float-right" style="margin-right: 0px; ">Tampilkan</button>
 
                                 </div>
                             </div>
@@ -160,6 +180,7 @@
 
                         </form>
                     </div>
+
                 </div>
 
             </div>
@@ -183,14 +204,14 @@
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 ">Pertanggal : </h6>
-                        <h6 class="m-0 ">Kategori : </h6>
+                        <!--   <h6 class="m-0 ">Pertanggal : </h6>
+                        <h6 class="m-0 ">Kategori : </h6>-->
 
 
                         <a href="<?= base_url('Welcome/Cetakpdf'); ?>" class="float-right btn btn-danger" style="margin-right: 0px;">Cetak PDF</a>
 
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" id="ordertable">
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
@@ -226,7 +247,7 @@
                                                 <a onclick="javascript:return confirm('Anda yakin ingin menghapus data?')" href="<?= base_url(); ?>/Welcome/DeleteDataKeuCon/<? echo $keu['id']; ?>" type="submit" style="height: 30px; width:35px; margin-top:3px;">
                                                     <img src="<?= base_url('assets/'); ?>/img/delete.svg">
                                                 </a>
-                                                <a href="<?= base_url(); ?>/Welcome/EditDataKeuCon/<? echo $keu['id']; ?>" type="submit" style="height: 25px;width:27px; margin-top:2px; margin-left:5px;">
+                                                <a href="<?= base_url(); ?>/Welcome/EditDataKeuCon?<? echo $keu['id']; ?>" type="submit" style="height: 25px;width:27px; margin-top:2px; margin-left:5px;">
                                                     <img src="<?= base_url('assets/'); ?>/img/edit.svg">
                                                 </a>
                                             </td>
@@ -309,7 +330,7 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
+    <scriptsrc=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src= src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></scriptsrc=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=>
     <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
@@ -328,6 +349,38 @@
     <script src="<?= base_url('assets/'); ?>vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
     <script src="<?= base_url('assets/'); ?>js/demo/datatables-demo.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $.datepicker.setDefaults({
+                dateFormat: 'yy-mm-dd'
+            });
+
+            $(function() {
+                $("#tanggalawal").datepicker();
+                $("#tanggalakhir").datepicker();
+            });
+            $('#filter').click(function() {
+                var tanggalawal = $('#tanggalawal').val();
+                var tanggalakhir = $('#tanggalakhir').val();
+                if (tanggalawal != '' && tanggalakhir != '') {
+                    $.ajax({
+                        url: "<?= base_url(); ?>/Welcome/filter",
+                        method: "POST",
+                        data: {
+                            tanggalawal: tanggalawal,
+                            tanggalakhir: tanggalakhir
+                        },
+                        success: function(data) {
+                            $('#ordertable').html(data);
+                        }
+                    });
+                } else {
+                    alert("Tolong masukkan tanggal terlebih dahulu");
+                }
+            });
+        });
+    </script>
 
 </body>
 
