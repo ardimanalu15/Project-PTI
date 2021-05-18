@@ -123,7 +123,7 @@
 
                                 <div class="form-group">
                                     <label for="banyak">Password</label>
-                                    <input style="width: 500px; height: 40px;" type="password" class="form-control" id="password" name="password" placeholder="Cth: *****" required>
+                                    <input style="width: 500px; height: 40px;" type="password" class="form-control" id="password" name="password" placeholder="Cth: *****" value="<?= $akun['password'] ?>" required>
                                 </div>
 
 

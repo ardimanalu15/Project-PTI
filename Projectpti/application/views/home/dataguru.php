@@ -131,16 +131,7 @@
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <nav class="navbar navbar-light bg-light justify-content-end">
 
-                                <form class="form-inline">
-
-                                    <input class="form-control mr-sm-2 " type="search" placeholder="Cari..." aria-label="Search">
-                                    <button class="btn btn-info  my-2 my-sm-0" type="submit"><i class="fas fa-search fa-fw"></i></button>
-                                </form>
-                            </nav>
-                        </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
