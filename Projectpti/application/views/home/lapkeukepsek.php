@@ -1,3 +1,12 @@
+<?php
+$connect = mysqli_connect("localhost", "root", "", "tkmelati");
+$querry = "SELECT * FROM keuangan ORDER BY id desc";
+$result = mysqli_query($connect, $querry);
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +18,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>LaporanKeuangan</title>
+    <title>LaporanKeuanganKepalaSekolah</title>
 
     <!-- Custom fonts for this template-->
     <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -18,8 +27,22 @@
     <!-- Custom styles for this template-->
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
     <link href="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 </head>
+
+<style>
+    .a:hover {
+        background-color: black;
+        text-decoration: none;
+    }
+</style>
 
 <body id="page-top">
 
@@ -46,8 +69,8 @@
                     <i class="fas fa-fw "></i>
                     <span>Dashboard</span></a>
             </li>
-            <li class="nav-item " style="font-family:Roboto Slab;">
-                <a class="nav-link" href="<?= base_url('Welcome/DataGuruKepsekCon'); ?>">
+            <li class="nav-item" style="font-family:Roboto Slab;">
+                <a class="nav-link " href="<?= base_url('Welcome/DataGuruKepsekCon'); ?>">
                     <i class="fas fa-fw "></i>
                     <span>Data Guru</span></a>
             </li>
@@ -64,7 +87,7 @@
                     <span>Status SPP Siswa</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item" style="font-family:Roboto Slab;background-color: #3278a0;">
+            <li class="nav-item " style="font-family:Roboto Slab;background-color: #3278a0;">
                 <a class="nav-link" href="#">
                     <i class="fas fa-fw "></i>
                     <span>Laporan Keuangan</span></a>
@@ -110,37 +133,55 @@
                             <div class="form-row align-items-center">
                                 <div class="col-sm-6 my-1 ">
                                     <label class="sr-only" for="inlineFormInputDate">Date</label>
-                                    <input type="date" name="begin" placeholder="dd-mm-yyyy" value="" min="1997-01-01" max="2030-12-31">
+                                    <input type="text" name="tanggalawal" id="tanggalawal" class="form-control" placeholder="dd-mm-yyyy" value="">
 
                                 </div>
                                 <p class="my-1" style="font-size: 18px;">s/d</p>
                                 <div class="col-sm-5 my-1">
                                     <label class="sr-only" for="inlineFormInputDate">Date</label>
-                                    <input type="date" name="begin" placeholder="dd-mm-yyyy" value="" min="1997-01-01" max="2030-12-31">
+                                    <input type="text" name="tanggalakhir" id="tanggalakhir" class="form-control" placeholder="dd-mm-yyyy" value="">
+
                                 </div>
                             </div>
                         </form>
+                        <div style=" clear:both">
+                        </div>
                     </div>
                     <div class="col">
-
-                        <p>Kategori</p>
+                        <p style="color:rgba(250, 244, 244, 1);">.</p>
+                        <!--  -->
                         <form>
+                            <!--  -->
                             <div class="form-row align-items-center">
-                                <div class="dropdown show">
-                                    <a class="border-0 btn  dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white;">
-                                        -semua jenis kategori-
-                                    </a>
+                                <div class="col-sm-3 my-1 ">
+                                    <!--   <div class="dropdown show" style="width: 500px; height: 40px;" value="<?= set_select('kategori'); ?>">
 
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
+                                        <select name="kategori" id="inputjk" class="form-control" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; color:black; width:250px;">
+                                            <option class="dropdown-item" href="#" disabled selected>-Semua kategori-</option>
+                                            <option class="dropdown-item" href="#">Pembelian Barang</option>
+                                            <option class="dropdown-item" href="#">Operasional</option>
+                                            <option class="dropdown-item" href="#">Gaji</option>
+                                            <option class="dropdown-item" href="#">Pemasukan SPP</option>
+                                            <option class="dropdown-item" href="#">Pemasukan Pendaftaran</option>
+                                            <option class="dropdown-item" href="#">Pemasukan Dana Bantuan</option>
+
+                                        </select>
+
+                                    </div>-->
+
                                 </div>
-                                <button type="button" class="btn btn-primary col-sm-3 float-right" style="margin-right: 0px;">Tampilkan</button>
+                                <p></p>
+
+                                <div class="col-sm-6">
+                                    <button type="button" name="filter" id="filter" class="btn btn-primary float-right" style="margin-right: 0px; ">Tampilkan</button>
+
+                                </div>
                             </div>
+
+
                         </form>
                     </div>
+
                 </div>
 
             </div>
@@ -164,13 +205,10 @@
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 ">Pertanggal : </h6>
-                        <h6 class="m-0 ">Kategori : </h6>
-
                         <a href="<?= base_url('Welcome/Cetakpdf'); ?>" class="float-right btn btn-danger" style="margin-right: 0px;">Cetak PDF</a>
 
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" id="ordertable">
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
@@ -206,7 +244,7 @@
                                                 <a onclick="javascript:return confirm('Anda yakin ingin menghapus data?')" href="<?= base_url(); ?>/Welcome/DeleteDataKeuCon/<? echo $keu['id']; ?>" type="submit" style="height: 30px; width:35px; margin-top:3px;">
                                                     <img src="<?= base_url('assets/'); ?>/img/delete.svg">
                                                 </a>
-                                                <a href="<?= base_url(); ?>/Welcome/EditDataKeuCon/<? echo $keu['id']; ?>" type="submit" style="height: 25px;width:27px; margin-top:2px; margin-left:5px;">
+                                                <a href="<?= base_url(); ?>/Welcome/EditDataKeuCon?<? echo $keu['id']; ?>" type="submit" style="height: 25px;width:27px; margin-top:2px; margin-left:5px;">
                                                     <img src="<?= base_url('assets/'); ?>/img/edit.svg">
                                                 </a>
                                             </td> -->
@@ -268,8 +306,28 @@
         </div>
     </div>
 
+    <div class="modal fade" style="margin-top:150px;" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Apakah Anda Yakin Ingin Menghapus Data?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="margin-left:200px;"><img src="<?= base_url('assets/'); ?>/img/warningIcon.svg"></div>
+                <div class="modal-body">Pilih "Hapus" untuk menghapus data.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="<?= base_url('Welcome/LapKeuCon'); ?>">Hapus</a>
+                    <!-- <a class="btn btn-primary" onclick="Swal('Data Berhasil Dihapus', 'Data telah dihapus', 'success')">Hapus</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Bootstrap core JavaScript-->
-    <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
+    <scriptsrc=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src= src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></scriptsrc=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=src=>
     <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
@@ -288,6 +346,38 @@
     <script src="<?= base_url('assets/'); ?>vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
     <script src="<?= base_url('assets/'); ?>js/demo/datatables-demo.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $.datepicker.setDefaults({
+                dateFormat: 'yy-mm-dd'
+            });
+
+            $(function() {
+                $("#tanggalawal").datepicker();
+                $("#tanggalakhir").datepicker();
+            });
+            $('#filter').click(function() {
+                var tanggalawal = $('#tanggalawal').val();
+                var tanggalakhir = $('#tanggalakhir').val();
+                if (tanggalawal != '' && tanggalakhir != '') {
+                    $.ajax({
+                        url: "<?= base_url(); ?>/Welcome/filter",
+                        method: "POST",
+                        data: {
+                            tanggalawal: tanggalawal,
+                            tanggalakhir: tanggalakhir
+                        },
+                        success: function(data) {
+                            $('#ordertable').html(data);
+                        }
+                    });
+                } else {
+                    alert("Tolong masukkan tanggal terlebih dahulu");
+                }
+            });
+        });
+    </script>
 
 </body>
 

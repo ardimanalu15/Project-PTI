@@ -23,6 +23,7 @@ class Welcome extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->library('form_validation');
+
 		// if (!$this->session->userdata('username') == null) {
 		// 	redirect('Welcome/LoginCon');
 		// }
@@ -36,10 +37,12 @@ class Welcome extends CI_Controller
 	}
 	public function LoginCon()
 	{
+
 		$this->form_validation->set_rules('username', 'Username', 'trim|required');
 		$this->form_validation->set_rules('password', 'Password', 'required|trim');
 
 		if ($this->form_validation->run() == false) {
+			$this->session->sess_destroy();
 			$this->load->view('home/login');
 		} else {
 			$this->_login();
@@ -144,16 +147,26 @@ class Welcome extends CI_Controller
 	}
 	public function DashAdminCon()
 	{
-
-		$data['jlh'] = $this->Modelsiswa->jumlahdata();
-		$data['jlhguru'] = $this->Modelguru->jumlahdata();
-		$this->load->view('home/dashAdmin', $data);
+		if ($this->session->userdata('username') == "admin") {
+			$data['jlh'] = $this->Modelsiswa->jumlahdata();
+			$data['jlhguru'] = $this->Modelguru->jumlahdata();
+			$this->load->view('home/dashAdmin', $data);
+		} else {
+			$this->session->set_flashdata('error_login', 'Silahkan login terlebih dahulu untuk mengakses data.');
+			redirect('Welcome/LoginCon');
+		}
 	}
 	public function DashKepsekCon()
 	{
-		$data['jlh'] = $this->Modelsiswa->jumlahdata();
-		$data['jlhguru'] = $this->Modelguru->jumlahdata();
-		$this->load->view('home/dashKepsek', $data);
+		// $tes = $this->session->userdata('username');
+		// echo $tes;
+		if ($this->session->userdata('username') == "kepalasekolah") {
+			$data['jlh'] = $this->Modelsiswa->jumlahdata();
+			$data['jlhguru'] = $this->Modelguru->jumlahdata();
+			$this->load->view('home/dashKepsek', $data);
+		} else {
+			redirect('Welcome/LoginCon');
+		}
 	}
 	public function DashUserCon()
 	{
@@ -164,269 +177,333 @@ class Welcome extends CI_Controller
 	}
 	public function DataSiswaCon()
 	{
-		$data['jlh'] = $this->Modelsiswa->jumlahdata();
-		$data['laki'] = $this->Modelsiswa->jumlahlaki();
-		$data['perempuan'] = $this->Modelsiswa->jumlahperempuan();
-		$data['siswa'] = $this->Modelsiswa->Alldata();
-		$this->load->view('home/datasiswa', $data);
+		if ($this->session->userdata('username') == "admin") {
+			$data['jlh'] = $this->Modelsiswa->jumlahdata();
+			$data['laki'] = $this->Modelsiswa->jumlahlaki();
+			$data['perempuan'] = $this->Modelsiswa->jumlahperempuan();
+			$data['siswa'] = $this->Modelsiswa->Alldata();
+			$this->load->view('home/datasiswa', $data);
+		} else {
+			$this->session->set_flashdata('error_login', 'Silahkan login terlebih dahulu untuk mengakses data.');
+			redirect('Welcome/LoginCon');
+		}
 	}
 	public function DataSiswaKepsekCon()
 	{
-		$data['jlh'] = $this->Modelsiswa->jumlahdata();
-		$data['laki'] = $this->Modelsiswa->jumlahlaki();
-		$data['perempuan'] = $this->Modelsiswa->jumlahperempuan();
-		$data['siswa'] = $this->Modelsiswa->Alldata();
-		$this->load->view('home/datasiswakepsek', $data);
+		if ($this->session->userdata('username') == "kepalasekolah") {
+
+			$data['jlh'] = $this->Modelsiswa->jumlahdata();
+			$data['laki'] = $this->Modelsiswa->jumlahlaki();
+			$data['perempuan'] = $this->Modelsiswa->jumlahperempuan();
+			$data['siswa'] = $this->Modelsiswa->Alldata();
+			$this->load->view('home/datasiswakepsek', $data);
+		} else {
+			$this->session->set_flashdata('error_login', 'Silahkan login terlebih dahulu untuk mengakses data.');
+			redirect('Welcome/LoginCon');
+		}
 	}
 	public function DataGuruCon()
 	{
-		$data['jlh'] = $this->Modelguru->jumlahdata();
-		$data['guru'] = $this->Modelguru->Alldata();
-		$this->load->view('home/dataguru', $data);
+		if ($this->session->userdata('username') == "admin") {
+			$data['jlh'] = $this->Modelguru->jumlahdata();
+			$data['guru'] = $this->Modelguru->Alldata();
+			$this->load->view('home/dataguru', $data);
+		} else {
+			$this->session->set_flashdata('error_login', 'Silahkan login terlebih dahulu untuk mengakses data.');
+			redirect('Welcome/LoginCon');
+		}
 	}
 	public function DataGuruKepsekCon()
 	{
-		$data['jlh'] = $this->Modelguru->jumlahdata();
-		$data['guru'] = $this->Modelguru->Alldata();
-		$this->load->view('home/datagurukepsek', $data);
+		if ($this->session->userdata('username') == "kepalasekolah") {
+			$data['jlh'] = $this->Modelguru->jumlahdata();
+			$data['guru'] = $this->Modelguru->Alldata();
+			$this->load->view('home/datagurukepsek', $data);
+		} else {
+			$this->session->set_flashdata('error_login', 'Silahkan login terlebih dahulu untuk mengakses data.');
+			redirect('Welcome/LoginCon');
+		}
 	}
 	public function DataAkunCon()
 	{
-		$data['jlh'] = $this->Modelakun->jumlahdata();
-		$data['akun'] = $this->Modelakun->Alldata();
-		$this->load->view('home/dataakun', $data);
+		if ($this->session->userdata('username') == "admin") {
+
+			$data['jlh'] = $this->Modelakun->jumlahdata();
+			$data['akun'] = $this->Modelakun->Alldata();
+			$this->load->view('home/dataakun', $data);
+		} else {
+			$this->session->set_flashdata('error_login', 'Silahkan login terlebih dahulu untuk mengakses data.');
+			redirect('Welcome/LoginCon');
+		}
 	}
 	public function DataAkunKepsekCon()
 	{
-		$data['jlh'] = $this->Modelakun->jumlahdata();
-		$data['akun'] = $this->Modelakun->Alldata();
-		$this->load->view('home/dataakunkepsek', $data);
+		if ($this->session->userdata('username') == "kepalasekolah") {
+
+			$data['jlh'] = $this->Modelakun->jumlahdata();
+			$data['akun'] = $this->Modelakun->Alldata();
+			$this->load->view('home/dataakunkepsek', $data);
+		} else {
+			$this->session->set_flashdata('error_login', 'Silahkan login terlebih dahulu untuk mengakses data.');
+			redirect('Welcome/LoginCon');
+		}
 	}
 	public function StatusSppCon()
 	{
-		$data['jlh'] = $this->Modelsiswa->jumlahdata();
-		$data['status'] = $this->Modelspp->Alldata();
-		$this->load->view('home/StatusSpp', $data);
+		if ($this->session->userdata('username') == "admin") {
+
+			$data['jlh'] = $this->Modelsiswa->jumlahdata();
+			$data['status'] = $this->Modelspp->Alldata();
+			$this->load->view('home/StatusSpp', $data);
+		} else {
+			$this->session->set_flashdata('error_login', 'Silahkan login terlebih dahulu untuk mengakses data.');
+			redirect('Welcome/LoginCon');
+		}
 	}
 	public function StatusSppKepsekCon()
 	{
-		$data['jlh'] = $this->Modelsiswa->jumlahdata();
-		$data['status'] = $this->Modelspp->Alldata();
-		$this->load->view('home/statussppkepsek', $data);
+		if ($this->session->userdata('username') == "kepalasekolah") {
+			$data['jlh'] = $this->Modelsiswa->jumlahdata();
+			$data['status'] = $this->Modelspp->Alldata();
+			$this->load->view('home/statussppkepsek', $data);
+		} else {
+			$this->session->set_flashdata('error_login', 'Silahkan login terlebih dahulu untuk mengakses data.');
+			redirect('Welcome/LoginCon');
+		}
 	}
 	public function StatusSppUserCon()
 	{
-		$data_['akun'] = $this->db->get_where('akun', ['username' => $this->session->userdata('username')])->row_array();
-		$take = $data_['akun']['nik'];
-		$data_['siswa'] = $this->Modelsiswa->ambildata($take);
-		$data_['spp'] = $this->Modelspp->ambildata($take);
-		$this->load->view('home/statusSppUser', $data_);
+		if ($this->session->userdata('username') != NULL) {
+
+			$data_['akun'] = $this->db->get_where('akun', ['username' => $this->session->userdata('username')])->row_array();
+			$take = $data_['akun']['nik'];
+			$data_['siswa'] = $this->Modelsiswa->ambildata($take);
+			$data_['spp'] = $this->Modelspp->ambildata($take);
+			$this->load->view('home/statusSppUser', $data_);
+		} else {
+			$this->session->set_flashdata('error_login', 'Silahkan login terlebih dahulu untuk mengakses data.');
+			redirect('Welcome/LoginCon');
+		}
 	}
 	public function LapKeuCon()
 	{
-		$data['keuangan'] = $this->Modelkeu->Alldata();
-		$this->load->view('home/LapKeu', $data);
+		if ($this->session->userdata('username') == "admin") {
+
+			$data['keuangan'] = $this->Modelkeu->Alldata();
+			$this->load->view('home/LapKeu', $data);
+		} else {
+			$this->session->set_flashdata('error_login', 'Silahkan login terlebih dahulu untuk mengakses data.');
+			redirect('Welcome/LoginCon');
+		}
 	}
 	public function LapKeuKepsekCon()
 	{
-		$data['keuangan'] = $this->Modelkeu->Alldata();
-		$this->load->view('home/lapkeukepsek', $data);
+		if ($this->session->userdata('username') == "kepalasekolah") {
+			$data['keuangan'] = $this->Modelkeu->Alldata();
+			$this->load->view('home/lapkeukepsek', $data);
+		} else {
+			$this->session->set_flashdata('error_login', 'Silahkan login terlebih dahulu untuk mengakses data.');
+			redirect('Welcome/LoginCon');
+		}
 	}
 	public function TambahDataAkunCon()
 	{
-		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
-		$this->form_validation->set_rules('nik', 'Nik', 'required|trim');
-		$this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[akun.username]', ['is_unique' => 'username sudah dipakai!']);
-		$this->form_validation->set_rules('password', 'Password', 'required|trim');
+		if ($this->session->userdata('username') == "admin") {
+			$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+			$this->form_validation->set_rules('nik', 'Nik', 'required|trim');
+			$this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[akun.username]', ['is_unique' => 'username sudah dipakai!']);
+			$this->form_validation->set_rules('password', 'Password', 'required|trim');
 
 
 
 
-		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('home/tambahdataakun');
+			if ($this->form_validation->run() == FALSE) {
+				$this->load->view('home/tambahdataakun');
+			} else {
+
+
+				$nama = $this->input->post('nama', TRUE);
+				$nik = $this->input->post('nik', TRUE);
+				$username =  htmlspecialchars($this->input->post('username', true));
+				$password =  password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+				$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
+
+				$data = array(
+					'nama' => $nama,
+					'nik' => $nik,
+					'username' => $username,
+					'password' => $password,
+					'last' => $last,
+					'role_id' => 2,
+					'is_active' => 1,
+				);
+				$this->Modelakun->insert_data($data);
+				$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Akun sudah Berhasil Ditambahkan!</div>');
+				redirect('Welcome/DataAkunCon');
+			}
 		} else {
-
-
-			$nama = $this->input->post('nama', TRUE);
-			$nik = $this->input->post('nik', TRUE);
-			$username =  htmlspecialchars($this->input->post('username', true));
-			$password =  password_hash($this->input->post('password'), PASSWORD_DEFAULT);
-			$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
-
-			$data = array(
-				'nama' => $nama,
-				'nik' => $nik,
-				'username' => $username,
-				'password' => $password,
-				'last' => $last,
-				'role_id' => 2,
-				'is_active' => 1,
-			);
-			$this->Modelakun->insert_data($data);
-			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Akun sudah Berhasil Ditambahkan!</div>');
-			redirect('Welcome/DataAkunCon');
+			$this->session->set_flashdata('error_login', 'Silahkan login terlebih dahulu untuk mengakses data.');
+			redirect('Welcome/LoginCon');
 		}
-		// $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
-		// $this->form_validation->set_rules('nik', 'Nik', 'required|trim');
-		// $this->form_validation->set_rules('username', 'Username', 'required|trim');
-		// $this->form_validation->set_rules('password', 'Password', 'required');
-
-
-
-		// if ($this->form_validation->run() == FALSE) {
-		// 	$this->load->view('home/tambahdataakun');
-		// } else {
-
-
-		// 	$nama = $this->input->post('nama', TRUE);
-		// 	$nik = $this->input->post('nik', TRUE);
-		// 	$username = $this->input->post('username', TRUE);
-		// 	$password = $this->input->post('password', TRUE);
-		// 	$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
-
-		// 	$data = array(
-		// 		'nama' => $nama,
-		// 		'nik' => $nik,
-		// 		'username' => $username,
-		// 		'password' => $password,
-		// 		'last' => $last,
-		// 	);
-
-
-
-		// 	$this->Modelakun->insert_data($data);
-		// 	$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data Berhasil Ditambahkan!</div>');
-		// 	redirect('Welcome/DataAkunCon');
-		// }
 	}
 
 
 	public function TambahDataSiswaCon()
 	{
-		$this->form_validation->set_rules('Nama_Calon_Siswa', 'Nama', 'required|trim');
-		$this->form_validation->set_rules('ttl', 'Tanggal lahir', 'required|trim');
-		$this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
-		$this->form_validation->set_rules('umur', 'Umur', 'required|trim|integer');
-		$this->form_validation->set_rules('noakte', 'Nomor akte', 'required|trim');
-		$this->form_validation->set_rules('nokk', 'Nomor KK', 'required|trim');
-		$this->form_validation->set_rules('nik', 'Nik', 'required|trim');
-		$this->form_validation->set_rules('tinggi', 'Tinggi', 'required|trim|integer');
-		$this->form_validation->set_rules('berat', 'Berat', 'required|trim|integer');
-		$this->form_validation->set_rules('jeniskelamin', 'Jenis kelamin', 'required|trim');
-		$this->form_validation->set_rules('nama_ayah', 'Nama ayah', 'required|trim');
-		$this->form_validation->set_rules('nama_ibu', 'Nama ibu', 'required|trim');
-		$this->form_validation->set_rules('pendidikan_ayah', 'Pendidikan ayah', 'required|trim');
-		$this->form_validation->set_rules('pendidikan_ibu', 'Pendidikan ibu', 'required|trim');
-		$this->form_validation->set_rules('pekerjaan_ayah', 'Pekerjaan ayah', 'required|trim');
-		$this->form_validation->set_rules('pekerjaan_ibu', 'Pekerjaan ibu', 'required|trim');
-		$this->form_validation->set_rules('penghasilan_ayah', 'Penghasilan ayah', 'required|integer|trim');
-		$this->form_validation->set_rules('penghasilan_ibu', 'Penghasilan ibu', 'required|integer|trim');
-		$this->form_validation->set_rules('ttl_ayah', 'Tanggal lahir ayah', 'required|trim');
-		$this->form_validation->set_rules('ttl_ibu', 'Tanggal lahir ibu', 'required|trim');
-		$this->form_validation->set_rules('notelpon', 'Nomor telpon', 'required|trim');
+		if ($this->session->userdata('username') == "admin") {
+			$this->form_validation->set_rules('Nama_Calon_Siswa', 'Nama', 'required|trim');
+			$this->form_validation->set_rules('ttl', 'Tanggal lahir', 'required|trim');
+			$this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
+			$this->form_validation->set_rules('umur', 'Umur', 'required|trim|integer');
+			$this->form_validation->set_rules('noakte', 'Nomor akte', 'required|trim');
+			$this->form_validation->set_rules('nokk', 'Nomor KK', 'required|trim');
+			$this->form_validation->set_rules('nik', 'Nik', 'required|trim');
+			$this->form_validation->set_rules('tinggi', 'Tinggi', 'required|trim|integer');
+			$this->form_validation->set_rules('berat', 'Berat', 'required|trim|integer');
+			$this->form_validation->set_rules('jeniskelamin', 'Jenis kelamin', 'required|trim');
+			$this->form_validation->set_rules('nama_ayah', 'Nama ayah', 'required|trim');
+			$this->form_validation->set_rules('nama_ibu', 'Nama ibu', 'required|trim');
+			$this->form_validation->set_rules('pendidikan_ayah', 'Pendidikan ayah', 'required|trim');
+			$this->form_validation->set_rules('pendidikan_ibu', 'Pendidikan ibu', 'required|trim');
+			$this->form_validation->set_rules('pekerjaan_ayah', 'Pekerjaan ayah', 'required|trim');
+			$this->form_validation->set_rules('pekerjaan_ibu', 'Pekerjaan ibu', 'required|trim');
+			$this->form_validation->set_rules('penghasilan_ayah', 'Penghasilan ayah', 'required|integer|trim');
+			$this->form_validation->set_rules('penghasilan_ibu', 'Penghasilan ibu', 'required|integer|trim');
+			$this->form_validation->set_rules('ttl_ayah', 'Tanggal lahir ayah', 'required|trim');
+			$this->form_validation->set_rules('ttl_ibu', 'Tanggal lahir ibu', 'required|trim');
+			$this->form_validation->set_rules('notelpon', 'Nomor telpon', 'required|trim');
 
 
 
-		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('home/tambahDataMurid');
+			if ($this->form_validation->run() == FALSE) {
+				$this->load->view('home/tambahDataMurid');
+			} else {
+
+
+				$nama = $this->input->post('Nama_Calon_Siswa', TRUE);
+				$ttl = $this->input->post('ttl', TRUE);
+				$alamat = $this->input->post('alamat', TRUE);
+				$umur = $this->input->post('umur', TRUE);
+				$akte = $this->input->post('noakte', TRUE);
+				$kk = $this->input->post('nokk', TRUE);
+				$nik = $this->input->post('nik', TRUE);
+				$tinggi = $this->input->post('tinggi', TRUE);
+				$berat = $this->input->post('berat', TRUE);
+				$jk = $this->input->post('jeniskelamin', TRUE);
+				$namaayah = $this->input->post('nama_ayah', TRUE);
+				$namaibu = $this->input->post('nama_ibu', TRUE);
+				$pendidikanayah = $this->input->post('pendidikan_ayah', TRUE);
+				$pendidikanibu = $this->input->post('pendidikan_ibu', TRUE);
+				$pekerjaanayah = $this->input->post('pekerjaan_ayah', TRUE);
+				$pekerjaanibu = $this->input->post('pekerjaan_ibu', TRUE);
+				$penghasilanayah = $this->input->post('penghasilan_ayah', TRUE);
+				$penghasilanibu = $this->input->post('penghasilan_ibu', TRUE);
+				$ttlayah = $this->input->post('ttl_ayah', TRUE);
+				$ttlibu = $this->input->post('ttl_ibu', TRUE);
+				$telpon = $this->input->post('notelpon', TRUE);
+				$last = mdate('%d-%m-%Y/ %h:%i:%a', time());;
+				// $image = $_FILES['image']['name'];
+				// if ($image) {
+				// 	$config['upload_path'] = './assets/fotosiswa'; //letak folder file yang akan diupload
+				// 	$config['allowed_types'] = 'jpg|png|img|jpeg'; //jenis file yang dapat diterima
+				// 	$config['max_size'] = '2048'; // kb
+				// 	$this->load->library('upload', $config); //deklarasi library upload (config)
+
+				// 	if ($this->upload->do_upload('foto')) {
+				// 		$foto =  $this->upload->data('file_name');
+				// 		$this->db->set('foto');
+				// 	} else {
+				// 		echo $this->upload->display_errors();
+				// 	}
+				// }
+
+
+				$data = array(
+					'nama' => $nama,
+					'ttl' => $ttl,
+					'alamat' => $alamat,
+					'umur' => $umur,
+					'akte' => $akte,
+					'kk' => $kk,
+					'nik' => $nik,
+					'tinggi' => $tinggi,
+					'berat' => $berat,
+					'jk' => $jk,
+					'namaayah' => $namaayah,
+					'namaibu' => $namaibu,
+					'pendidikanayah' => $pendidikanayah,
+					'pendidikanibu' => $pendidikanibu,
+					'pekerjaanayah' => $pekerjaanayah,
+					'pekerjaanibu' => $pekerjaanibu,
+					'penghasilanayah' => $penghasilanayah,
+					'penghasilanibu' => $penghasilanibu,
+					'ttlayah' => $ttlayah,
+					'ttlibu' => $ttlibu,
+					'telpon' => $telpon,
+					'last' => $last,
+					// 'foto' => 'default.jpg ',
+				);
+
+
+				$this->Modelsiswa->insert_data($data);
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data Berhasil Ditambahkan!</div>');
+				redirect('Welcome/DataSiswaCon');
+			}
 		} else {
-
-
-			$nama = $this->input->post('Nama_Calon_Siswa', TRUE);
-			$ttl = $this->input->post('ttl', TRUE);
-			$alamat = $this->input->post('alamat', TRUE);
-			$umur = $this->input->post('umur', TRUE);
-			$akte = $this->input->post('noakte', TRUE);
-			$kk = $this->input->post('nokk', TRUE);
-			$nik = $this->input->post('nik', TRUE);
-			$tinggi = $this->input->post('tinggi', TRUE);
-			$berat = $this->input->post('berat', TRUE);
-			$jk = $this->input->post('jeniskelamin', TRUE);
-			$namaayah = $this->input->post('nama_ayah', TRUE);
-			$namaibu = $this->input->post('nama_ibu', TRUE);
-			$pendidikanayah = $this->input->post('pendidikan_ayah', TRUE);
-			$pendidikanibu = $this->input->post('pendidikan_ibu', TRUE);
-			$pekerjaanayah = $this->input->post('pekerjaan_ayah', TRUE);
-			$pekerjaanibu = $this->input->post('pekerjaan_ibu', TRUE);
-			$penghasilanayah = $this->input->post('penghasilan_ayah', TRUE);
-			$penghasilanibu = $this->input->post('penghasilan_ibu', TRUE);
-			$ttlayah = $this->input->post('ttl_ayah', TRUE);
-			$ttlibu = $this->input->post('ttl_ibu', TRUE);
-			$telpon = $this->input->post('notelpon', TRUE);
-			$last = mdate('%d-%m-%Y/ %h:%i:%a', time());;
-			// $image = $_FILES['image']['name'];
-			// if ($image) {
-			// 	$config['upload_path'] = './assets/fotosiswa'; //letak folder file yang akan diupload
-			// 	$config['allowed_types'] = 'jpg|png|img|jpeg'; //jenis file yang dapat diterima
-			// 	$config['max_size'] = '2048'; // kb
-			// 	$this->load->library('upload', $config); //deklarasi library upload (config)
-
-			// 	if ($this->upload->do_upload('foto')) {
-			// 		$foto =  $this->upload->data('file_name');
-			// 		$this->db->set('foto');
-			// 	} else {
-			// 		echo $this->upload->display_errors();
-			// 	}
-			// }
-
-
-			$data = array(
-				'nama' => $nama,
-				'ttl' => $ttl,
-				'alamat' => $alamat,
-				'umur' => $umur,
-				'akte' => $akte,
-				'kk' => $kk,
-				'nik' => $nik,
-				'tinggi' => $tinggi,
-				'berat' => $berat,
-				'jk' => $jk,
-				'namaayah' => $namaayah,
-				'namaibu' => $namaibu,
-				'pendidikanayah' => $pendidikanayah,
-				'pendidikanibu' => $pendidikanibu,
-				'pekerjaanayah' => $pekerjaanayah,
-				'pekerjaanibu' => $pekerjaanibu,
-				'penghasilanayah' => $penghasilanayah,
-				'penghasilanibu' => $penghasilanibu,
-				'ttlayah' => $ttlayah,
-				'ttlibu' => $ttlibu,
-				'telpon' => $telpon,
-				'last' => $last,
-				// 'foto' => 'default.jpg ',
-			);
-
-
-			$this->Modelsiswa->insert_data($data);
-			$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data Berhasil Ditambahkan!</div>');
-			redirect('Welcome/DataSiswaCon');
+			$this->session->set_flashdata('error_login', 'Silahkan login terlebih dahulu untuk mengakses data.');
+			redirect('Welcome/LoginCon');
 		}
 	}
 
 	public function EditDataSiswaCon($id)
 	{
-		$data['siswa'] = $this->Modelsiswa->ambil_id_siswa($id);
-		$this->load->view('home/editdatasiswa', $data);
+		if ($this->session->userdata('username') == "admin") {
+			$data['siswa'] = $this->Modelsiswa->ambil_id_siswa($id);
+			$this->load->view('home/editdatasiswa', $data);
+		} else {
+			$this->session->set_flashdata('error_login', 'Silahkan login terlebih dahulu untuk mengakses data.');
+			redirect('Welcome/LoginCon');
+		}
 	}
 	public function EditDataGurucon($id)
 	{
-		$data['guru'] = $this->Modelguru->ambil_id_guru($id);
-		$this->load->view('home/editdataguru', $data);
+		if ($this->session->userdata('username') == "admin") {
+			$data['guru'] = $this->Modelguru->ambil_id_guru($id);
+			$this->load->view('home/editdataguru', $data);
+		} else {
+			$this->session->set_flashdata('error_login', 'Silahkan login terlebih dahulu untuk mengakses data.');
+			redirect('Welcome/LoginCon');
+		}
 	}
 	public function EditDataSppCon($id)
 	{
-		$data['status'] = $this->Modelspp->ambil_id_spp($id);
-		$this->load->view('home/editdataspp', $data);
+		if ($this->session->userdata('username') == "admin") {
+			$data['status'] = $this->Modelspp->ambil_id_spp($id);
+			$this->load->view('home/editdataspp', $data);
+		} else {
+			$this->session->set_flashdata('error_login', 'Silahkan login terlebih dahulu untuk mengakses data.');
+			redirect('Welcome/LoginCon');
+		}
 	}
 	public function EditDataKeucon($id)
 	{
-		$data['keuangan'] = $this->Modelkeu->ambil_id_keu($id);
-		$this->load->view('home/editdatakeu', $data);
+		if ($this->session->userdata('username') == "admin") {
+			$data['keuangan'] = $this->Modelkeu->ambil_id_keu($id);
+			$this->load->view('home/editdatakeu', $data);
+		} else {
+			$this->session->set_flashdata('error_login', 'Silahkan login terlebih dahulu untuk mengakses data.');
+			redirect('Welcome/LoginCon');
+		}
 	}
 	public function EditDataAkunCon($id)
 	{
-		$data['akun'] = $this->Modelakun->ambil_id_akun($id);
-		$this->load->view('home/editdataakun', $data);
+		if ($this->session->userdata('username') == "admin") {
+			$data['akun'] = $this->Modelakun->ambil_id_akun($id);
+			$this->load->view('home/editdataakun', $data);
+		} else {
+			$this->session->set_flashdata('error_login', 'Silahkan login terlebih dahulu untuk mengakses data.');
+			redirect('Welcome/LoginCon');
+		}
 	}
 	public function halamanpendaf()
 	{
@@ -498,181 +575,196 @@ class Welcome extends CI_Controller
 	}
 	public function TambahDataKeucon()
 	{
-		$this->form_validation->set_rules('tanggalKeu', 'TanggalKeu', 'required|trim');
-		$this->form_validation->set_rules('jenisTransaksi', 'JenisTransaksi', 'required|trim');
-		$this->form_validation->set_rules('banyak', 'Banyak', 'required|trim|integer');
-		$this->form_validation->set_rules('satuan', 'Satuan', 'required|trim|integer');
-		$this->form_validation->set_rules('kategori', 'Kategori', 'required|trim');
-		$this->form_validation->set_rules('kas', 'Kas', 'required|trim');
+		if ($this->session->userdata('username') == "admin") {
+			$this->form_validation->set_rules('tanggalKeu', 'TanggalKeu', 'required|trim');
+			$this->form_validation->set_rules('jenisTransaksi', 'JenisTransaksi', 'required|trim');
+			$this->form_validation->set_rules('banyak', 'Banyak', 'required|trim|integer');
+			$this->form_validation->set_rules('satuan', 'Satuan', 'required|trim|integer');
+			$this->form_validation->set_rules('kategori', 'Kategori', 'required|trim');
+			$this->form_validation->set_rules('kas', 'Kas', 'required|trim');
 
-		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('home/tambahdatakeu');
+			if ($this->form_validation->run() == FALSE) {
+				$this->load->view('home/tambahdatakeu');
+			} else {
+
+
+				$nama = $this->input->post('tanggalKeu', TRUE);
+				$jk = $this->input->post('jenisTransaksi', TRUE);
+				$banyak = $this->input->post('banyak', TRUE);
+				$satuan = $this->input->post('satuan', TRUE);
+				$ttl = $this->input->post('kategori', TRUE);
+				$alamat = $this->input->post('kas', TRUE);
+				$jlh = $banyak * $satuan;
+				$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
+
+				$data = array(
+					'tanggal' => $nama,
+					'jenistransaksi' => $jk,
+					'banyak' => $banyak,
+					'satuan' => $satuan,
+					'kategori' => $ttl,
+					'jeniskas' => $alamat,
+					'jumlah' => $jlh,
+					'last' => $last,
+				);
+
+
+				$this->Modelkeu->insert_data($data);
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data Berhasil Ditambahkan!</div>');
+				redirect('Welcome/LapKeuCon');
+			}
 		} else {
-
-
-			$nama = $this->input->post('tanggalKeu', TRUE);
-			$jk = $this->input->post('jenisTransaksi', TRUE);
-			$banyak = $this->input->post('banyak', TRUE);
-			$satuan = $this->input->post('satuan', TRUE);
-			$ttl = $this->input->post('kategori', TRUE);
-			$alamat = $this->input->post('kas', TRUE);
-			$jlh = $banyak * $satuan;
-			$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
-
-			$data = array(
-				'tanggal' => $nama,
-				'jenistransaksi' => $jk,
-				'banyak' => $banyak,
-				'satuan' => $satuan,
-				'kategori' => $ttl,
-				'jeniskas' => $alamat,
-				'jumlah' => $jlh,
-				'last' => $last,
-			);
-
-
-			$this->Modelkeu->insert_data($data);
-			$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data Berhasil Ditambahkan!</div>');
-			redirect('Welcome/LapKeuCon');
+			$this->session->set_flashdata('error_login', 'Silahkan login terlebih dahulu untuk mengakses data.');
+			redirect('Welcome/LoginCon');
 		}
 	}
 	public function TambahDataGurucon()
 	{
-		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
-		$this->form_validation->set_rules('jeniskelamin', 'Jenis kelamin', 'required|trim');
-		$this->form_validation->set_rules('ttl', 'Tanggal lahir', 'required|trim');
-		$this->form_validation->set_rules('alamatguru', 'Alamat', 'required|trim');
-		$this->form_validation->set_rules('NIK', 'Nik', 'required|trim');
-		$this->form_validation->set_rules('NIP', 'Nip', 'required|trim');
-		$this->form_validation->set_rules('NUPTK', 'Nuptk', 'required|trim');
-		$this->form_validation->set_rules('jenisPTK', 'JenisPTK', 'required|trim');
-		$this->form_validation->set_rules('NPSN', 'Npsn', 'required|trim');
-		// $this->form_validation->set_rules('nama_ayah', 'Nama ayah', 'required|trim');
-		// $this->form_validation->set_rules('nama_ibu', 'Nama ibu', 'required|trim');
-		// $this->form_validation->set_rules('pendidikan_ayah', 'Pendidikan ayah', 'required|trim');
-		// $this->form_validation->set_rules('pendidikan_ibu', 'Pendidikan ibu', 'required|trim');
-		// $this->form_validation->set_rules('pekerjaan_ayah', 'Pekerjaan ayah', 'required|trim');
-		// $this->form_validation->set_rules('pekerjaan_ibu', 'Pekerjaan ibu', 'required|trim');
-		// $this->form_validation->set_rules('penghasilan_ayah', 'Penghasilan ayah', 'required|integer|trim');
-		// $this->form_validation->set_rules('penghasilan_ibu', 'Penghasilan ibu', 'required|integer|trim');
-		// $this->form_validation->set_rules('ttl_ayah', 'Tanggal lahir ayah', 'required|trim');
-		// $this->form_validation->set_rules('ttl_ibu', 'Tanggal lahir ibu', 'required|trim');
-		// $this->form_validation->set_rules('notelpon', 'Nomor telpon', 'required|trim');
+		if ($this->session->userdata('username') == "admin") {
+			$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+			$this->form_validation->set_rules('jeniskelamin', 'Jenis kelamin', 'required|trim');
+			$this->form_validation->set_rules('ttl', 'Tanggal lahir', 'required|trim');
+			$this->form_validation->set_rules('alamatguru', 'Alamat', 'required|trim');
+			$this->form_validation->set_rules('NIK', 'Nik', 'required|trim');
+			$this->form_validation->set_rules('NIP', 'Nip', 'required|trim');
+			$this->form_validation->set_rules('NUPTK', 'Nuptk', 'required|trim');
+			$this->form_validation->set_rules('jenisPTK', 'JenisPTK', 'required|trim');
+			$this->form_validation->set_rules('NPSN', 'Npsn', 'required|trim');
+			// $this->form_validation->set_rules('nama_ayah', 'Nama ayah', 'required|trim');
+			// $this->form_validation->set_rules('nama_ibu', 'Nama ibu', 'required|trim');
+			// $this->form_validation->set_rules('pendidikan_ayah', 'Pendidikan ayah', 'required|trim');
+			// $this->form_validation->set_rules('pendidikan_ibu', 'Pendidikan ibu', 'required|trim');
+			// $this->form_validation->set_rules('pekerjaan_ayah', 'Pekerjaan ayah', 'required|trim');
+			// $this->form_validation->set_rules('pekerjaan_ibu', 'Pekerjaan ibu', 'required|trim');
+			// $this->form_validation->set_rules('penghasilan_ayah', 'Penghasilan ayah', 'required|integer|trim');
+			// $this->form_validation->set_rules('penghasilan_ibu', 'Penghasilan ibu', 'required|integer|trim');
+			// $this->form_validation->set_rules('ttl_ayah', 'Tanggal lahir ayah', 'required|trim');
+			// $this->form_validation->set_rules('ttl_ibu', 'Tanggal lahir ibu', 'required|trim');
+			// $this->form_validation->set_rules('notelpon', 'Nomor telpon', 'required|trim');
 
 
 
-		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('home/tambahdataguru');
+			if ($this->form_validation->run() == FALSE) {
+				$this->load->view('home/tambahdataguru');
+			} else {
+
+
+				$nama = $this->input->post('nama', TRUE);
+				$jk = $this->input->post('jeniskelamin', TRUE);
+				$ttl = $this->input->post('ttl', TRUE);
+				$alamat = $this->input->post('alamatguru', TRUE);
+				$nik = $this->input->post('NIK', TRUE);
+				$nip = $this->input->post('NIP', TRUE);
+				$nuptk = $this->input->post('NUPTK', TRUE);
+				$jenis = $this->input->post('jenisPTK', TRUE);
+				$npsn = $this->input->post('NPSN', TRUE);
+				$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
+				// $namaayah = $this->input->post('nama_ayah', TRUE);
+				// $namaibu = $this->input->post('nama_ibu', TRUE);
+				// $pendidikanayah = $this->input->post('pendidikan_ayah', TRUE);
+				// $pendidikanibu = $this->input->post('pendidikan_ibu', TRUE);
+				// $pekerjaanayah = $this->input->post('pekerjaan_ayah', TRUE);
+				// $pekerjaanibu = $this->input->post('pekerjaan_ibu', TRUE);
+				// $penghasilanayah = $this->input->post('penghasilan_ayah', TRUE);
+				// $penghasilanibu = $this->input->post('penghasilan_ibu', TRUE);
+				// $ttlayah = $this->input->post('ttl_ayah', TRUE);
+				// $ttlibu = $this->input->post('ttl_ibu', TRUE);
+				// $telpon = $this->input->post('notelpon', TRUE);
+				// $image = $_FILES['image']['name'];
+				// if ($image) {
+				// 	$config['upload_path'] = './assets/fotosiswa'; //letak folder file yang akan diupload
+				// 	$config['allowed_types'] = 'jpg|png|img|jpeg'; //jenis file yang dapat diterima
+				// 	$config['max_size'] = '2048'; // kb
+				// 	$this->load->library('upload', $config); //deklarasi library upload (config)
+
+				// 	if ($this->upload->do_upload('foto')) {
+				// 		$foto =  $this->upload->data('file_name');
+				// 		$this->db->set('foto');
+				// 	} else {
+				// 		echo $this->upload->display_errors();
+				// 	}
+				// }
+
+
+				$data = array(
+					'namaguru' => $nama,
+					'jk' => $jk,
+					'ttl' => $ttl,
+					'alamat' => $alamat,
+					'NIK' => $nik,
+					'NIP' => $nip,
+					'NUPTK' => $nuptk,
+					'JPTK' => $jenis,
+					'NPSN' => $npsn,
+					'last' => $last,
+					// 'namaayah' => $namaayah,
+					// 'namaibu' => $namaibu,
+					// 'pendidikanayah' => $pendidikanayah,
+					// 'pendidikanibu' => $pendidikanibu,
+					// 'pekerjaanayah' => $pekerjaanayah,
+					// 'pekerjaanibu' => $pekerjaanibu,
+					// 'penghasilanayah' => $penghasilanayah,
+					// 'penghasilanibu' => $penghasilanibu,
+					// 'ttlayah' => $ttlayah,
+					// 'ttlibu' => $ttlibu,
+					// 'telpon' => $telpon,
+					// 'foto' => 'default.jpg ',
+				);
+
+
+				$this->Modelguru->insert_data($data);
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data Berhasil Ditambahkan!</div>');
+				redirect('Welcome/DataGuruCon');
+			}
 		} else {
-
-
-			$nama = $this->input->post('nama', TRUE);
-			$jk = $this->input->post('jeniskelamin', TRUE);
-			$ttl = $this->input->post('ttl', TRUE);
-			$alamat = $this->input->post('alamatguru', TRUE);
-			$nik = $this->input->post('NIK', TRUE);
-			$nip = $this->input->post('NIP', TRUE);
-			$nuptk = $this->input->post('NUPTK', TRUE);
-			$jenis = $this->input->post('jenisPTK', TRUE);
-			$npsn = $this->input->post('NPSN', TRUE);
-			$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
-			// $namaayah = $this->input->post('nama_ayah', TRUE);
-			// $namaibu = $this->input->post('nama_ibu', TRUE);
-			// $pendidikanayah = $this->input->post('pendidikan_ayah', TRUE);
-			// $pendidikanibu = $this->input->post('pendidikan_ibu', TRUE);
-			// $pekerjaanayah = $this->input->post('pekerjaan_ayah', TRUE);
-			// $pekerjaanibu = $this->input->post('pekerjaan_ibu', TRUE);
-			// $penghasilanayah = $this->input->post('penghasilan_ayah', TRUE);
-			// $penghasilanibu = $this->input->post('penghasilan_ibu', TRUE);
-			// $ttlayah = $this->input->post('ttl_ayah', TRUE);
-			// $ttlibu = $this->input->post('ttl_ibu', TRUE);
-			// $telpon = $this->input->post('notelpon', TRUE);
-			// $image = $_FILES['image']['name'];
-			// if ($image) {
-			// 	$config['upload_path'] = './assets/fotosiswa'; //letak folder file yang akan diupload
-			// 	$config['allowed_types'] = 'jpg|png|img|jpeg'; //jenis file yang dapat diterima
-			// 	$config['max_size'] = '2048'; // kb
-			// 	$this->load->library('upload', $config); //deklarasi library upload (config)
-
-			// 	if ($this->upload->do_upload('foto')) {
-			// 		$foto =  $this->upload->data('file_name');
-			// 		$this->db->set('foto');
-			// 	} else {
-			// 		echo $this->upload->display_errors();
-			// 	}
-			// }
-
-
-			$data = array(
-				'namaguru' => $nama,
-				'jk' => $jk,
-				'ttl' => $ttl,
-				'alamat' => $alamat,
-				'NIK' => $nik,
-				'NIP' => $nip,
-				'NUPTK' => $nuptk,
-				'JPTK' => $jenis,
-				'NPSN' => $npsn,
-				'last' => $last,
-				// 'namaayah' => $namaayah,
-				// 'namaibu' => $namaibu,
-				// 'pendidikanayah' => $pendidikanayah,
-				// 'pendidikanibu' => $pendidikanibu,
-				// 'pekerjaanayah' => $pekerjaanayah,
-				// 'pekerjaanibu' => $pekerjaanibu,
-				// 'penghasilanayah' => $penghasilanayah,
-				// 'penghasilanibu' => $penghasilanibu,
-				// 'ttlayah' => $ttlayah,
-				// 'ttlibu' => $ttlibu,
-				// 'telpon' => $telpon,
-				// 'foto' => 'default.jpg ',
-			);
-
-
-			$this->Modelguru->insert_data($data);
-			$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data Berhasil Ditambahkan!</div>');
-			redirect('Welcome/DataGuruCon');
+			$this->session->set_flashdata('error_login', 'Silahkan login terlebih dahulu untuk mengakses data.');
+			redirect('Welcome/LoginCon');
 		}
 	}
 
 	public function TambahDataSppCon()
 	{
-		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
-		$this->form_validation->set_rules('nik', 'Nik', 'required|trim');
-		$this->form_validation->set_rules('bulan', 'Bulan', 'required|trim');
-		$this->form_validation->set_rules('nominal', 'Nominal', 'required|trim|integer');
-		$this->form_validation->set_rules('tempo', 'Tempo', 'required|trim');
-		$this->form_validation->set_rules('status', 'Status', 'required|trim');
+		if ($this->session->userdata('username') == "admin") {
+			$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+			$this->form_validation->set_rules('nik', 'Nik', 'required|trim');
+			$this->form_validation->set_rules('bulan', 'Bulan', 'required|trim');
+			$this->form_validation->set_rules('nominal', 'Nominal', 'required|trim|integer');
+			$this->form_validation->set_rules('tempo', 'Tempo', 'required|trim');
+			$this->form_validation->set_rules('status', 'Status', 'required|trim');
 
-		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('home/tambahdataspp');
+			if ($this->form_validation->run() == FALSE) {
+				$this->load->view('home/tambahdataspp');
+			} else {
+
+
+				$nama = $this->input->post('nama', TRUE);
+				$nik = $this->input->post('nik', TRUE);
+				$bulan = $this->input->post('bulan', TRUE);
+				$nominal = $this->input->post('nominal', TRUE);
+				$tempo = $this->input->post('tempo', TRUE);
+				$tanggal = $this->input->post('tanggalbayar', TRUE);
+				$status = $this->input->post('status', TRUE);
+				$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
+
+				$data = array(
+					'nama' => $nama,
+					'nik' => $nik,
+					'bulan' => $bulan,
+					'nominal' => $nominal,
+					'tempo' => $tempo,
+					'tglbayar' => $tanggal,
+					'status' => $status,
+					'last' => $last,
+				);
+
+
+				$this->Modelspp->insert_data($data);
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data Berhasil Ditambahkan!</div>');
+				redirect('Welcome/StatusSppCon');
+			}
 		} else {
-
-
-			$nama = $this->input->post('nama', TRUE);
-			$nik = $this->input->post('nik', TRUE);
-			$bulan = $this->input->post('bulan', TRUE);
-			$nominal = $this->input->post('nominal', TRUE);
-			$tempo = $this->input->post('tempo', TRUE);
-			$tanggal = $this->input->post('tanggalbayar', TRUE);
-			$status = $this->input->post('status', TRUE);
-			$last = mdate('%d-%m-%Y/ %h:%i:%a', time());
-
-			$data = array(
-				'nama' => $nama,
-				'nik' => $nik,
-				'bulan' => $bulan,
-				'nominal' => $nominal,
-				'tempo' => $tempo,
-				'tglbayar' => $tanggal,
-				'status' => $status,
-				'last' => $last,
-			);
-
-
-			$this->Modelspp->insert_data($data);
-			$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Data Berhasil Ditambahkan!</div>');
-			redirect('Welcome/StatusSppCon');
+			$this->session->set_flashdata('error_login', 'Silahkan login terlebih dahulu untuk mengakses data.');
+			redirect('Welcome/LoginCon');
 		}
 	}
 

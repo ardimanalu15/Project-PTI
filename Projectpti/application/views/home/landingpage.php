@@ -82,7 +82,7 @@
                     </dir>
                 </div>
                 <div class="lanjutprofile">
-                    <a href="#"><img src="img/Group131.png" alt="tombol"></a>
+                    <a href="<?= base_url('Welcome/ProfileCon') ?>"><img src="img/Group131.png" alt="tombol"></a>
                 </div>
             </div>
         </section>
@@ -143,7 +143,7 @@
                     </div>
                 </div>
                 <div class="lanjutguru">
-                    <a href="#"><img src="img/Group132.png" alt="tombol"></a>
+                    <a href="<?= base_url('Welcome/GuruCon') ?>"><img src="img/Group132.png" alt="tombol"></a>
                 </div>
             </div>
         </section>
@@ -173,7 +173,7 @@
                     </div>
                 </div>
                 <div class="gambarinfo">
-                    <a href="#"> <img src="img/Group133.png" alt="gambarinfolengkapnya"></a>
+                    <a href="<?= base_url('Welcome/InfoDaftarCon') ?>"> <img src="img/Group133.png" alt="gambarinfolengkapnya"></a>
                 </div>
             </div>
         </section>

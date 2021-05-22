@@ -154,9 +154,9 @@ $result = mysqli_query($connect, $querry);
                             <!--  -->
                             <div class="form-row align-items-center">
                                 <div class="col-sm-3 my-1 ">
-                                    <!--   <div class="dropdown show" style="width: 500px; height: 40px;" value="<?= set_select('jeniskelamin'); ?>">
+                                    <!--   <div class="dropdown show" style="width: 500px; height: 40px;" value="<?= set_select('kategori'); ?>">
 
-                                        <select name=" jeniskelamin" id="inputjk" class="form-control" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; color:black; width:250px;">
+                                        <select name="kategori" id="inputjk" class="form-control" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white; color:black; width:250px;">
                                             <option class="dropdown-item" href="#" disabled selected>-Semua kategori-</option>
                                             <option class="dropdown-item" href="#">Pembelian Barang</option>
                                             <option class="dropdown-item" href="#">Operasional</option>
@@ -205,10 +205,6 @@ $result = mysqli_query($connect, $querry);
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <!--   <h6 class="m-0 ">Pertanggal : </h6>
-                        <h6 class="m-0 ">Kategori : </h6>-->
-
-
                         <a href="<?= base_url('Welcome/Cetakpdf'); ?>" class="float-right btn btn-danger" style="margin-right: 0px;">Cetak PDF</a>
 
                     </div>

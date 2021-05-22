@@ -245,7 +245,7 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Pilih "Loguot" untuk keluar dari laman ini.</div>
+                <div class="modal-body">Pilih "Logout" untuk keluar dari laman ini.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <a class="btn btn-primary" href="<?= base_url('Welcome/LoginCon'); ?>">Logout</a>
