@@ -172,10 +172,10 @@
                                                 <td><?php echo $gur['NPSN']; ?></td>
                                                 <td><?php echo $gur['last']; ?></td>
                                                 <td>
-                                                    <a onclick="javascript:return confirm('Anda yakin ingin menghapus data?')" href="<?= base_url(); ?>/Welcome/DeleteDataGuruCon/<? echo $gur['id']; ?>" type="submit" style="height: 30px; width:35px; margin-top:3px;margin-left:5px;">
+                                                    <a onclick="javascript:return confirm('Anda yakin ingin menghapus data?')" href="<?= base_url(); ?>/Welcome/DeleteDataGuruCon/<?php echo $gur['id']; ?>" type="submit" style="height: 30px; width:35px; margin-top:3px;margin-left:5px;">
                                                         <img src="<?= base_url('assets/'); ?>/img/delete.svg">
                                                     </a>
-                                                    <a href="<?= base_url(); ?>/Welcome/EditDataGuruCon/<? echo $gur['id']; ?>" type="submit" style="height: 25px;width:27px; margin-top:2px; margin-left:10px;">
+                                                    <a href="<?= base_url(); ?>/Welcome/EditDataGuruCon/<?php echo $gur['id']; ?>" type="submit" style="height: 25px;width:27px; margin-top:2px; margin-left:10px;">
                                                         <img src="<?= base_url('assets/'); ?>/img/edit.svg">
                                                     </a>
                                                 </td>

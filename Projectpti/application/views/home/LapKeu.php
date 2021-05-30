@@ -241,10 +241,10 @@ $result = mysqli_query($connect, $querry);
                                             <td><?php echo $keu['last']; ?></td>
 
                                             <td>
-                                                <a onclick="javascript:return confirm('Anda yakin ingin menghapus data?')" href="<?= base_url(); ?>/Welcome/DeleteDataKeuCon/<? echo $keu['id']; ?>" type="submit" style="height: 30px; width:35px; margin-top:3px;">
+                                                <a onclick="javascript:return confirm('Anda yakin ingin menghapus data?')" href="<?= base_url(); ?>/Welcome/DeleteDataKeuCon/<?php echo $keu['id']; ?>" type="submit" style="height: 30px; width:35px; margin-top:3px;">
                                                     <img src="<?= base_url('assets/'); ?>/img/delete.svg">
                                                 </a>
-                                                <a href="<?= base_url(); ?>/Welcome/EditDataKeuCon?<? echo $keu['id']; ?>" type="submit" style="height: 25px;width:27px; margin-top:2px; margin-left:5px;">
+                                                <a href="<?= base_url(); ?>/Welcome/EditDataKeuCon/<?php echo $keu['id']; ?>" type="submit" style="height: 25px;width:27px; margin-top:2px; margin-left:5px;">
                                                     <img src="<?= base_url('assets/'); ?>/img/edit.svg">
                                                 </a>
                                             </td>
